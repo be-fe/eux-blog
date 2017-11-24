@@ -1,0 +1,19 @@
+{
+  "name": "picidae-theme-eux-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd test && picidae start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "picidae": "^1.1.10"
+  },
+  "dependencies": {
+    "classname": "0.0.0",
+    "picidae-tools": "0.0.3"
+  }
+}
