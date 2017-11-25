@@ -22,8 +22,6 @@ export default class Layout extends React.PureComponent {
     location: PropTypes.object
   }
   render() {
-    console.log(this.props);
-
     const {children, location} = this.props;
     return (
       <div className="main">

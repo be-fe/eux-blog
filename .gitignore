@@ -3,3 +3,5 @@
 dist/
 node_modules/
 
+/pre-treat/md/
+/pre-treat/links.txt

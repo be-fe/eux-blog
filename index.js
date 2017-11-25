@@ -67,6 +67,7 @@ module.exports = {
       }
     ],
     routesMap(path) {
+      // console.log(path)
       return nps.join('blog', path)
     }
   },

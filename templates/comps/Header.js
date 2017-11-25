@@ -14,7 +14,7 @@ export default ({withScreen}) => (
   <header className={c('clearfix', withScreen ? 'eux-header-home' : 'eux-header')}>
     {withScreen && <Screen/>}
     <div className="eux-header-top">
-      <Link to="javascript:void(0);" className="eux-portable-menu"/>
+      <a href="javascript:void(0);" className="eux-portable-menu"/>
       <nav className="menu-primary-container">
         <ul id="menu-primary" className="menu">
           <li id="menu-item-25" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-25">

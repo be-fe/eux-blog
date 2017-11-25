@@ -4,16 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cd test && picidae start"
+    "test": "cd test && picidae start",
+    "test:build": "cd test && picidae build -f",
+    "getlinks": "./pre-treat/getBlogLinks.js > ./pre-treat/links.txt",
+    "getmds": "npm run getlinks && ./pre-treat/getMdFromLink.js"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "picidae": "^1.1.10"
+    "cheerio": "^1.0.0-rc.2",
+    "concat-stream": "^1.6.0",
+    "del": "^3.0.0",
+    "html-markdown": "^1.0.17",
+    "mkdirp": "^0.5.1",
+    "picidae": "^1.1.13"
   },
   "dependencies": {
-    "classname": "0.0.0",
-    "picidae-tools": "0.0.3"
+    "classname": "^0.0.0",
+    "picidae-tools": "^0.0.3"
   }
 }
