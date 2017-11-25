@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Picidae </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="root">
+    <div class="main" data-reactroot="" data-reactid="1" data-react-checksum="-2065402053"><header class="clearfix eux-header" data-reactid="2"><div class="eux-header-top" data-reactid="3"><a href="javascript:void(0);" class="eux-portable-menu" data-reactid="4"></a><nav class="menu-primary-container" data-reactid="5"><ul id="menu-primary" class="menu" data-reactid="6"><li id="menu-item-25" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25" data-reactid="7"><a href="/" data-reactid="8">HOME</a></li><li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-45" data-reactid="9"><a href="/" data-reactid="10">BLOG</a><ul class="sub-menu" data-reactid="11"><li id="menu-item-63" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-63" data-reactid="12"><a href="/ue" data-reactid="13">交互</a></li><li id="menu-item-67" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-67" data-reactid="14"><a href="/ui" data-reactid="15">视觉</a></li><li id="menu-item-64" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-64" data-reactid="16"><a href="/fe" data-reactid="17">前端</a></li><li id="menu-item-62" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-62" data-reactid="18"><a href="/team" data-reactid="19">团队</a></li></ul></li><li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46" data-reactid="20"><a href="/tools" data-reactid="21">TOOLS</a></li><li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112" data-reactid="22"><a href="/works" data-reactid="23">WORKS</a></li><li id="menu-item-138" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-138" data-reactid="24"><a href="/jobs" data-reactid="25">JOBS</a></li><li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50" data-reactid="26"><a href="/about-us" data-reactid="27">ABOUT US</a></li></ul></nav></div></header><div class="eux-singular clearfix" data-reactid="28"><div class="container-singular clearfix" data-reactid="29"><nav class="menu-categories-container" data-reactid="30"><ul id="menu-categories" class="menu" data-reactid="31"><li class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-55" data-reactid="32"><span data-reactid="33"><a href="/" data-reactid="34">全部</a></span></li><li class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-55" data-reactid="35"><span data-reactid="36"><a href="/ue" data-reactid="37">交互</a></span></li><li class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-55" data-reactid="38"><span data-reactid="39"><a href="/ui" data-reactid="40">视觉</a></span></li><li class="current-menu-item menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-55" data-reactid="41"><span data-reactid="42"><a href="/fe" data-reactid="43">前端</a></span></li><li class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-55" data-reactid="44"><span data-reactid="45"><a href="/team" data-reactid="46">团队</a></span></li></ul></nav><div class="inner clearfix" data-reactid="47"><div class="article-meta" data-reactid="48"><h1 class="title" data-reactid="49">利用jQuery实现简单的数据双向绑定</h1><div class="eux-page-detail" data-reactid="50"><span data-reactid="51"><em data-reactid="52">by.</em><!-- react-text: 53 -->西瓜痞<!-- /react-text --></span><span data-reactid="54">2015-9-11</span></div></div><article data-reactid="55"><h2 id="导语" data-reactid="56"><a href="#%E5%AF%BC%E8%AF%AD" aria-hidden="true" data-reactid="57"><span class="icon icon-link" data-reactid="58"></span></a><!-- react-text: 59 -->导语<!-- /react-text --></h2><!-- react-text: 60 -->
+<!-- /react-text --><p data-reactid="61">在软件开发中，MVC或者MVVM是经常被用到的设计模式。在web前端开发中，之前我们需要自己写许多代码来完成这项功能。而现在有许多优秀的类库可以帮我们实现这个功能。  </p><!-- react-text: 62 -->
+<!-- /react-text --><p data-reactid="63"><!-- react-text: 64 -->许多优秀的前端框架都提供了强大的数据双向绑定的功能。比如 <!-- /react-text --><strong data-reactid="65">Ember.js</strong><!-- react-text: 66 -->， <!-- /react-text --><strong data-reactid="67">Angular.js</strong><!-- react-text: 68 -->， <!-- /react-text --><strong data-reactid="69">KnockoutJS</strong><!-- react-text: 70 -->。  <!-- /react-text --></p><!-- react-text: 71 -->
+<!-- /react-text --><p data-reactid="72">如果我们在一些小型的项目中，只是希望某个功能区域有数据双向绑定的功能，是不是就非得使用这么重的框架呢？事实上，我们可以用jQuery来实现一个简单的数据双向绑定的功能。  </p><!-- react-text: 73 -->
+<!-- /react-text --><p data-reactid="74">从头开始做一个数据双向绑定并不是那么复杂。简单来说，需要实现下面三点：  </p><!-- react-text: 75 -->
+<!-- /react-text --><ol start="2" data-reactid="76"><!-- react-text: 77 -->
+<!-- /react-text --><li data-reactid="78">我们需要指定View中的UI元素和数据中的属性对应关系。</li><!-- react-text: 79 -->
+<!-- /react-text --><li data-reactid="80">我们需要监听View中的UI元素内容以及数据的变化。</li><!-- react-text: 81 -->
+<!-- /react-text --><li data-reactid="82">最后就是我们需要把变化通知到所有与之绑定的数据或者UI元素。</li><!-- react-text: 83 -->
+<!-- /react-text --></ol><!-- react-text: 84 -->
+<!-- /react-text --><h2 id="javascript-code" data-reactid="85"><a href="#javascript-code" aria-hidden="true" data-reactid="86"><span class="icon icon-link" data-reactid="87"></span></a><!-- react-text: 88 -->Javascript Code<!-- /react-text --></h2><!-- react-text: 89 -->
+<!-- /react-text --><pre data-reactid="90"><code data-query="{}" data-lang="data-lang" data-reactid="91">function DataBinder (objectId) {
+    // 使用jQuery空对象作为监听对象
+    var pubSub = jQuery({});
+    //
+    var dataAttr = &#x27;bind-&#x27; + objectId;
+    var message = objectId + &#x27;:change&#x27;;
+    // 监听dom中所有元素的 data-binding 属性变化。并由pubSub来处理。
+    $(document).on(&#x27;input change&#x27;, &#x27;[data-&#x27; + dataAttr + &#x27;]&#x27;, function (event) {
+        var $ele = $(this);
+        console.log(&#x27;$ele&#x27;, $ele);
+        pubSub.trigger(message, [$ele.data(dataAttr), $ele.val()]);
+    });
+    // pubSub把数据变化推送给所有与之绑定的页面元素
+    pubSub.on(message, function (event, proName, newValue) {
+        $(&#x27;[data-&#x27; + dataAttr + &#x27;=&#x27; + proName + &#x27;]&#x27;).each(function () {
+            var $ele = $(this);
+            if($ele.is(&#x27;input, textarea, select&#x27;)) {
+                $ele.val(newValue);
+            } else {
+                $ele.html(newValue);
+            }
+        })
+    });
+    return pubSub;
+}
+function User(uid) {
+    var binder = new DataBinder(uid);
+    var user = {
+        attributes: {},
+        set: function (attrName, val) {
+            this.attributes[attrName] = val;
+            binder.trigger(uid + &#x27;:change&#x27;, [attrName, val, this]);
+        },
+        get: function (attrName) {
+            return this.attributes[attrName];
+        },
+        _binder: binder
+    }
+    return user;
+}
+</code></pre><!-- react-text: 92 -->
+<!-- /react-text --><p data-reactid="93">调用的时候，用uid与之关联。  </p><!-- react-text: 94 -->
+<!-- /react-text --><h2 id="javascript-code-1" data-reactid="95"><a href="#javascript-code-1" aria-hidden="true" data-reactid="96"><span class="icon icon-link" data-reactid="97"></span></a><!-- react-text: 98 -->Javascript Code<!-- /react-text --></h2><!-- react-text: 99 -->
+<!-- /react-text --><pre data-reactid="100"><code data-query="{}" data-lang="data-lang" data-reactid="101">var user = new User(&#x27;user&#x27;);
+$(&#x27;#btnSet&#x27;).bind(&#x27;click&#x27;, function (event) {
+    user.set(&#x27;name&#x27;, &#x27;Liuyuan211&#x27;);
+});
+</code></pre><!-- react-text: 102 -->
+<!-- /react-text --><h2 id="html" data-reactid="103"><a href="#html" aria-hidden="true" data-reactid="104"><span class="icon icon-link" data-reactid="105"></span></a><!-- react-text: 106 -->Html<!-- /react-text --></h2><!-- react-text: 107 -->
+<!-- /react-text --><pre data-reactid="108"><code data-query="{}" data-lang="data-lang" data-reactid="109">&lt;div class=&quot;item&quot;&gt;
+    &lt;label&gt;用户名：&lt;/label&gt;&lt;input type=&quot;text&quot; data-bind-user=&quot;name&quot; /&gt;&lt;span data-bind-user=&quot;name&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;item&quot;&gt;
+    &lt;input type=&quot;button&quot; id=&quot;btnSet&quot; value=&quot;Set&quot; /&gt;
+&lt;/div&gt;
+</code></pre><!-- react-text: 110 -->
+<!-- /react-text --><p data-reactid="111"><!-- react-text: 112 -->该例子中，uid就是 <!-- /react-text --><code data-reactid="113">data-bind-user=&quot;name&quot;</code><!-- react-text: 114 --> 中的 <!-- /react-text --><code data-reactid="115">user</code><!-- react-text: 116 --> ，绑定的页面元素会自动与user对应的属性关联。  <!-- /react-text --></p><!-- react-text: 117 -->
+<!-- /react-text --><h2 id="题外话" data-reactid="118"><a href="#%E9%A2%98%E5%A4%96%E8%AF%9D" aria-hidden="true" data-reactid="119"><span class="icon icon-link" data-reactid="120"></span></a><!-- react-text: 121 -->题外话<!-- /react-text --></h2><!-- react-text: 122 -->
+<!-- /react-text --><p data-reactid="123"><!-- react-text: 124 -->如果项目中需要使用的数据绑定功能更复杂，<!-- /react-text --><a href="http://knockoutjs.com/documentation/observables.html" data-reactid="125">knockout.js</a><!-- react-text: 126 --> 库也是一个不错的选择。  <!-- /react-text --></p><!-- react-text: 127 -->
+<!-- /react-text --><ul data-reactid="128"><!-- react-text: 129 -->
+<!-- /react-text --><li data-reactid="130">免费开源</li><!-- react-text: 131 -->
+<!-- /react-text --><li data-reactid="132">javascript原生代码实现，不依赖其他库</li><!-- react-text: 133 -->
+<!-- /react-text --><li data-reactid="134">小巧，只有50多K大</li><!-- react-text: 135 -->
+<!-- /react-text --><li data-reactid="136">支持几乎所有主流浏览器</li><!-- react-text: 137 -->
+<!-- /react-text --></ul><!-- react-text: 138 -->
+<!-- /react-text --></article><div data-reactid="139"><div class="valine-comment-container" data-reactid="140"></div></div><nav class="single-bar clearfix" data-reactid="141"><span class="prev" data-reactid="142"><a rel="prev" href="/blog/fe/javascript-settimeout" data-reactid="143"><em class="eux-icon eux-icon-page-prev" data-reactid="144"></em><!-- react-text: 145 -->setTimeout<!-- /react-text --></a></span></nav></div></div></div><footer class="footer" data-reactid="146"><div class="eux-footer-area-wrapper container-singular" role="complementary" data-reactid="147"><div class="inner clearfix" data-reactid="148"><aside id="simple-links-2" class="widget sl-links-main" data-reactid="149"><h2 class="widgettitle" data-reactid="150">友情链接</h2><ul class="simple-links-list simple-links-2-list" id="simple-links-2-list" data-reactid="151"><li class="simple-links-item simple-links-widget-item" id="link-379" data-reactid="152"><a href="http://sux.baidu.com" target="_blank" title="百度搜索用户体验中心" data-reactid="153">百度 SUX</a></li><li class="simple-links-item simple-links-widget-item" id="link-362" data-reactid="154"><a href="http://fex.baidu.com/" target="_blank" title="百度 FEX 团队" data-reactid="155">百度 FEX</a></li><li class="simple-links-item simple-links-widget-item" id="link-368" data-reactid="156"><a href="http://efe.baidu.com/" target="_blank" title="百度 EFE 团队" data-reactid="157">百度 EFE</a></li><li class="simple-links-item simple-links-widget-item" id="link-795" data-reactid="158"><a href="https://aotu.io/" target="_blank" title="京东凹凸实验室，面向多终端技术体系，致力于构建沉淀与分享包括但不限于交互、页面制作技巧、前端开发、原生APP开发等方面的专业知识及案例。" data-reactid="159">凹凸实验室</a></li></ul></aside><!-- react-text: 160 -->          <!-- /react-text --></div></div><div class="eux-icp" data-reactid="161"><!-- react-text: 162 -->百度EUX 版权所有 ©百度EUX    All rights reserved. 骄傲地采用 <!-- /react-text --><a target="_blank" href="https://github.com/picidaejs/picidaejs" data-reactid="163">Picidae</a><!-- react-text: 164 -->。<!-- /react-text --></div></footer></div>
+</div>
+<script src="/PICIDAE_COMMON.js"></script>
+<script src="/PICIDAE_ENTRY.js"></script>
+</body>
+</html>

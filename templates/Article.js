@@ -11,10 +11,15 @@ import collect from 'picidae-tools/browser/collect'
 import {join} from 'path'
 
 import Categories from './comps/Categories'
+import DisqusComment from './comps/DisqusComment'
+import ValineComment from './comps/ValineComment'
 
 const Article = ({location, render, params, pageData, themeConfig, pluginData: {utils}, ...props}) => {
 
   const {curr, prev, next} = utils.pagination(join('blog', params.group), {split: false})
+  const {comment: {use, ...commentSet}} = themeConfig
+  const usedComment = commentSet[use]
+  console.log(use, usedComment)
 
   return (
     <div className="eux-singular clearfix">
@@ -25,11 +30,23 @@ const Article = ({location, render, params, pageData, themeConfig, pluginData: {
             <h1 className="title">{pageData.meta.title}</h1>
             <div className="eux-page-detail">
               <span><em>by.</em>{pageData.meta.author}</span>
-              <span>{moment(pageData.meta.datetime).format('YYYY-MM-D')}</span>
+              <span>{moment(pageData.meta.datetime).format('YYYY-M-D')}</span>
             </div>
           </div>
           {render()}
 
+          <div>
+            {
+              use === 'disqus'
+              && usedComment
+              && <DisqusComment url={'http://' + join(usedComment.host, location.pathname)} {...usedComment} />
+            }
+            {
+              use === 'valine'
+              && usedComment
+              && <ValineComment path={'http://' + join(usedComment.host || '', location.pathname)} {...usedComment} />
+            }
+          </div>
           <nav className="single-bar clearfix">
             {
               prev &&

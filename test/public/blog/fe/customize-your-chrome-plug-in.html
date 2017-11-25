@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Picidae </title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="root">
+    <div class="main" data-reactroot="" data-reactid="1" data-react-checksum="-1981398099"><header class="clearfix eux-header" data-reactid="2"><div class="eux-header-top" data-reactid="3"><a href="javascript:void(0);" class="eux-portable-menu" data-reactid="4"></a><nav class="menu-primary-container" data-reactid="5"><ul id="menu-primary" class="menu" data-reactid="6"><li id="menu-item-25" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25" data-reactid="7"><a href="/" data-reactid="8">HOME</a></li><li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-45" data-reactid="9"><a href="/" data-reactid="10">BLOG</a><ul class="sub-menu" data-reactid="11"><li id="menu-item-63" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-63" data-reactid="12"><a href="/ue" data-reactid="13">交互</a></li><li id="menu-item-67" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-67" data-reactid="14"><a href="/ui" data-reactid="15">视觉</a></li><li id="menu-item-64" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-64" data-reactid="16"><a href="/fe" data-reactid="17">前端</a></li><li id="menu-item-62" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-62" data-reactid="18"><a href="/team" data-reactid="19">团队</a></li></ul></li><li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46" data-reactid="20"><a href="/tools" data-reactid="21">TOOLS</a></li><li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112" data-reactid="22"><a href="/works" data-reactid="23">WORKS</a></li><li id="menu-item-138" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-138" data-reactid="24"><a href="/jobs" data-reactid="25">JOBS</a></li><li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50" data-reactid="26"><a href="/about-us" data-reactid="27">ABOUT US</a></li></ul></nav></div></header><div class="eux-singular clearfix" data-reactid="28"><div class="container-singular clearfix" data-reactid="29"><nav class="menu-categories-container" data-reactid="30"><ul id="menu-categories" class="menu" data-reactid="31"><li class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-55" data-reactid="32"><span data-reactid="33"><a href="/" data-reactid="34">全部</a></span></li><li class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-55" data-reactid="35"><span data-reactid="36"><a href="/ue" data-reactid="37">交互</a></span></li><li class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-55" data-reactid="38"><span data-reactid="39"><a href="/ui" data-reactid="40">视觉</a></span></li><li class="current-menu-item menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-55" data-reactid="41"><span data-reactid="42"><a href="/fe" data-reactid="43">前端</a></span></li><li class="menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-55" data-reactid="44"><span data-reactid="45"><a href="/team" data-reactid="46">团队</a></span></li></ul></nav><div class="inner clearfix" data-reactid="47"><div class="article-meta" data-reactid="48"><h1 class="title" data-reactid="49">定制属于你自己的chrome插件</h1><div class="eux-page-detail" data-reactid="50"><span data-reactid="51"><em data-reactid="52">by.</em><!-- react-text: 53 -->sucer<!-- /react-text --></span><span data-reactid="54">2015-11-16</span></div></div><article data-reactid="55"><p data-reactid="56"><strong data-reactid="57">1.添加图标到浏览器窗口，两种方式</strong><!-- react-text: 58 -->  <!-- /react-text --></p><!-- react-text: 59 -->
+<!-- /react-text --><p data-reactid="60"><span class="s1" data-reactid="61"><b data-reactid="62">1）地址栏右侧，如下图：</b></span><!-- react-text: 63 -->  <!-- /react-text --></p><!-- react-text: 64 -->
+<!-- /react-text --><p data-reactid="65"><span class="s2" data-reactid="66">manifest代码如下：</span><!-- react-text: 67 -->  <!-- /react-text --></p><!-- react-text: 68 -->
+<!-- /react-text --><pre data-reactid="69"><code data-query="{}" data-lang="data-lang" data-reactid="70">&quot;browser_action&quot;: {
+  &quot;default_icon&quot;: &quot;images/icon.gif&quot;,   // 直接定义插件图标
+  &quot;default_popup&quot;: &quot;popup.html&quot;  // 插件弹窗html
+},
+</code></pre><!-- react-text: 71 -->
+<!-- /react-text --><p data-reactid="72"><img src="http://ww2.sinaimg.cn/large/43b712ebjw1ey33ussdiwj205g02aaa3.jpg" data-reactid="73"/></p><!-- react-text: 74 -->
+<!-- /react-text --><p data-reactid="75"><span class="s1" data-reactid="76">更多资料参考：</span><!-- react-text: 77 -->  <!-- /react-text --></p><!-- react-text: 78 -->
+<!-- /react-text --><p data-reactid="79"><span class="s4" data-reactid="80"><a href="http://developer.chrome.com/extensions/browserAction.html" data-reactid="81">http://developer.chrome.com/extensions/browserAction.html</a></span><!-- react-text: 82 -->  <!-- /react-text --></p><!-- react-text: 83 -->
+<!-- /react-text --><p data-reactid="84"><span class="s1" data-reactid="85"><b data-reactid="86">2）地址栏中，如下图：（注意默认为隐藏，必须通过js调出）</b></span><!-- react-text: 87 -->  <!-- /react-text --></p><!-- react-text: 88 -->
+<!-- /react-text --><p data-reactid="89"><img src="http://ww4.sinaimg.cn/large/43b712ebjw1ey33yrfudej2038010743.jpg" data-reactid="90"/></p><!-- react-text: 91 -->
+<!-- /react-text --><pre data-reactid="92"><code data-query="{}" data-lang="data-lang" data-reactid="93">{
+  &quot;name&quot;: &quot;通过url控制插件显示与隐藏&quot;,
+  &quot;version&quot;: &quot;1.0&quot;,
+  &quot;description&quot;:  &quot;只有当url中含有g时才显示插件&quot;,
+  &quot;background&quot;: { &quot;scripts&quot;: [&quot;background.js&quot;] },
+  &quot;page_action&quot; : {
+    &quot;default_icon&quot; : &quot;icon-19.png&quot;,
+    &quot;default_title&quot; : &quot;图标hover时显示文字&quot;
+  },
+  &quot;permissions&quot; : [
+    &quot;tabs&quot;
+  ],
+  &quot;icons&quot; : {
+    &quot;48&quot; : &quot;icon-48.png&quot;,
+    &quot;128&quot; : &quot;icon-128.png&quot;
+  },
+  &quot;manifest_version&quot;: 2
+}
+</code></pre><!-- react-text: 94 -->
+<!-- /react-text --><p data-reactid="95"><span class="s1" data-reactid="96">调出代码如下，在background.js中：</span><!-- react-text: 97 -->  <!-- /react-text --></p><!-- react-text: 98 -->
+<!-- /react-text --><pre data-reactid="99"><code data-query="{}" data-lang="data-lang" data-reactid="100">function checkForValidUrl(tabId, changeInfo, tab) {
+  // If the letter &#x27;g&#x27; is found in the tab&#x27;s URL...
+  if (tab.url.indexOf(&#x27;g&#x27;) &gt; -1) {
+    // ... show the page action.
+    chrome.pageAction.show(tabId);
+  }
+};
+
+// Listen for any changes to the URL of any tab.
+chrome.tabs.onUpdated.addListener(checkForValidUrl);
+</code></pre><!-- react-text: 101 -->
+<!-- /react-text --><p data-reactid="102"><span class="s1" data-reactid="103">更多资料参考：</span><!-- react-text: 104 -->  <!-- /react-text --></p><!-- react-text: 105 -->
+<!-- /react-text --><p data-reactid="106"><span class="s4" data-reactid="107"><a href="http://developer.chrome.com/extensions/pageAction.html" data-reactid="108">http://developer.chrome.com/extensions/pageAction.html</a></span><!-- react-text: 109 -->  <!-- /react-text --></p><!-- react-text: 110 -->
+<!-- /react-text --><p data-reactid="111"><span class="s1" data-reactid="112"><b data-reactid="113">2.桌面提醒，如下图：（注意是电脑桌面，而不是chrome中）</b></span><!-- react-text: 114 -->  <!-- /react-text --></p><!-- react-text: 115 -->
+<!-- /react-text --><p data-reactid="116"><img src="http://ww1.sinaimg.cn/large/43b712ebjw1ey343se926j208r02b3yi.jpg" data-reactid="117"/></p><!-- react-text: 118 -->
+<!-- /react-text --><p data-reactid="119"><span class="s1" data-reactid="120">改桌面提醒的代码在popup.html的js文件中写即可（备注：chrome插件中不允许写内联js，故需要将js写在外联js中）</span><!-- react-text: 121 -->  <!-- /react-text --></p><!-- react-text: 122 -->
+<!-- /react-text --><p data-reactid="123"><span class="s1" data-reactid="124">代码如下：</span><!-- react-text: 125 -->  <!-- /react-text --></p><!-- react-text: 126 -->
+<!-- /react-text --><pre data-reactid="127"><code data-query="{}" data-lang="data-lang" data-reactid="128">var notification = webkitNotifications.createNotification(
+  &#x27;icon-48.png&#x27;, // 弹窗图片，记住要在manifest中声明
+  &#x27;Hello!&#x27;, // 弹窗标题
+  &#x27;最新新闻提示~~&#x27;  // 弹框内容
+);
+
+//或者弹出网页
+var notification = webkitNotifications.createHTMLNotification(
+  &#x27;&lt;a href=&quot;http://www.baidu.com&quot;&gt;错误! 超链接引用无效。  // 弹窗地址（只有300*180左右大小）
+);
+
+notification.show();
+</code></pre><!-- react-text: 129 -->
+<!-- /react-text --><p data-reactid="130"><span class="s1" data-reactid="131">这里还提供了与其它view通信的接口</span><!-- react-text: 132 -->  <!-- /react-text --></p><!-- react-text: 133 -->
+<!-- /react-text --><pre data-reactid="134"><code data-query="{}" data-lang="data-lang" data-reactid="135">var back = chrome.extension.getBackgroundPage();
+back.document.body.innerHTML = &quot;&quot;;
+var views = chrome.extension.getViews({type:&quot;notification&quot;});
+</code></pre><!-- react-text: 136 -->
+<!-- /react-text --><p data-reactid="137"><span class="s1" data-reactid="138"><b data-reactid="139">3.omnibox，可以基于地址栏扩展，如下图</b></span><!-- react-text: 140 -->  <!-- /react-text --></p><!-- react-text: 141 -->
+<!-- /react-text --><p data-reactid="142"><img src="http://ww4.sinaimg.cn/large/43b712ebjw1ey347jb0twj20cb046gm6.jpg" data-reactid="143"/></p><!-- react-text: 144 -->
+<!-- /react-text --><p data-reactid="145"><span class="s1" data-reactid="146">代码如下：（这里要注意的一点时，需要输入keyword的值（如下demo是lhs），按tab键才能进入omnibox模式，进入该模式，后续绑定的事件才能生效）</span><!-- react-text: 147 -->  <!-- /react-text --></p><!-- react-text: 148 -->
+<!-- /react-text --><p data-reactid="149"><span class="s1" data-reactid="150">manifest.json配置文件如下：</span><!-- react-text: 151 -->  <!-- /react-text --></p><!-- react-text: 152 -->
+<!-- /react-text --><pre data-reactid="153"><code data-query="{}" data-lang="data-lang" data-reactid="154">{
+  &quot;name&quot;: &quot;liuhui&#x27;s Omnibox&quot;,
+  &quot;description&quot; : &quot;地址栏输入测试&quot;,
+  &quot;version&quot;: &quot;1.1&quot;,
+  &quot;background&quot;: {
+    &quot;scripts&quot;: [&quot;background.js&quot;]
+  },
+  &quot;omnibox&quot;: { &quot;keyword&quot; : &quot;lhs&quot; },
+  &quot;manifest_version&quot;: 2
+}
+</code></pre><!-- react-text: 155 -->
+<!-- /react-text --><p data-reactid="156"><span class="s1" data-reactid="157">background.js文件如下：</span><!-- react-text: 158 -->  <!-- /react-text --></p><!-- react-text: 159 -->
+<!-- /react-text --><pre data-reactid="160"><code data-query="{}" data-lang="data-lang" data-reactid="161">//当用户在omnibox中输入时触发，类似于地址栏改变时执行
+chrome.omnibox.onInputChanged.addListener(
+  function (text, suggest) {
+    console.log(&#x27;inputChanged: &#x27; + text);
+    chrome.omnibox.setDefaultSuggestion({
+      description:&#x27;默认显示&#x27;
+    });
+    suggest([
+      {content:text + &quot; one&quot;, description:&quot;the first one&quot;},
+      {content:text + &quot; number two&quot;, description:&quot;the second entry&quot;}
+    ]);
+  }
+);
+
+//当用户点击omnibox下拉提示时执行（默认添加了google搜索，点击时不触发此事件）
+chrome.omnibox.onInputEntered.addListener(
+  function (text) {
+    console.log(&#x27;inputEntered: &#x27; + text);
+    alert(&#x27;You just typed &quot;&#x27; + text + &#x27;&quot;&#x27;);
+  }
+);
+</code></pre><!-- react-text: 162 -->
+<!-- /react-text --><p data-reactid="163"><span class="s1" data-reactid="164">更多资料参考：</span><!-- react-text: 165 -->  <!-- /react-text --></p><!-- react-text: 166 -->
+<!-- /react-text --><p data-reactid="167"><span class="s4" data-reactid="168"><a href="http://developer.chrome.com/extensions/omnibox.html" data-reactid="169">http://developer.chrome.com/extensions/omnibox.html</a></span><!-- react-text: 170 -->  <!-- /react-text --></p><!-- react-text: 171 -->
+<!-- /react-text --><p data-reactid="172"><span class="s1" data-reactid="173"><b data-reactid="174">4.经常看到很多chrome插件都有可配置项，例如refer_control怎么做到的呢？效果如下图：</b></span><!-- react-text: 175 -->  <!-- /react-text --></p><!-- react-text: 176 -->
+<!-- /react-text --><p data-reactid="177"><img src="http://ww4.sinaimg.cn/large/43b712ebjw1ey34cvmsajj20ad04gmxu.jpg" data-reactid="178"/></p><!-- react-text: 179 -->
+<!-- /react-text --><p data-reactid="180"><span class="s1" data-reactid="181">manifest.json中配置项如下</span><!-- react-text: 182 -->  <!-- /react-text --></p><!-- react-text: 183 -->
+<!-- /react-text --><pre data-reactid="184"><code data-query="{}" data-lang="data-lang" data-reactid="185">{
+  ...
+  &quot;manifest_version&quot;: 2,
+  &quot;options_page&quot;:&quot;options.html&quot;
+}
+</code></pre><!-- react-text: 186 -->
+<!-- /react-text --><p data-reactid="187"><span class="s1" data-reactid="188">options.html即为配置项，随便配置即可（注意html中不能有内联js）</span><!-- react-text: 189 -->  <!-- /react-text --></p><!-- react-text: 190 -->
+<!-- /react-text --><p data-reactid="191"><span class="s1" data-reactid="192">至于options.html中配置项与插件的通信可以通过localstorage来解决</span><!-- react-text: 193 -->  <!-- /react-text --></p><!-- react-text: 194 -->
+<!-- /react-text --><p data-reactid="195"><span class="s1" data-reactid="196"><b data-reactid="197">5.覆盖已有的页面,效果如下图</b></span><!-- react-text: 198 -->  <!-- /react-text --></p><!-- react-text: 199 -->
+<!-- /react-text --><p data-reactid="200"><img src="http://ww2.sinaimg.cn/large/43b712ebjw1ey34ehj0ouj20ca064gmd.jpg" data-reactid="201"/></p><!-- react-text: 202 -->
+<!-- /react-text --><p data-reactid="203"><span class="s1" data-reactid="204">代码如下：</span><!-- react-text: 205 -->  <!-- /react-text --></p><!-- react-text: 206 -->
+<!-- /react-text --><pre data-reactid="207"><code data-query="{}" data-lang="data-lang" data-reactid="208">&quot;chrome_url_overrides&quot; : {
+  &quot;pageToOverride&quot;: &quot;myPage.html&quot;
+}
+</code></pre><!-- react-text: 209 -->
+<!-- /react-text --><p data-reactid="210"><span class="s1" data-reactid="211">使用:bookmarks/history/newtab替换pageToOverride</span><!-- react-text: 212 -->  <!-- /react-text --></p><!-- react-text: 213 -->
+<!-- /react-text --><ul data-reactid="214"><!-- react-text: 215 -->
+<!-- /react-text --><li data-reactid="216"><span class="s1" data-reactid="217">bookmarks：书签页面，在chrome中输入chrome://bookmarks/ 打开</span></li><!-- react-text: 218 -->
+<!-- /react-text --><li data-reactid="219"><span class="s1" data-reactid="220">history：历史访问记录页面，在chrome中输入chrome://chrome/history/打开</span></li><!-- react-text: 221 -->
+<!-- /react-text --><li data-reactid="222"><span class="s1" data-reactid="223">newtab：新页面，在chrome中新建页面时展现，或者输入chrome://chrome/newtab/</span></li><!-- react-text: 224 -->
+<!-- /react-text --></ul><!-- react-text: 225 -->
+<!-- /react-text --><p data-reactid="226"><span class="s1" data-reactid="227">一个插件中只能替换上述三种页面中的一个。</span><!-- react-text: 228 -->  <!-- /react-text --></p><!-- react-text: 229 -->
+<!-- /react-text --><p data-reactid="230"><span class="s1" data-reactid="231"><b data-reactid="232">注意事项：</b></span><!-- react-text: 233 -->  <!-- /react-text --></p><!-- react-text: 234 -->
+<!-- /react-text --><ul data-reactid="235"><!-- react-text: 236 -->
+<!-- /react-text --><li data-reactid="237"><span class="s1" data-reactid="238">新页面最好小而快，用户经常希望立马打开页面</span></li><!-- react-text: 239 -->
+<!-- /react-text --><li data-reactid="240"><span class="s1" data-reactid="241"><!-- react-text: 242 -->新页面中药添加title,例如<!-- /react-text --><title data-reactid="243">new tab</title></span></li><!-- react-text: 244 -->
+<!-- /react-text --><li data-reactid="245"><span class="s1" data-reactid="246">新页面不要有焦点，当新建窗口时，用户往往希望焦点在地址栏</span></li><!-- react-text: 247 -->
+<!-- /react-text --><li data-reactid="248"><span class="s1" data-reactid="249">不要模仿默认的新建页</span></li><!-- react-text: 250 -->
+<!-- /react-text --></ul><!-- react-text: 251 -->
+<!-- /react-text --></article><div data-reactid="252"><div class="valine-comment-container" data-reactid="253"></div></div><nav class="single-bar clearfix" data-reactid="254"><span class="prev" data-reactid="255"><a rel="prev" href="/blog/fe/fractal-vs-web" data-reactid="256"><em class="eux-icon eux-icon-page-prev" data-reactid="257"></em><!-- react-text: 258 -->分形的基本画法<!-- /react-text --></a></span><span class="next" data-reactid="259"><a rel="next" href="/blog/fe/js-loader" data-reactid="260"><em class="eux-icon eux-icon-page-next" data-reactid="261"></em><!-- react-text: 262 -->脚本的动态加载<!-- /react-text --></a></span></nav></div></div></div><footer class="footer" data-reactid="263"><div class="eux-footer-area-wrapper container-singular" role="complementary" data-reactid="264"><div class="inner clearfix" data-reactid="265"><aside id="simple-links-2" class="widget sl-links-main" data-reactid="266"><h2 class="widgettitle" data-reactid="267">友情链接</h2><ul class="simple-links-list simple-links-2-list" id="simple-links-2-list" data-reactid="268"><li class="simple-links-item simple-links-widget-item" id="link-379" data-reactid="269"><a href="http://sux.baidu.com" target="_blank" title="百度搜索用户体验中心" data-reactid="270">百度 SUX</a></li><li class="simple-links-item simple-links-widget-item" id="link-362" data-reactid="271"><a href="http://fex.baidu.com/" target="_blank" title="百度 FEX 团队" data-reactid="272">百度 FEX</a></li><li class="simple-links-item simple-links-widget-item" id="link-368" data-reactid="273"><a href="http://efe.baidu.com/" target="_blank" title="百度 EFE 团队" data-reactid="274">百度 EFE</a></li><li class="simple-links-item simple-links-widget-item" id="link-795" data-reactid="275"><a href="https://aotu.io/" target="_blank" title="京东凹凸实验室，面向多终端技术体系，致力于构建沉淀与分享包括但不限于交互、页面制作技巧、前端开发、原生APP开发等方面的专业知识及案例。" data-reactid="276">凹凸实验室</a></li></ul></aside><!-- react-text: 277 -->          <!-- /react-text --></div></div><div class="eux-icp" data-reactid="278"><!-- react-text: 279 -->百度EUX 版权所有 ©百度EUX    All rights reserved. 骄傲地采用 <!-- /react-text --><a target="_blank" href="https://github.com/picidaejs/picidaejs" data-reactid="280">Picidae</a><!-- react-text: 281 -->。<!-- /react-text --></div></footer></div>
+</div>
+<script src="/PICIDAE_COMMON.js"></script>
+<script src="/PICIDAE_ENTRY.js"></script>
+</body>
+</html>

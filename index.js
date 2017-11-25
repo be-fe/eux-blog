@@ -42,6 +42,21 @@ module.exports = {
   notFound: './NotFound',
 
   config: {
+    comment: {
+      use: 'valine',
+      disqus: {
+        host: 'www.abc.com',
+        short: 'test'
+      },
+      valine: {
+        notify: false,
+        verify: false,
+        appId: '4fCdqnlFElaTqy9miyFBgCqo-gzGzoHsz',
+        appKey: 'VYh1hEgQTIFzEBD7DY5TqImM',
+        placeholder: 'just go go',
+        avatar: 'mm'
+      }
+    },
     defaultCover: 'http://eux.baidu.com/wp-content/themes/eux/images/no-thumbnail.png',
     pageSize: 12,
     menus: [

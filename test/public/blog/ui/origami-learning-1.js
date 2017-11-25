@@ -1,0 +1,1 @@
+webpackJsonp([1,40],{942:function(e,n){e.exports={content:'<p><img src="http://ww2.sinaimg.cn/large/56f7b09ejw1ew49vaam2mj20ms2elk68.jpg"></p>\n',extra:{}}}});

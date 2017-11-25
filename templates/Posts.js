@@ -67,7 +67,7 @@ const Posts = ({location, params, pluginData: {utils}, themeConfig, routeData, .
         to: _key,
         coverUrl: cover || themeConfig.defaultCover,
         name: author,
-        date: moment(datetime).format('YYYY-MM-D'),
+        date: moment(datetime).format('YYYY-M-D'),
         category
       }
     }
