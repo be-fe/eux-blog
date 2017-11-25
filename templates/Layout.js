@@ -21,11 +21,18 @@ export default class Layout extends React.PureComponent {
   static childContextTypes = {
     location: PropTypes.object
   }
+
+  get withScreen() {
+    const {params = {}} = this.props
+    return location.pathname === '/' ||
+        params.pageNum != null && params.menu == null
+  }
+
   render() {
-    const {children, location} = this.props;
+    const {children, location, params} = this.props;
     return (
       <div className="main">
-        <Header withScreen={location.pathname === '/'}/>
+        <Header withScreen={this.withScreen}/>
         {children}
         <Footer className={location.pathname.startsWith('blog/') ? 'container-singular' : 'container'}/>
       </div>
