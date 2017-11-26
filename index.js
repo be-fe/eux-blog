@@ -17,10 +17,14 @@ module.exports = {
     indexRoute: {
       component: './Posts'
     },
-    childRoutes: [
-      {
+    childRoutes: [{
         path: 'blog/:group/:name',
         component: './Article',
+        data: {},
+      },
+      {
+        path: 'jobs',
+        component: './Jobs',
         data: {},
       },
       {
@@ -36,7 +40,7 @@ module.exports = {
         data: {
           className: 'container-singular'
         },
-      },
+      }
     ]
   },
   notFound: './NotFound',
@@ -44,8 +48,7 @@ module.exports = {
   config: {
     defaultCover: 'http://eux.baidu.com/wp-content/themes/eux/images/no-thumbnail.png',
     pageSize: 12,
-    menus: [
-      {
+    menus: [{
         label: '全部',
         path: '/'
       },

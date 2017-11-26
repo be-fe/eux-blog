@@ -1,0 +1,54 @@
+@const-color-black: #000000;
+@const-color-white: #ffffff;
+@const-color-transparent: rgba(0, 0, 0, 0);
+@const-color-gray-light: #dddddd;
+@const-color-gray-medium: #999999;
+@const-color-gray-dark: #555555;
+
+@eux-icon-color-normal: #CCCCCC;
+@eux-icon-color-lighter: lighten(@eux-icon-color-normal, 5%);
+@eux-icon-color-highlight: #378eef; // #FFB400; old value? @todo
+
+@const-color-0: #F5E744;
+@const-color-1: #00AEFF;
+@const-color-2: #1083cf;
+@const-color-3: #000000;
+@const-color-4: #000000;
+@const-color-5: #000000;
+@const-color-6: #000000;
+@const-color-7: #000000;
+@const-color-8: #000000;
+@const-color-9: #000000;
+
+@global-link-color: @const-color-black;
+@global-link-color-hover: @const-color-2;
+@global-selection-color: @const-color-white;
+@global-selection-background: @const-color-gray-medium;
+@header-color: @const-color-black;
+@header-background: @const-color-0;
+@footer-color: @const-color-gray-medium;
+@footer-background: @const-color-black;
+
+@singular-link-color: @const-color-1;
+@singular-link-color-hover: @const-color-0;
+
+@aboutus-color-background-0: #FFFB00;
+@aboutus-color-background-1: #8D8D8D;
+
+@tools-title-link-color: @const-color-1;
+
+@tabmenu-selcted-bg-color: @const-color-2;
+
+.selection {
+    background-color: @global-selection-background;
+    color: @global-selection-color;
+    text-shadow: none;
+}
+
+.eux-skew(@deg:0deg) {
+    -webkit-transform: skew(@deg);
+    -moz-transform: skew(@deg);
+    -o-transform: skew(@deg);
+    -ms-transform: skew(@deg);
+    transform: skew(@deg);
+}
