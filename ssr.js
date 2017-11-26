@@ -19,3 +19,8 @@ module.exports = function (gift) {
 }
 
 module.exports.externals = 'react-document-title'
+
+// curl -X POST \
+//   -F token=5aa7cd42d4ceaa45a72adebb35ef70 \
+//   -F ref=master \
+//   http://gitlab.baidu.com/api/v4/projects/31182/trigger/pipeline
