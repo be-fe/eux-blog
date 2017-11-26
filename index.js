@@ -8,6 +8,8 @@
 var moment = require('picidae/exports/moment')
 var nps = require('path')
 
+var autoKeyword = require('picidae-tool-auto-keyword')
+
 module.exports = {
   root: './templates',
 
@@ -24,6 +26,10 @@ module.exports = {
         data: {},
       },
       {
+        path: 'jobs',
+        component: './Jobs'
+      },
+      {
         path: ':menu(/page/:pageNum)',
         component: './Posts',
         data: {
@@ -36,12 +42,15 @@ module.exports = {
         data: {
           className: 'container-singular'
         },
-      },
+      }
     ]
   },
   notFound: './NotFound',
 
   config: {
+    title: '百度EUX',
+    homeTitleDesc: '百度企业产品用户体验团队',
+
     comment: {
       use: 'valine',
       disqus: {
@@ -90,6 +99,9 @@ module.exports = {
     if (!meta.author) {
       meta.author = 'anonymity'
     }
-    return meta;
+    return autoKeyword(meta, gift)
+      .then(function () {
+        return meta
+      });
   }
 }

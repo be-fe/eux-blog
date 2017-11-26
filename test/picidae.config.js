@@ -21,5 +21,12 @@ module.exports = {
       /\/node_modules\/(core-js|babel-runtime)\//
     ]
     return config
-  }
+  },
+
+  // templateData(gift) {
+  //   console.log('templateData', gift)
+  //   return Promise.resolve({
+  //     gift
+  //   })
+  // }
 }
