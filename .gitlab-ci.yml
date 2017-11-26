@@ -6,6 +6,7 @@ pages:
     - node_modules/
 
   script:
+  - whoami
   - npm install
   - npm -v
   - npm run test:build
