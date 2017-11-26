@@ -6,10 +6,10 @@ pages:
     - node_modules/
 
   script:
-  - whoami
-  - npm install
-  - npm -v
-  - npm run test:build
+  - whoami > /dev/null
+  - npm install > /dev/null
+  - npm -v > /dev/null
+  - npm run test:build > /dev/null
   artifacts:
     paths:
     - test/public
