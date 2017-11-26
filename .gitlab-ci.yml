@@ -12,6 +12,6 @@ pages:
   - npm run test:build
   artifacts:
     paths:
-    - test/public
+    - test
   only:
   - master
