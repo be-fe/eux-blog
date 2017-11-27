@@ -7,6 +7,7 @@
 import React from 'picidae/exports/react'
 import moment from 'picidae/exports/moment'
 import collect from 'picidae-tools/browser/collect'
+import DocumentTitle from 'react-document-title'
 import {join} from 'path'
 
 import Body from './comps/Body'
@@ -27,14 +28,14 @@ const getPage = function (group = [], {pageSize, pageNum}) {
   }
 }
 
-const Posts = ({location, params, pluginData: {utils}, themeConfig, routeData, ...props}) => {
-  const {pageNum = 1, menu: activeMenu = ''} = params;
-  const pageSize = themeConfig.pageSize || 8;
-  const name = join('blog', activeMenu);
-  const opt = {split: false}
+const Posts = ({location, params, activeMenu, pluginData: {utils}, themeConfig, routeData, ...props}) => {
 
+  const {key: activeMenuKey} = activeMenu
+  const {pageNum = 1} = params;
+  const name = join('blog', activeMenuKey);
+  const opt = {split: false};
+  const {menus = [], title = '', pageSize = 8} = themeConfig;
   const {group, prev, next} = getPage(utils.group(name, opt), {pageNum, pageSize});
-  const menus = themeConfig.menus || []
 
   const transform =
     ({
@@ -67,29 +68,45 @@ const Posts = ({location, params, pluginData: {utils}, themeConfig, routeData, .
         to: _key,
         coverUrl: cover || themeConfig.defaultCover,
         name: author,
-        date: moment(datetime).format('YYYY-MM-D'),
+        date: moment(datetime).format('YYYY-M-D'),
         category
       }
     }
+
+  let realTitle = ''
+  console.log('activeMenu', activeMenuKey)
+  if (activeMenuKey === '') {
+    realTitle = title + ' | ' + themeConfig.homeTitleDesc
+  } else {
+    realTitle = activeMenu.label + ' | ' + title
+  }
+
   return (
-    <div className="eux-stream clearfix">
-      <div className="container clearfix">
-        <Body
-          menus={menus}
-          posts={group.map(transform)}
-          active={activeMenu}
-          prev={prev && (prev === 1 ? '/' + activeMenu : activeMenu + '/page/' + prev)}
-          next={next && (activeMenu + '/page/' + next)}
-        />
+    <DocumentTitle title={realTitle}>
+      <div className="eux-stream clearfix">
+        <div className="container clearfix">
+          <Body
+            menus={menus}
+            posts={group.map(transform)}
+            active={activeMenuKey}
+            prev={prev && (prev === 1 ? '/' + activeMenuKey : activeMenuKey + '/page/' + prev)}
+            next={next && (activeMenuKey + '/page/' + next)}
+          />
+        </div>
       </div>
-    </div>
+    </DocumentTitle>
   )
 }
 
 export default collect(async function ({location, params, themeConfig}) {
-  console.log(params)
   let found = (themeConfig.menus || []).find(({path}) => (params.menu || '/') === path)
   if (!found) {
     return false;
+  }
+  return {
+    activeMenu: {
+      ...found,
+      key: params.menu || ''
+    }
   }
 })(Posts)

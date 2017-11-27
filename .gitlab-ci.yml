@@ -1,0 +1,17 @@
+image: node:8.8
+
+pages:
+  cache:
+    paths:
+    - node_modules/
+
+  script:
+  - whoami > /dev/null
+  - npm install > /dev/null
+  - npm -v > /dev/null
+  - npm run test:build > /dev/null
+  artifacts:
+    paths:
+    - test/public
+  only:
+  - master

@@ -23,7 +23,7 @@ export default class Layout extends React.PureComponent {
   }
 
   get withScreen() {
-    const {params = {}} = this.props
+    const {params = {}, location} = this.props
     return location.pathname === '/' ||
         params.pageNum != null && params.menu == null
   }
