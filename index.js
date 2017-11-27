@@ -25,7 +25,10 @@ module.exports = {
       {
         path: 'jobs',
         component: './Jobs',
-        data: {},
+      },
+      {
+        path: 'about-us',
+        component: './AboutUS',
       },
       {
         path: ':menu(/page/:pageNum)',

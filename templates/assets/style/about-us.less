@@ -1,0 +1,85 @@
+.about-grid {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-auto-flow: column dense;
+    li {
+        width: 160px;
+        height: 160px;
+        img {
+            width: 100%;
+        }
+    }
+
+    .big-logo {
+        width: auto;
+        height: auto;
+        grid-column: span 4;
+        grid-row: span 2;
+        background: url(http://eux.baidu.com/wp-content/themes/eux/images/aboutus-baidu.png) 50% 50% no-repeat;
+    }
+}
+
+
+
+// .eux-aboutus-img-list ul li {
+//     position: absolute;
+//     width: 160px;
+//     height: 160px
+//   }
+//   .eux-aboutus-img-list ul li.big {
+//     background: url(../images/aboutus-baidu.png) 50% 50% no-repeat;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none
+//   }
+//   .eux-aboutus-img-list ul li.big.sign-protable {
+//     background-image: none;
+//     font-size: 72px;
+//     text-align: center
+//   }
+//   .eux-aboutus-img-list ul li .yellow {
+//     background: #FFFB00
+//   }
+//   .eux-aboutus-img-list ul li .grey {
+//     background-color: #8D8D8D
+//   }
+//   .eux-aboutus-img-list ul li b, .eux-aboutus-img-list ul li i, .eux-aboutus-img-list ul li img {
+//     display: block;
+//     width: 100%;
+//     height: 100%;
+//     -webkit-backface-visibility: hidden;
+//     -moz-backface-visibility: hidden;
+//     -ms-backface-visibility: hidden;
+//     backface-visibility: hidden;
+//     -webkit-transition: all 1.5s;
+//     -moz-transition: all 1.5s;
+//     -ms-transition: all 1.5s;
+//     -o-transition: all 1.5s;
+//     transition: all 1.5s
+//   }
+//   .eux-aboutus-img-list ul li img.default-avatar {
+//     margin-top: -100%;
+//     background: #8D8D8D;
+//     -webkit-transform: rotateY(180deg);
+//     -moz-transform: rotateY(180deg);
+//     -ms-transform: rotateY(180deg);
+//     -o-transform: rotateY(180deg);
+//     transform: rotateY(180deg)
+//   }
+//   .eux-aboutus-img-list ul li.reversal img.default-avatar {
+//     -webkit-transform: perspective(400px) rotateY(0);
+//     -moz-transform: perspective(400px) rotateY(0);
+//     -ms-transform: perspective(400px) rotateY(0);
+//     -o-transform: perspective(400px) rotateY(0);
+//     transform: perspective(400px) rotateY(0)
+//   }
+//   .eux-aboutus-img-list ul li.reversal b, .eux-aboutus-img-list ul li.reversal img.avatar {
+//     -webkit-transform: perspective(400px) rotateY(180deg);
+//     -moz-transform: perspective(400px) rotateY(180deg);
+//     -ms-transform: perspective(400px) rotateY(180deg);
+//     -o-transform: perspective(400px) rotateY(180deg);
+//     transform: perspective(400px) rotateY(180deg)
+//   }

@@ -9,6 +9,7 @@ import React from 'picidae/exports/react'
 import './assets/style/joinus.less'
 
 export default class Jobs extends React.PureComponent {
+  // 稍后数据抽成可配置项
   state = {
     list: [{
       title: '交互',
