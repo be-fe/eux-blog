@@ -18,4 +18,4 @@ module.exports = function (gift) {
   }
 }
 
-module.exports.externals = 'react-document-title'
+// module.exports.externals = 'react-document-title'

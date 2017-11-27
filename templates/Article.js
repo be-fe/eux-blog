@@ -52,18 +52,18 @@ const Article = ({location, render, params, pageData, themeConfig, pluginData: {
               {
                 prev &&
                 <span className="prev">
-                <Link to={prev._key} rel="prev">
-                  <em className="eux-icon eux-icon-page-prev"/>{prev.title}
-                </Link>
-              </span>
+                  <Link to={prev._key} rel="prev">
+                    <em className="eux-icon eux-icon-page-prev"/>{prev.title}
+                  </Link>
+                </span>
               }
               {
                 next &&
                 <span className="next">
-                <Link to={next._key} rel="next">
-                  <em className="eux-icon eux-icon-page-next"/>{next.title}
-                </Link>
-              </span>
+                  <Link to={next._key} rel="next">
+                    <em className="eux-icon eux-icon-page-next"/>{next.title}
+                  </Link>
+                </span>
               }
             </nav>
           </div>

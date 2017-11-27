@@ -29,12 +29,23 @@ export default class Layout extends React.PureComponent {
   }
 
   render() {
-    const {children, location, params} = this.props;
+    const {children, location, params, themeConfig} = this.props;
     return (
       <div className="main">
-        <Header withScreen={this.withScreen}/>
+        <Header
+          withScreen={this.withScreen}
+          screen={{title: themeConfig.title, desc: themeConfig.homeTitleDesc}}
+          menu={
+            themeConfig.menus
+            .map(x => ({...x, path: x.path.replace(/^\/*?/, '/')}))
+            .filter(x => x.path !== '/')
+          }
+        />
         {children}
-        <Footer className={location.pathname.startsWith('blog/') ? 'container-singular' : 'container'}/>
+        <Footer
+          className={location.pathname.startsWith('blog/') ? 'container-singular' : 'container'}
+          friendLinks={themeConfig.friendLinks}
+        />
       </div>
     )
   }

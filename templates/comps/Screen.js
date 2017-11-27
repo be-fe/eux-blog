@@ -7,10 +7,10 @@
 import React from 'picidae/exports/react'
 import {Link} from 'picidae/exports/react-router'
 
-export default () => (
+export default ({title, desc}) => (
   <div>
-    <h1><Link to="/">百度EUX</Link></h1>
-    <h3>百度企业产品用户体验中心</h3>
+    <h1><Link to="/">{title}</Link></h1>
+    <h3>{desc}</h3>
     <div className="header-bg-images">
       <div className="computer-wrap">
         <img className="large-pillar" src="http://eux.baidu.com/wp-content/themes/eux/images/large-pillar.png" />

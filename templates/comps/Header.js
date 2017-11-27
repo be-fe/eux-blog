@@ -10,9 +10,9 @@ import c from 'classname'
 
 import Screen from './Screen'
 
-export default ({withScreen}) => (
+export default ({withScreen, screen = {}, menus = []}) => (
   <header className={c('clearfix', withScreen ? 'eux-header-home' : 'eux-header')}>
-    {withScreen && <Screen/>}
+    {withScreen && <Screen {...screen} />}
     <div className="eux-header-top">
       <a href="javascript:void(0);" className="eux-portable-menu"/>
       <nav className="menu-primary-container">
@@ -23,23 +23,16 @@ export default ({withScreen}) => (
           <li id="menu-item-45"
               className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-45">
             <Link to="/">BLOG</Link>
+
             <ul className="sub-menu">
-              <li id="menu-item-63"
-                  className="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-63">
-                <Link to="/ue">交互</Link>
-              </li>
-              <li id="menu-item-67"
-                  className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-67">
-                <Link to="/ui">视觉</Link>
-              </li>
-              <li id="menu-item-64"
-                  className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-64">
-                <Link to="/fe">前端</Link>
-              </li>
-              <li id="menu-item-62"
-                  className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-62">
-                <Link to="/team">团队</Link>
-              </li>
+              {
+                menus.map(({label, path}) => (
+                  <li id="menu-item-63"
+                      className="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-63">
+                    <Link to={path}>{label}</Link>
+                  </li>
+                ))
+              }
             </ul>
           </li>
           <li id="menu-item-46" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-46">
