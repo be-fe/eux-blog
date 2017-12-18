@@ -9,6 +9,7 @@ var nps = require('path')
 module.exports = {
   docRoot: './doc',
   theme: '../',
+  publicPath: '/picidae-theme-eux-blog/',
   verbose: false,
   webpackConfigUpdater: function (config) {
     // config.module.loaders[2].include = [/\/node_modules\/picidae\//, nps.join(__dirname, '..')]
