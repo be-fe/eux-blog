@@ -19,7 +19,6 @@ deploy:
 #  repo: $GH_REF
   on:
     branch: master
-
 env:
  global:
    - GH_REF: be-fe/picidae-theme-eux-blog
