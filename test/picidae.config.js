@@ -10,7 +10,7 @@ module.exports = {
   docRoot: './doc',
   theme: '../',
   publicPath: '/picidae-theme-eux-blog/',
-  verbose: false,
+  verbose: true,
   webpackConfigUpdater: function (config) {
     // config.module.loaders[2].include = [/\/node_modules\/picidae\//, nps.join(__dirname, '..')]
     config.module.loaders[2].exclude = [

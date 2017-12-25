@@ -3,12 +3,13 @@
  * @file: getBlogLinks
  * @author: Cuttle Cong
  * @date: 2017/11/25
- * @description: 
+ * @description:
  */
 
 var http = require('http')
 var https = require('https')
 var url = require('url')
+var nps = require('path')
 
 var cheerio = require('cheerio')
 
@@ -18,7 +19,7 @@ var BLOG_HOST = 'http://eux.baidu.com/'
 
 getLinksFromURL(BLOG_HOST)
   .then(function (links) {
-    console.log(links.join('\n'))
+    console.log(JSON.stringify(links))
   }, console.error)
 
 function getLinksFromURL(href) {
@@ -48,7 +49,12 @@ function getLinks(html, origin) {
   $cards.map(function () {
     var href = $(this).find('.eux-card-thumbnail a').attr('href')
     var thumbnail = $(this).find('.eux-card-thumbnail img').attr('src')
-    links.push(JSON.stringify({link: url.resolve(origin, href), data: {cover: thumbnail}}))
+    var menu = nps.basename($(this).find('footer .eux-card-category a').attr('href'))
+    links.push({
+      link: url.resolve(origin, href),
+      menu: menu,
+      data: { cover: thumbnail }
+    })
   })
 
   return getLinksFromURL(nextHref)

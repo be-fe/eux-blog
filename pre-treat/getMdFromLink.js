@@ -23,12 +23,11 @@ var get = require('./lib/request')
 
 var mdRoot = nps.join(__dirname, 'md')
 
-var rl = readline.createInterface({
-  input: fs.createReadStream(nps.join(__dirname, 'links.txt')),
-});
+var links = require(nps.join(__dirname, 'links.json'))
 
-rl.on('line', function (line) {
-  var rec = JSON.parse(line)
+del.sync([nps.join(mdRoot, '*')], {force: true})
+
+links.forEach(function (rec) {
   var link = rec.link
   get(link)
     .then(function (body) {
@@ -38,10 +37,8 @@ rl.on('line', function (line) {
       writeMD(data.markdown, nps.join(data.data.menu, keyName));
     })
     .catch(console.error)
-});
+})
 
-
-del.sync([nps.join(mdRoot, '*')], {force: true})
 function writeMD(md, key) {
   console.log('writing ', key)
   var path = nps.join(mdRoot, key + '.md')
