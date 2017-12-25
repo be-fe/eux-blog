@@ -7,6 +7,7 @@
 import React from 'picidae/exports/react'
 import DocumentTitle from 'react-document-title'
 import links from './assets/links.json'
+import { Link } from 'picidae/exports/react-router'
 import { parse, format } from 'url'
 import { basename, join } from 'path'
 
@@ -73,7 +74,7 @@ export default class extends React.PureComponent {
     return (
       <div>
         <div>
-          页面搬家啦，<a href={url}>点击此处跳转</a>
+          页面搬家啦，<Link to={url}>点击此处跳转</Link>
         </div>
         <div style={{ marginTop: 10 }}>
           <span style={{ color: 'orange' }}>{this.state.count} </span>s 后将自动跳转
