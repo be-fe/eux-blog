@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cd test && picidae start",
-    "test:build": "cd test && picidae build -f",
+    "test:build": "cd test && picidae build -f --source-map",
     "getlinks": "./pre-treat/getBlogLinks.js > ./pre-treat/links.json && cp ./pre-treat/links.json ./templates/assets",
     "getmds": "npm run getlinks && ./pre-treat/getMdFromLink.js"
   },
