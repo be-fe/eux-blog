@@ -9,7 +9,7 @@ var nps = require('path')
 module.exports = {
   docRoot: './doc',
   theme: './theme',
-  publicPath: '/eux-blog/',
+  // publicPath: '/eux-blog/',
   // @todo
   // host: 'http://eux.baidu.com/',
   verbose: true,
