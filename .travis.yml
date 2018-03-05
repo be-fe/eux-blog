@@ -8,17 +8,17 @@ cache:
 
 install:
   - npm install
-script:
-  - npm run test:build
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: ${GH_TOKEN} # Set in travis-ci.org dashboard
-  local_dir: public
-#  target_branch: gh-pages
-#  repo: $GH_REF
-  on:
-    branch: master
-env:
- global:
-   - GH_REF: be-fe/picidae-theme-eux-blog
+
+jobs:
+  include:
+    - stage: Github Pages
+#      allow_failure: true
+      script: npm run build
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: ${GH_TOKEN} # Set in travis-ci.org dashboard
+        local_dir: public
+        target-branch: master
+        repo: $GH_REF
+      env: GH_REF=be-fe/be-fe.github.io
