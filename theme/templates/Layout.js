@@ -2,7 +2,7 @@
  * @file: Layout
  * @author: Cuttle Cong
  * @date: 2017/11/24
- * @description: 
+ * @description:
  */
 import React from 'picidae/exports/react'
 import PropTypes from 'picidae/exports/prop-types'
@@ -18,27 +18,32 @@ export default class Layout extends React.PureComponent {
       location: this.props.location
     }
   }
+
   static childContextTypes = {
     location: PropTypes.object
   }
 
   get withScreen() {
-    const {params = {}, location} = this.props
+    const { params = {}, location } = this.props
     return location.pathname === '/' ||
-        params.pageNum != null && params.menu == null
+           params.pageNum != null && params.menu == null
   }
 
   render() {
-    const {children, location, params, themeConfig} = this.props;
+    const { children, location, params, router, themeConfig } = this.props
     return (
       <div className="main">
         <Header
           withScreen={this.withScreen}
-          screen={{title: themeConfig.title, desc: themeConfig.homeTitleDesc}}
-          menu={
-            themeConfig.menus
-            .map(x => ({...x, path: x.path.replace(/^\/*?/, '/')}))
-            .filter(x => x.path !== '/')
+          router={router}
+          screen={{ title: themeConfig.title, desc: themeConfig.homeTitleDesc }}
+          menus={
+            themeConfig
+              .menus
+              .map(x => (
+                { ...x, path: x.path.replace(/^\/*/, '/') }
+              ))
+              .filter(x => x.path !== '/')
           }
         />
         {children}

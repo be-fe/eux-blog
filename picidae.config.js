@@ -8,7 +8,7 @@ var nps = require('path')
 
 module.exports = {
   docRoot: './doc',
-  theme: '../',
+  theme: './theme',
   publicPath: '/picidae-theme-eux-blog/',
   verbose: true,
   webpackConfigUpdater: function (config) {
@@ -24,7 +24,7 @@ module.exports = {
     return config
   },
 
-  distRoot: '../public'
+  distRoot: './public'
 
   // templateData(gift) {
   //   console.log('templateData', gift)

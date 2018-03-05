@@ -410,11 +410,17 @@ a:hover {
   margin: 0
 }
 
+.main nav ul li > a:hover + .sub-menu {
+  display: block;
+}
 .main nav ul.sub-menu {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0
+  left: 0;
+  &:hover {
+    display: block;
+  }
 }
 
 .main nav a:focus {
@@ -722,10 +728,12 @@ a:hover {
 
 header.eux-header-home {
   position: relative;
-  background: url(../images/header-bg.png) 50% 48px/auto 272px no-repeat, linear-gradient(90deg, #1a51ac 50%, #14b6cb 50%);
+  background: url(../images/header.jpg) center 48px no-repeat #ffd92f;
+  background-size: auto 450px;
+  height: 500px;
   box-shadow: 0 -5px 5px -7px #000 inset;
-  height: 320px;
-  overflow: hidden
+  overflow: hidden;
+
 }
 
 header.eux-header-home h1 {
@@ -748,19 +756,6 @@ header.eux-header-home h1 a {
 
 header.eux-header-home .header-bg-images .computer-wrap .computer-on-phone, header.eux-header-home .header-bg-images .pic-on-phone, header.eux-header-home .header-bg-images .watch-wrap .watch-on-phone {
   display: none
-}
-
-header.eux-header-home h3 {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  font-size: 14px;
-  font-weight: 200;
-  letter-spacing: 3px;
-  top: 0;
-  margin-top: 123px;
-  color: #fff;
-  font-family: PingFangSC, "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif
 }
 
 header.eux-header-home .header-bg-images {
@@ -951,8 +946,10 @@ header > .eux-header-top {
 
 @media screen and (max-width: 500px) {
   header.eux-header-home {
-    zoom: .8;
-    background: url(../images/header-bg.png) 50% 48px/auto 272px no-repeat
+    //zoom: .8;
+    height: 400px;
+    background-size: cover;
+    //background: url(../images/header-bg.png) 50% 48px/auto 272px no-repeat
   }
 
   header.eux-header-home .header-bg-images .computer-wrap .computer-on-com {
@@ -1947,4 +1944,25 @@ nav.menu-portable-container .menu-portable-caption {
     -o-transform: translateX(0) scale(.7, .7);
     transform: translateX(0) scale(.7, .7)
   }
+}
+
+header.eux-header-home h3 .blog-desp {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  word-spacing: 2px;
+  font-weight: 700;
+  top: 0;
+  margin-top: 34px;
+  color: rgba(0,0,0,.6);
+  padding-left: 38px;
+  background: url(../images/logo.png) left center no-repeat rgba(0,0,0,0);
+  background-size: 30px auto;
+}
+
+header.eux-header-home h3 {
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }

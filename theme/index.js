@@ -52,7 +52,7 @@ module.exports = {
 
   config: {
     title: '百度EUX',
-    homeTitleDesc: '百度企业产品用户体验团队',
+    homeTitleDesc: '百度企业产品用户体验中心',
 
     comment: {
       use: 'valine',

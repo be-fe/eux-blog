@@ -25,16 +25,16 @@ var mdRoot = nps.join(__dirname, 'md')
 
 var links = require(nps.join(__dirname, 'links.json'))
 
-del.sync([nps.join(mdRoot, '*')], {force: true})
+del.sync([nps.join(mdRoot, '*')], { force: true })
 
 links.forEach(function (rec) {
   var link = rec.link
   get(link)
     .then(function (body) {
-      var data = calcBlogHtml2MD(body.toString(), rec.data);
+      var data = calcBlogHtml2MD(body.toString(), rec.data)
 
       var keyName = decodeURIComponent(nps.basename(link))
-      writeMD(data.markdown, nps.join(data.data.menu, keyName));
+      writeMD(data.markdown, nps.join(data.data.menu, keyName))
     })
     .catch(console.error)
 })
@@ -71,19 +71,19 @@ function calcBlogHtml2MD(html, data) {
     dataList.push(key + ': ' + JSON.stringify(data[key]))
   })
 
-  $inner.find('.eux-like, .single-bar').remove();
+  $inner.find('.eux-like, .single-bar').remove()
 
   var markdown = [
-      '---',
-      'title: ' + JSON.stringify(title),
-      'author: ' + JSON.stringify(author),
-      'datetime: ' + date
-    ]
+    '---',
+    'title: ' + JSON.stringify(title),
+    'author: ' + JSON.stringify(author),
+    'datetime: ' + date
+  ]
     .concat(dataList)
     .concat([
       '---',
       '',
-      html2MD.html2mdFromString($inner.html()),
+      html2MD.html2mdFromString($inner.html())
     ]).join('\n')
 
   return {

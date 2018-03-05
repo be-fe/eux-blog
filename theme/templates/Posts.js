@@ -74,7 +74,6 @@ const Posts = ({location, params, activeMenu, pluginData: {utils}, themeConfig, 
     }
 
   let realTitle = ''
-  console.log('activeMenu', activeMenuKey)
   if (activeMenuKey === '') {
     realTitle = title + ' | ' + themeConfig.homeTitleDesc
   } else {
