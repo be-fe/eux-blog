@@ -36,7 +36,7 @@ export default class extends React.PureComponent {
 
   componentDidUpdate() {
     if (this.state.count === 0) {
-      location.href = this.redirectUrl
+      this.props.router.push(this.redirectUrl)
     }
   }
 
@@ -74,7 +74,7 @@ export default class extends React.PureComponent {
     return (
       <div>
         <div>
-          页面搬家啦，<a href={url}>点击此处跳转</a>
+          页面搬家啦，<Link to={url}>点击此处跳转</Link>
         </div>
         <div style={{ marginTop: 10 }}>
           <span style={{ color: 'orange' }}>{this.state.count} </span>s 后将自动跳转
