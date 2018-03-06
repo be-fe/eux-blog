@@ -5,6 +5,7 @@
  * @description:
  */
 import React from 'picidae/exports/react'
+import Favicon from 'react-favicon'
 import PropTypes from 'picidae/exports/prop-types'
 
 import Header from './comps/Header'
@@ -23,6 +24,20 @@ export default class Layout extends React.PureComponent {
     location: PropTypes.object
   }
 
+  componentDidMount() {
+    if (window._vds) {
+      this.unlisten = this.props.router.listen(loc => {
+        window._vds.trackPV()
+      })
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.unlisten) {
+      this.unlisten()
+    }
+  }
+
   get withScreen() {
     const { params = {}, location } = this.props
     return location.pathname === '/' ||
@@ -33,6 +48,7 @@ export default class Layout extends React.PureComponent {
     const { children, location, params, router, themeConfig } = this.props
     return (
       <div className="main">
+        <Favicon url={require('./assets/images/logo.png')}/>
         <Header
           withScreen={this.withScreen}
           router={router}
