@@ -60,8 +60,8 @@ export default class extends React.PureComponent {
   get redirectUrl() {
     const index = this.redirectIndex
     if (index >= 0) {
-      return format(paths[index])
-      // return `/blog/${join(paths[index].other.menu, basename(paths[index].pathname))}`
+      // return format(paths[index])
+      return `/blog/${join(paths[index].other.menu, basename(paths[index].pathname))}`
     }
   }
 
