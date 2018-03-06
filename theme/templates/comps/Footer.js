@@ -17,7 +17,7 @@ export default ({className, friendLinks = []}) => (
             {
               friendLinks.map(({title, href, label}, i) => (
                 <li key={i} className="simple-links-item simple-links-widget-item" id="link-379">
-                  <a target="_blank" title={title || label}>{label || title}</a>
+                  <a target="_blank" href={href} title={title || label}>{label || title}</a>
                 </li>
               ))
             }
