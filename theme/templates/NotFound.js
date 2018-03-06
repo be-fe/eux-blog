@@ -36,7 +36,7 @@ export default class extends React.PureComponent {
 
   componentDidUpdate() {
     if (this.state.count === 0) {
-      this.props.router.push(this.redirectUrl)
+      location.href = this.redirectUrl
     }
   }
 
@@ -60,8 +60,8 @@ export default class extends React.PureComponent {
   get redirectUrl() {
     const index = this.redirectIndex
     if (index >= 0) {
-      // return format(paths[index])
-      return `/blog/${join(paths[index].other.menu, basename(paths[index].pathname))}`
+      return format(paths[index])
+      // return `/blog/${join(paths[index].other.menu, basename(paths[index].pathname))}`
     }
   }
 
@@ -74,7 +74,7 @@ export default class extends React.PureComponent {
     return (
       <div>
         <div>
-          页面搬家啦，<Link to={url}>点击此处跳转</Link>
+          页面搬家啦，<a href={url}>点击此处跳转</a>
         </div>
         <div style={{ marginTop: 10 }}>
           <span style={{ color: 'orange' }}>{this.state.count} </span>s 后将自动跳转
