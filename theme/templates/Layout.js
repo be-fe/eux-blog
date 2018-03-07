@@ -26,16 +26,17 @@ export default class Layout extends React.PureComponent {
 
   componentDidMount() {
     if (window._vds) {
-      this.unlisten = this.props.router.listen(loc => {
-        window._vds.trackPV()
-      })
+      // no-op _vds would overwrite window.history.pushState
+      // this.unlisten = this.props.router.listen(loc => {
+      //   window._vds.trackPV()
+      // })
     }
   }
 
   componentWillUnmount() {
-    if (this.unlisten) {
-      this.unlisten()
-    }
+    // if (this.unlisten) {
+    //   this.unlisten()
+    // }
   }
 
   get withScreen() {
