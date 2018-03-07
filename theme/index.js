@@ -74,15 +74,15 @@ module.exports = {
     jobs: [
       {
         title: '交互',
-        imgSrc: 'http://eux.baidu.com/wp-content/themes/eux/images/Interaction-right.png',
+        imgSrc: './assets/images/jobs/Interaction-right.png',
         content: ['能用线框构建世界', '能专注逻辑且准确拿捏用户喜好']
       }, {
         title: '视觉',
-        imgSrc: 'http://eux.baidu.com/wp-content/themes/eux/images/vision-right.png',
+        imgSrc: './assets/images/jobs/vision-right.png',
         content: ['把每一个像素点都做到极致', '每一次产出都当作是完美表演']
       }, {
         title: '前端',
-        imgSrc: 'http://eux.baidu.com/wp-content/themes/eux/images/fe-right.png',
+        imgSrc: './assets/images/jobs/fe-right.png',
         content: ['...', '...']
       }
     ],
@@ -134,10 +134,9 @@ module.exports = {
       {img: 'suntiantian', name: '孙甜甜'},
       {img: 'chenjianwei', name: '陈建伟'},
       {img: 'meijingjing', name: '梅晶晶'}
-    ].map(function (x) {
-      return Object.assign({}, x, {
-        img: 'http://eux.baidu.com/wp-content/themes/eux/images/avatar/' + x.img + '.png'
-      })
+    ].map(item => {
+      item.img = `./assets/images/avatar/${item.img}.png`;
+      return item;
     }),
     friendLinks: [
       {
@@ -160,6 +159,11 @@ module.exports = {
         title: '京东凹凸实验室，面向多终端技术体系，致力于构建沉淀与分享包括但不限于交互、页面制作技巧、前端开发、原生APP开发等方面的专业知识及案例。',
         href: 'https://aotu.io/',
       },
+      {
+        label: '人人网FED',
+        title: '人人网FED',
+        href: 'https://fed.renren.com/',
+      }
     ],
     menus: [
       {

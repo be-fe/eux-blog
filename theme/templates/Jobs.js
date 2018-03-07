@@ -34,7 +34,7 @@ export default class Jobs extends React.PureComponent {
     const jobImg = list.map((item, index) => {
       const cls = index === activeIndex ? 'active right-img': 'right-img';
       return (
-        <img key={index} src={item.imgSrc} className={cls}/>
+        <img key={index} src={require(item.imgSrc)} className={cls}/>
       )
     })
 
@@ -48,7 +48,7 @@ export default class Jobs extends React.PureComponent {
       })
       return (
         <div key={index} className={cls}>
-            <img src="http://eux.baidu.com/wp-content/themes/eux/images/joinus.png" />
+            <img src={require('./assets/images/jobs/joinus.png')} />
             <p>如果你</p>
             {content}
             <p>请把你的简历发给我们</p>

@@ -22,7 +22,6 @@ const About = ({themeConfig}) => {
   ours.splice(23, 0, {img: 'big', name: 'logo'});
 
   // 默认图
-  // <img className="default-avatar" src="http://eux.baidu.com/wp-content/themes/eux/images/default-avatar/3.jpg"/>
   const lists = ours.map((item, index) => {
     if (item.name === 'logo') {
       return (
@@ -31,7 +30,7 @@ const About = ({themeConfig}) => {
     } else {
       return (
         <li key={index} data-title={item.name}>
-          <img className="avatar" src={item.img}/>
+          <img className="avatar" src={require(item.img)}/>
         </li>
       )
     }
