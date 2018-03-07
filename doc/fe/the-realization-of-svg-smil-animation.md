@@ -2,7 +2,7 @@
 title: "[译] 使用SMIL实现SVG动画"
 author: "莳子"
 datetime: 2015-12-25 08:00:00
-cover: "http://eux.baidu.com/wp-content/themes/eux/images/no-thumbnail.png"
+
 ---
 
 ## 概览

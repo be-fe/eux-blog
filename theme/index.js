@@ -69,20 +69,20 @@ module.exports = {
         avatar: 'mm'
       }
     },
-    defaultCover: 'http://eux.baidu.com/wp-content/themes/eux/images/no-thumbnail.png',
+    defaultCover: '/images/no-thumbnail.png',
     pageSize: 12,
     jobs: [
       {
         title: '交互',
-        imgSrc: './assets/images/jobs/Interaction-right.png',
+        imgSrc: '/images/jobs/Interaction-right.png',
         content: ['能用线框构建世界', '能专注逻辑且准确拿捏用户喜好']
       }, {
         title: '视觉',
-        imgSrc: './assets/images/jobs/vision-right.png',
+        imgSrc: '/images/jobs/vision-right.png',
         content: ['把每一个像素点都做到极致', '每一次产出都当作是完美表演']
       }, {
         title: '前端',
-        imgSrc: './assets/images/jobs/fe-right.png',
+        imgSrc: '/images/jobs/fe-right.png',
         content: ['...', '...']
       }
     ],
@@ -135,7 +135,7 @@ module.exports = {
       {img: 'chenjianwei', name: '陈建伟'},
       {img: 'meijingjing', name: '梅晶晶'}
     ].map(item => {
-      item.img = `./assets/images/avatar/${item.img}.png`;
+      item.img = `/images/avatar/${item.img}.png`;
       return item;
     }),
     friendLinks: [

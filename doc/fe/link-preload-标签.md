@@ -2,7 +2,7 @@
 title: "Link Preload 标签"
 author: "田 光宇"
 datetime: 2017-08-28 12:00:00
-cover: "http://eux.baidu.com/wp-content/themes/eux/images/no-thumbnail.png"
+
 ---
 
 近期项目中需要开发一个兼容PC和移动端的富文本编辑器，其中包含了一些特殊的定制功能。考察了下现有的js富文本编辑器，桌面端的很多，移动端的几乎没有。桌面端以UEditor为代表。但是我们并不打算考虑兼容性，所以没有必要采用UEditor这么重的插件。为此决定自研一个富文本编辑器。本文，主要介绍如何实现富文本编辑器，和解决一些不同浏览器和设备之间的bug。    

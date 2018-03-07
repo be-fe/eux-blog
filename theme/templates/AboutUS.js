@@ -5,21 +5,21 @@
  * @description: 关于我们
  */
 
-import React from 'picidae/exports/react';
-import PropTypes from 'picidae/exports/prop-types';
+import React from 'picidae/exports/react'
+import PropTypes from 'picidae/exports/prop-types'
 
-import './assets/style/index.less';
-import './assets/style/about-us.less';
+import './assets/style/index.less'
+import './assets/style/about-us.less'
 
-const About = ({themeConfig}) => {
-  const ours = themeConfig.ours.slice();
+const About = ({ themeConfig }) => {
+  const ours = themeConfig.ours.slice()
 
   // 随机排序
   ours.sort((a, b) => {
-    return Math.random() > 0.5 ? -1 : 1;
+    return Math.random() > 0.5 ? -1 : 1
   })
   // 插入 logo 图
-  ours.splice(23, 0, {img: 'big', name: 'logo'});
+  ours.splice(23, 0, { img: 'big', name: 'logo' })
 
   // 默认图
   const lists = ours.map((item, index) => {
@@ -27,13 +27,13 @@ const About = ({themeConfig}) => {
       return (
         <li key={index} className="big-logo"/>
       )
-    } else {
-      return (
-        <li key={index} data-title={item.name}>
-          <img className="avatar" src={require(item.img)}/>
-        </li>
-      )
     }
+
+    return (
+      <li key={index} data-title={item.name}>
+        <img className="avatar" src={item.img}/>
+      </li>
+    )
   })
 
   return (
@@ -49,4 +49,4 @@ const About = ({themeConfig}) => {
   )
 }
 
-export default About;
+export default About

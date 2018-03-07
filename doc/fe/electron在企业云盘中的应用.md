@@ -2,7 +2,7 @@
 title: "Electron在企业云盘中的应用"
 author: "刘, 卉"
 datetime: 2017-06-06 12:00:00
-cover: "http://eux.baidu.com/wp-content/themes/eux/images/no-thumbnail.png"
+
 ---
 
 # 简要介绍

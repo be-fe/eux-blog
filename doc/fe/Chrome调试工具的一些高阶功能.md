@@ -2,7 +2,7 @@
 title: "Chrome 调试工具的一些高阶功能"
 author: "苏 迪"
 datetime: 2017-08-21 12:00:00
-cover: "http://eux.baidu.com/wp-content/themes/eux/images/no-thumbnail.png"
+
 ---
 
 - Chrome 内置抓包工具

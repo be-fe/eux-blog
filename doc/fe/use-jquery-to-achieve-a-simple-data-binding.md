@@ -2,7 +2,6 @@
 title: "利用jQuery实现简单的数据双向绑定"
 author: "西瓜痞"
 datetime: 2015-09-11 12:00:00
-cover: "http://eux.baidu.com/wp-content/themes/eux/images/no-thumbnail.png"
 ---
 
 ## 导语
