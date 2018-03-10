@@ -19,7 +19,8 @@
     "del": "^3.0.0",
     "html-markdown": "^1.0.17",
     "mkdirp": "^0.5.1",
-    "picidae": "^2.1.23"
+    "picidae": "^2.1.23",
+    "picidae-transformer-medium-image-zoom": "^1.0.1"
   },
   "dependencies": {
     "classname": "^0.0.0",

@@ -26,7 +26,7 @@ module.exports = {
     return config
   },
 
-  distRoot: './public'
+  distRoot: './public',
 
   // templateData(gift) {
   //   console.log('templateData', gift)
@@ -34,4 +34,8 @@ module.exports = {
   //     gift
   //   })
   // }
+
+  transformers: [
+    'picidae-transformer-medium-image-zoom'
+  ]
 }
