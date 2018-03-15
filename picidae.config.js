@@ -36,6 +36,10 @@ module.exports = {
   // }
 
   transformers: [
-    'picidae-transformer-medium-image'
+    'picidae-transformer-medium-image?' + JSON.stringify({
+      progressive: {
+        sizeOptions: { debug: true }
+      }
+    })
   ]
 }
