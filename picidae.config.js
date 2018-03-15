@@ -36,6 +36,6 @@ module.exports = {
   // }
 
   transformers: [
-    'picidae-transformer-medium-image-zoom'
+    'picidae-transformer-medium-image'
   ]
 }

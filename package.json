@@ -19,14 +19,14 @@
     "del": "^3.0.0",
     "html-markdown": "^1.0.17",
     "mkdirp": "^0.5.1",
-    "picidae": "^2.1.23",
-    "picidae-transformer-medium-image-zoom": "^1.0.1"
+    "picidae": "^2.2.7"
   },
   "dependencies": {
     "classname": "^0.0.0",
     "nodejieba": "^2.2.5",
     "picidae-tool-auto-keyword": "0.0.0",
     "picidae-tools": "^0.0.3",
+    "picidae-transformer-medium-image": "^1.0.2",
     "react-document-title": "^2.0.3",
     "react-favicon": "0.0.13"
   }
