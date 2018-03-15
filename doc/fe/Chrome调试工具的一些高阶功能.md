@@ -18,7 +18,7 @@ datetime: 2017-08-21 12:00:00
 在浏览器地址栏输入**chrome://net-internals/#events**，即可打开自带的抓包工具。工具处于live状态，其他tab 页有请求刷新，列表会随之刷新请求的快照，点击快照可查看详细的请求信息，配合 network面板能看到一个完整的请求。  
 
 
-[![1502785912](http://upload-images.jianshu.io/upload_images/670206-fe6451d3a9893c7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+[<img src="http://upload-images.jianshu.io/upload_images/670206-fe6451d3a9893c7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1502785912" width="856" height="457" />
 ](http://eux.baidu.com/wp-content/uploads/2017/08/1502785912.png)  
 
 
@@ -31,7 +31,7 @@ network 面板右击请求即可看到 block 选项，这个选项能够使我�
 eg: 配合 Preserve log 可以监测请求在不同域之间转发跳转时状态变化(请求在不同域之间转发跳转，network面板会经常性地丢失 response)。  
 
 
-[![block-request-url](https://developers.google.cn/web/updates/images/2017/04/block-request-url.png)
+[<img src="https://developers.google.cn/web/updates/images/2017/04/block-request-url.png" alt="block-request-url" width="1260" height="1182" />
 ](http://eux.baidu.com/wp-content/uploads/2017/08/block-request-url.png)  
 
 
@@ -60,11 +60,11 @@ eg: 配合这个选项可以做一些 module lazyload 的优化。
 通过coverage 面板可以找到没有用到的 css和 js 代码，点击单个文件可以查看详情，并且也是处于 live 状态，页面发生变化时，覆盖率报告也会随之刷新。通过右边菜单 more tools 或者通过快捷键 ctrl + shift +p (windows) 输入coverage 即可打开 coverage。  
 
 
-[![coverage](https://developers.google.cn/web/updates/images/2017/04/coverage.png)
+[<img src="https://developers.google.cn/web/updates/images/2017/04/coverage.png" alt="coverage" width="1238" height="870" />
 ](http://eux.baidu.com/wp-content/uploads/2017/08/coverage.png)  
 
 
-[![coverage-breakdown](https://developers.google.cn/web/updates/images/2017/04/coverage-breakdown.png)
+[<img src="https://developers.google.cn/web/updates/images/2017/04/coverage-breakdown.png" alt="coverage-breakdown" width="1236" height="1000" />
 ](http://eux.baidu.com/wp-content/uploads/2017/08/coverage-breakdown.png)  
 
 

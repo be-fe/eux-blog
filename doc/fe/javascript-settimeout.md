@@ -5,7 +5,7 @@ datetime: 2015-09-30 12:00:00
 cover: "http://ww2.sinaimg.cn/large/633b942ejw1eybwqwbr6hj20rs0gigob.jpg"
 ---
 
-![](http://ww2.sinaimg.cn/large/43b712ebjw1ewkfd1dgcij20c306f74n.jpg)
+<img src="http://ww2.sinaimg.cn/large/43b712ebjw1ewkfd1dgcij20c306f74n.jpg" alt="" width="435" height="231" />
   
 
 
@@ -29,7 +29,7 @@ setTimeout(window.location.href = 'index.php?xxx=111', 5000)
 <span class="s1">那么，他们到底来自哪里呢？翻阅MSDN和MDN对其的描述，我们可以看到如下内容：</span>  
 
 
-![](http://ww1.sinaimg.cn/large/43b712ebjw1ewke8muhj3j209w02mwei.jpg)
+<img src="http://ww1.sinaimg.cn/large/43b712ebjw1ewke8muhj3j209w02mwei.jpg" alt="" width="356" height="94" />
   
 
 

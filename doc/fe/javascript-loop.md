@@ -112,7 +112,7 @@ console.log('Done!');
 <span class="s1">在每一次轮询中，任务队列会记录下一条消息（每次记录会返回一个“tick”），当轮询到这条消息时，该消息所对应的回调函数则被执行。</span>  
 
 
-![](http://ww1.sinaimg.cn/large/43b712ebjw1ewkmap1po0j20m00cktat.jpg)
+<img src="http://ww1.sinaimg.cn/large/43b712ebjw1ewkmap1po0j20m00cktat.jpg" alt="" width="792" height="452" />
   
 
 
@@ -173,7 +173,7 @@ f();
 <span class="s1">利用Web Workers能让你丢掉昂贵的多线程执行方式，释放主线程去做其他的事。Web Workers包括单独的消息队列，事件轮询，以及实例化了一个独立于最初的主线程的储存空间。利用消息传递来建立消息与主线程之间的联系，这种联系非常像我们刚才的代码示例。</span>  
 
 
-![](http://ww1.sinaimg.cn/large/43b712ebjw1ewkm02zdhtj20ol0a240q.jpg)
+<img src="http://ww1.sinaimg.cn/large/43b712ebjw1ewkm02zdhtj20ol0a240q.jpg" alt="" width="885" height="362" />
   
 
 

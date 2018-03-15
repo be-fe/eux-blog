@@ -25,7 +25,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1ew48bpvm1fj20e80800tk.jpg"
 热点图显示，度学堂网站首页点击量集中在顶部导航与右侧排行榜上，即占据首页大部分面积的课程宣传基本无效，首页的内容并不符合用户的心理预期。  
 
 
-![](http://ww4.sinaimg.cn/large/56f7b09ejw1ew44jdv2iwj20sd0du0we.jpg)
+<img src="http://ww4.sinaimg.cn/large/56f7b09ejw1ew44jdv2iwj20sd0du0we.jpg" alt="" width="1021" height="498" />
   
 
 
@@ -41,7 +41,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1ew48bpvm1fj20e80800tk.jpg"
    
 
 
-![](http://ww4.sinaimg.cn/large/56f7b09ejw1ew44joktstj20sd0f0dhd.jpg)
+<img src="http://ww4.sinaimg.cn/large/56f7b09ejw1ew44joktstj20sd0f0dhd.jpg" alt="" width="1021" height="540" />
   
 
 
@@ -51,7 +51,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1ew48bpvm1fj20e80800tk.jpg"
 
 #### **<span class="s1">如何让用户在首页看到与自己业务相关的内容，并且将好课突出出来？</span>**
 
-![](http://ww4.sinaimg.cn/large/56f7b09ejw1ew44jwzjoaj20sd0du41r.jpg)
+<img src="http://ww4.sinaimg.cn/large/56f7b09ejw1ew44jwzjoaj20sd0du41r.jpg" alt="" width="1021" height="498" />
   
 
 
@@ -67,7 +67,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1ew48bpvm1fj20e80800tk.jpg"
 <span class="s1">度学堂需要争取无目的性进入的用户。</span>  
 
 
-![](http://ww2.sinaimg.cn/large/56f7b09ejw1ew44k63gwsj21kw0yydrf.jpg)
+<img src="http://ww2.sinaimg.cn/large/56f7b09ejw1ew44k63gwsj21kw0yydrf.jpg" alt="" width="2048" height="1259" />
   
 
 
@@ -80,7 +80,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1ew48bpvm1fj20e80800tk.jpg"
 <span class="s1">仅凭业务相关性内容并不能维系用户，少有人能够在工作之余依然花时间逛学习网站，进行业务相关的课程学习。谁不想在休息时间看看综艺、读读小说呢?</span>  
 
 
-![](http://ww1.sinaimg.cn/large/56f7b09ejw1ew44kcunwfj20jn0c840w.jpg)
+<img src="http://ww1.sinaimg.cn/large/56f7b09ejw1ew44kcunwfj20jn0c840w.jpg" alt="" width="707" height="440" />
   
 
 
@@ -108,7 +108,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1ew48bpvm1fj20e80800tk.jpg"
 <span class="s1">MOOC是系统化的平台设计。不同于视频学习网站“闲逛－选择”的流程，用户在MOOC平台经历“寻找课程－参加课程－学习课程－拿到证书”的线性任务，以名校、定时的课程、与老师同学的在线交流、作业考试、证书等方式维系用户参与，使用户通过社交与证书获得学习的成就感，是学习内部动机与外部动机的有效结合。</span>  
 
 
-![](http://ww4.sinaimg.cn/large/56f7b09ejw1ew44knq8cwj21kw0yy4ay.jpg)
+<img src="http://ww4.sinaimg.cn/large/56f7b09ejw1ew44knq8cwj21kw0yy4ay.jpg" alt="" width="2048" height="1259" />
   
 
 
@@ -121,7 +121,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1ew48bpvm1fj20e80800tk.jpg"
 <span class="s1">无反馈是旧版度学堂反人类的“特色”之一。必要的提示是一个关心用户的产品的基础，一句问候或道谢有时可以拉近用户与产品之间的距离。</span>  
 
 
-![](http://ww3.sinaimg.cn/large/56f7b09ejw1ew44kwtdrzj20jc0cm76z.jpg)
+<img src="http://ww3.sinaimg.cn/large/56f7b09ejw1ew44kwtdrzj20jc0cm76z.jpg" alt="" width="696" height="454" />
   
 
 
@@ -134,4 +134,4 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1ew48bpvm1fj20e80800tk.jpg"
 <span class="s1">企业级MOOC的建立依赖于成熟的学习资源、学习模式和生态环境。优质资源的聚合基于良性的学习生态环境，即群体学习（同序列推荐与参考、讨论、笔记分享等）促使名师名课脱颖而出；群体学习生态环境需要分类资源和良性学习模式刺激，如人才成长修身计划、学习笔记、证书等方式。因而在交互图谱上，以同级或上级推荐和讨论为主的社交关系将作为度学堂迭代的第一步，任重道远。</span>  
 
 
-![](http://ww4.sinaimg.cn/large/56f7b09ejw1ew44l6318lj20k00a5775.jpg)
+<img src="http://ww4.sinaimg.cn/large/56f7b09ejw1ew44l6318lj20k00a5775.jpg" alt="" width="720" height="365" />

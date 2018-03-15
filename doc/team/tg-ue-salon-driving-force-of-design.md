@@ -5,7 +5,7 @@ datetime: 2016-02-02 12:00:00
 cover: "http://ww1.sinaimg.cn/large/6ff7504djw1f0kx3dw3kgj20rs0gidit.jpg"
 ---
 
-![](http://ww1.sinaimg.cn/large/6ff7504djw1f0kx3dw3kgj20rs0gidit.jpg)
+<img src="http://ww1.sinaimg.cn/large/6ff7504djw1f0kx3dw3kgj20rs0gidit.jpg" alt="" width="1000" height="594" />
   
 
 
@@ -15,28 +15,28 @@ cover: "http://ww1.sinaimg.cn/large/6ff7504djw1f0kx3dw3kgj20rs0gidit.jpg"
 <span class="s1">这次交流会邀请了DUX团队用户研究同学贺京，《如何科学的砍需求》，她的分享系统的讲述了如何利用Kano模型删减需求。在产品设计和产品迭代的过程中科学、理性的选择产品需求。</span>  
 
 
-![](http://ww4.sinaimg.cn/large/6ff7504djw1f0kx3e7c39j21kw11xqc1.jpg)
+<img src="http://ww4.sinaimg.cn/large/6ff7504djw1f0kx3e7c39j21kw11xqc1.jpg" alt="" width="2048" height="1365" />
   
 
 
 <span class="s1">EUX团队的交互设计同学康佳美，《企业用户产品设计》，结合自己工作中的项目，分析了企业用户产品与商业用户产品的不同，以百汇对审批流程的优化为例，讲述了她在工作中是如何对企业用户产品痛点进行再设计的。</span>  
 
 
-![](http://ww3.sinaimg.cn/large/6ff7504djw1f0kx3eh0dpj21kw11x7kw.jpg)
+<img src="http://ww3.sinaimg.cn/large/6ff7504djw1f0kx3eh0dpj21kw11x7kw.jpg" alt="" width="2048" height="1365" />
   
 
 
 <span class="s1">OPUE的视觉设计同学王涵，《监控类产品相关设计分享》结合自己的项目介绍了数据可视化在监控类产品中的应用，以及如何平衡项目中对数据展现方式和数据清晰度。</span>  
 
 
-![](http://ww4.sinaimg.cn/large/6ff7504djw1f0kx3dzclcj21kw11xdur.jpg)
+<img src="http://ww4.sinaimg.cn/large/6ff7504djw1f0kx3dzclcj21kw11xdur.jpg" alt="" width="2048" height="1365" />
   
 
 
 <span class="s1">提问环节</span>  
 
 
-![](http://ww3.sinaimg.cn/large/6ff7504djw1f0kx3e2qx2j21kw11xk89.jpg)
+<img src="http://ww3.sinaimg.cn/large/6ff7504djw1f0kx3e2qx2j21kw11xk89.jpg" alt="" width="2048" height="1365" />
   
 
 

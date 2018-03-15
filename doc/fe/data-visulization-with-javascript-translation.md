@@ -16,7 +16,7 @@ cover: "http://ww3.sinaimg.cn/large/633b942ejw1eyc6mbk5oxj20rs0gi77o.jpg"
 <span class="s1">数据可视化是弥补这一空缺的工具。</span>  
 
 
-![](http://ww1.sinaimg.cn/large/43b712ebjw1ewk9zru1ggj20d40audgh.jpg)
+<img src="http://ww1.sinaimg.cn/large/43b712ebjw1ewk9zru1ggj20d40audgh.jpg" alt="" width="472" height="390" />
 数据可视化的发展过程  
 
 
@@ -32,7 +32,7 @@ cover: "http://ww3.sinaimg.cn/large/633b942ejw1eyc6mbk5oxj20rs0gi77o.jpg"
 <span class="s1">如果你正在考虑是否投入时间和</span><span class="s2">/</span><span class="s1">或金钱在这本书上，你需要了解本书的编写哲学。在写这本书时，我尝试遵循四个主要的原则来保证这本书能提供有实用价值的指导。</span>  
 
 
-![](http://ww2.sinaimg.cn/large/43b712ebjw1ewka44v2z1j20b60adwes.jpg)
+<img src="http://ww2.sinaimg.cn/large/43b712ebjw1ewka44v2z1j20b60adwes.jpg" alt="" width="402" height="373" />
   
 
 
@@ -74,7 +74,7 @@ cover: "http://ww3.sinaimg.cn/large/633b942ejw1eyc6mbk5oxj20rs0gi77o.jpg"
 
 ## 本书内容
 
-![](http://ww4.sinaimg.cn/large/43b712ebjw1ewka8olfqij20ej0dogmt.jpg)
+<img src="http://ww4.sinaimg.cn/large/43b712ebjw1ewka8olfqij20ej0dogmt.jpg" alt="" width="523" height="492" />
   
 
 
@@ -186,7 +186,7 @@ Flotr2并不需要其它的JavaScript库（比如jQuery），但是它依赖HTML
 </head>
 <body>
 	<!-- Page Content Here -->
-	<!-- [if lt IE 9]><script src="js/excanvas.min.js"></script><![endif] -->
+	<!-- [if lt IE 9]><script src="js/excanvas.min.js"></script><<img width="375" height="257" src="http://ww3.sinaimg.cn/large/43b712ebjw1ewkbjgi4hyj20af075q34.jpg" alt="endif] -->
 	<script src="js/flotr2.min.js"></script>
 </body>
 </html>
@@ -276,7 +276,7 @@ window.onload = function () {
 因为flotr2并不需要jQuery，我们这里并没有用任何jQuery的简便方法。如果你的页面已经引用了jQuery，你可以使用jQuery事件和选择器来实现这段代码。下图是这段代码所绘制的图形：  
 
 
-![](http://ww3.sinaimg.cn/large/43b712ebjw1ewkbjgi4hyj20af075q34.jpg)
+![" width="375" height="257" />
   
 
 
@@ -308,7 +308,7 @@ Flotr.draw(document.getElementById("chart"), wins, {
 修改后的效果：  
 
 
-![](http://ww1.sinaimg.cn/large/43b712ebjw1ewkbokoffij20af06imxd.jpg)
+<img src="http://ww1.sinaimg.cn/large/43b712ebjw1ewkbokoffij20af06imxd.jpg" alt="" width="375" height="234" />
   
 
 
@@ -355,7 +355,7 @@ Flotr.draw(document.getElementById("chart"), wins, {
 现在我们的图形更加具有可读性了，如下图所示：  
 
 
-![](http://ww4.sinaimg.cn/large/43b712ebjw1ewkby3cln1j20af06gmxe.jpg)
+<img src="http://ww4.sinaimg.cn/large/43b712ebjw1ewkby3cln1j20af06gmxe.jpg" alt="" width="375" height="232" />
   
 
 
@@ -394,7 +394,7 @@ Flotr.draw(document.getElementById("chart"), wins, {
 效果如下图所示：  
 
 
-![](http://ww4.sinaimg.cn/large/43b712ebjw1ewkdb4w3t9j20af06cglo.jpg)
+<img src="http://ww4.sinaimg.cn/large/43b712ebjw1ewkdb4w3t9j20af06cglo.jpg" alt="" width="375" height="228" />
   
 
 
@@ -455,7 +455,7 @@ Flotr.draw(document.getElementById("chart"), wins, {
 如下图所见，一个微小的改变就可以完全改变柱状图的焦点。由原来的展示同一个队在不同时间点的数据变成比较不同的队在相同时间点的数据差异。这就是简单柱状图的多样性。  
 
 
-![](http://ww4.sinaimg.cn/large/43b712ebjw1ewkdj28ik2j20af06eglo.jpg)
+<img src="http://ww4.sinaimg.cn/large/43b712ebjw1ewkdj28ik2j20af06eglo.jpg" alt="" width="375" height="230" />
   
 
 

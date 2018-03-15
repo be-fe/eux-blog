@@ -21,7 +21,7 @@ cellspacing=0
 
 这些都已经以inline的形式加入到table里了，看起来很完美了，可是发出去以后windows下的outlook显示有白边：效果是这样的：
 
-![img](http://text-learn.qiniudn.com/92229A82923CC488CB77AD3C2F914195.JPG)
+<img src="http://text-learn.qiniudn.com/92229A82923CC488CB77AD3C2F914195.JPG" alt="img" width="1004" height="407" />
 
 我们一开始认为，那一定是IE浏览器的锅，于是用浏览器打开页面一看，表现也是有白边，加各种样式也去不掉，后来发现是代码间的换行导致的，于是很简单，我们随便弄个在线的html压缩工具把代码一压缩就行了，IE下的白边果然就没有了。
 

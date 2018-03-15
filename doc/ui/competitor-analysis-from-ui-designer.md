@@ -32,7 +32,7 @@ cover: "http://ww3.sinaimg.cn/large/633b942ejw1ezxmz7l4c4j20rs0gi78s.jpg"
    
 
 
-![](http://ww3.sinaimg.cn/large/633b942ejw1ezc2oavsqaj20dn0a7dh1.jpg)
+<img src="http://ww3.sinaimg.cn/large/633b942ejw1ezc2oavsqaj20dn0a7dh1.jpg" alt="" width="491" height="367" />
   
 
 
@@ -42,10 +42,10 @@ cover: "http://ww3.sinaimg.cn/large/633b942ejw1ezxmz7l4c4j20rs0gi78s.jpg"
 <span class="s1">从腾讯客服的首页和二级页面可以看出，腾讯客服，偏重解决问题，面向所有腾讯产品用户，高效解决问题，非论坛型产品。设计风格偏向qq空间，稍带质感。</span>  
 
 
-![](http://ww3.sinaimg.cn/large/633b942ejw1ezc2pizf9oj20fy0bat9r.jpg)
+<img src="http://ww3.sinaimg.cn/large/633b942ejw1ezc2pizf9oj20fy0bat9r.jpg" alt="" width="574" height="406" />
   
 
-![](http://ww1.sinaimg.cn/large/633b942ejw1ezc2qmxrbfj20e30a1q3v.jpg)
+<img src="http://ww1.sinaimg.cn/large/633b942ejw1ezc2qmxrbfj20e30a1q3v.jpg" alt="" width="507" height="361" />
   
 
 
@@ -55,27 +55,27 @@ cover: "http://ww3.sinaimg.cn/large/633b942ejw1ezxmz7l4c4j20rs0gi78s.jpg"
 <span class="s1">如图可以看出，Facebook Developer很大程度上是一个工具型产品，开放资源平台，提供官方的说明文档，面对开发者及专业型用户，但仍以非常易懂的方式向用户解释功能，图文及功能演示结合，功能说明开放明了，有很强的学习和交流性。视觉设计上与Facebook的整体设计风格也比较统一。</span>  
 
 
-![](http://ww2.sinaimg.cn/large/633b942ejw1ezc2rrzubvj20dr0c8dgx.jpg)
+<img src="http://ww2.sinaimg.cn/large/633b942ejw1ezc2rrzubvj20dr0c8dgx.jpg" alt="" width="495" height="440" />
   
 
-![](http://ww4.sinaimg.cn/large/633b942ejw1ezc2wu1753j20fa0fd3zn.jpg)
+<img src="http://ww4.sinaimg.cn/large/633b942ejw1ezc2wu1753j20fa0fd3zn.jpg" alt="" width="550" height="553" />
   
 
 
-![](http://ww2.sinaimg.cn/large/633b942ejw1ezc2zmeqhoj20de0e2gmw.jpg)
+<img src="http://ww2.sinaimg.cn/large/633b942ejw1ezc2zmeqhoj20de0e2gmw.jpg" alt="" width="482" height="506" />
   
 
 
 
 ## <span class="s1"><b>Google 产品论坛</b></span>
 
-<span class="s1">谷歌的产品论坛定位于“一站式”管理所有讨论内容，集思广益，面向所有产品使用者，首页以产品为导向并对产品线进行了分类，突出个人中心，用个人中心对主题的参与进行管理。整体的视觉风格与谷歌产品有很高的统一度，产品icon的处理识别度高。情感Level高，改版同时提供旧版入口，文案诙谐。<img class="aligncenter" src="http://ww1.sinaimg.cn/large/633b942ejw1ezc2w03wdfj20f90b3gmm.jpg" alt=""></span>  
+<span class="s1">谷歌的产品论坛定位于“一站式”管理所有讨论内容，集思广益，面向所有产品使用者，首页以产品为导向并对产品线进行了分类，突出个人中心，用个人中心对主题的参与进行管理。整体的视觉风格与谷歌产品有很高的统一度，产品icon的处理识别度高。情感Level高，改版同时提供旧版入口，文案诙谐。<img width="549" height="399" class="aligncenter" src="http://ww1.sinaimg.cn/large/633b942ejw1ezc2w03wdfj20f90b3gmm.jpg" alt=""></span>  
 
 
 <span class="s1">总结一下,</span><span class="s1">竞品分析在family产品论坛改版中的借鉴性。</span>  
 
 
-![](http://ww4.sinaimg.cn/large/633b942ejw1ezc317z53lj20de09f0td.jpg)
+<img src="http://ww4.sinaimg.cn/large/633b942ejw1ezc317z53lj20de09f0td.jpg" alt="" width="482" height="339" />
   
 
-![](http://ww4.sinaimg.cn/large/633b942ejw1ezc31ow4egj20de09dgmf.jpg)
+<img src="http://ww4.sinaimg.cn/large/633b942ejw1ezc31ow4egj20de09dgmf.jpg" alt="" width="482" height="337" />

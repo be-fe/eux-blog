@@ -62,9 +62,9 @@ selection 对象还有两个重要的方法， `addRange` 和 `removeAllRanges`�
 
 
 光标位置如图所示：  
-![](https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/a.png)
+<img src="https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/a.png" alt="" width="237" height="47" />
 打印出此时的 range 对象：  
-![](https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/b.png)  
+<img src="https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/b.png" alt="" width="762" height="132" />  
 
 其中属性含义如下：  
 * startContainer: range 范围的起始节点。
@@ -77,9 +77,9 @@ selection 对象还有两个重要的方法， `addRange` 和 `removeAllRanges`�
 这里我们的 startContainer , endContainer, commonAncestorContainer都为 `#text` 文本节点 '百度EUX团队'。因为光标在‘度‘字后面，所以startOffset 和 endOffset 均为 2。且没有产生拖蓝，所以 collapsed 的值为 true。我们再看一个产生拖蓝的例子：  
 
 光标位置如图所示：  
-![](https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/c.png) 
+<img src="https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/c.png" alt="" width="280" height="46" /> 
 打印出此时的 range 对象：  
-![](https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/d.png)  
+<img src="https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/d.png" alt="" width="763" height="133" />  
 
 由于产生了拖蓝 startContainer 和 endContainer 不再一致，collapsed 的值变为了 false。startOffset 和 endOffset 正好代表了拖蓝的起终位置。更多的效果大家自己尝试吧。  
 
@@ -109,7 +109,7 @@ range.setEnd(range.endContainer, textEle.length);
 
 我们加入一个定时器来查看效果： 
 
-![](https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/e.gif)  
+<img src="https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/e.gif" alt="" width="142" height="30" />  
 
 然而这种方式有个局限性，就是当光标所在的节点如果发生了变动。比如被替换或者加入新的节点了，那么再用这种方式就不会有任何效果。为此我们有时候需要一种强制更改光标位置手段, 简要代码如下(实际中你有可能还需要考虑自闭和元素等内容)：
 
@@ -149,15 +149,15 @@ function resetRange(startContainer, startOffset, endContainer, endOffset) {
 浏览器提供的富文本效果并不总是好用的，下面介绍几个遇到的问题。
 ### 回车换行
 当我们在编辑其中输入内容并回车换行继续输入后，可编辑框内容生成的节点和我们预期是不符的。  
-![](https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/f.png)   
-![](https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/a.png)    
+<img src="https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/f.png" alt="" width="296" height="56" />   
+<img src="https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/a.png" alt="" width="237" height="47" />    
 可以看到最先输入的文字没有被包裹起来，而换行产生的内容，包裹元素是 `<div>` 标签。为了能够让文字被 `<p>` 元素包裹起来。
 我们要在初始化的时候，向`<div>`默认插入`<p><br></p>` 元素(`<br>`标签用来占位，有内容输入后会自动删除)。这样以后每次回车产生的新内容都会被`<p>` 元素包裹起来(在可编辑状态下，回车换行产生的新结构会默认拷贝之前的内容，包裹节点，类名等各种内容)。  
 我们还需要监听 keyUp 事件下 `event.keyCode === 8` 删除键。当编辑器中内容全被清空后(delete键也会把`<p>`标签删除)，要重新加入`<p><br></p>`标签，并把光标定位在里面。   
 
 ### 插入 ul 和 ol 位置错误  
 当我们调用 `document.execCommand("insertUnorderedList", false, null)` 来插入一个列表的时候，新的列表会被插入`<p>`标签中。  
-![](https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/h.png)    
+<img src="https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/h.png" alt="" width="215" height="149" />    
 为此我们需要每次调用该命令前做一次修正，参考代码如下：
 
 
@@ -181,7 +181,7 @@ function adjustList() {
 
 ### 插入分割线    
 调用 `document.execCommand('insertHorizontalRule', false, null);` 会插入一个`<hr>`标签。然而产生的效果却是这样的：  
-![](https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/i.gif)  
+<img src="https://caelumtian.github.io/2017/08/21/%E5%88%A9%E7%94%A8javascript%E6%90%AD%E5%BB%BA%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/i.gif" alt="" width="191" height="60" />  
 光标和`<hr>`的效果一致了。为此要判断当前光标是否在 `<li>` 里面，如果是则在 `<hr>` 后面追加一个空的文本节点 `#text` 不是的话追加 `<p><br></p>`。然后将光标定位在里面，可用如下方式查找。
 
 

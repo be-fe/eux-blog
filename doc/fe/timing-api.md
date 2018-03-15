@@ -79,7 +79,7 @@ JS 对象（包括V8引擎内部对象）占用的内存
 
 ## performance.timing(时间)
 
-![image](http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/NavigationTiming/timing-overview.png?_=2670727)
+<img src="http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/NavigationTiming/timing-overview.png?_=2670727" alt="image" width="912" height="555" />
   
 
 

@@ -42,7 +42,7 @@ Riot.js 采用自定义标签的语法，每个自定义标签都可以看做是
 
 ## Riot.js 基本执行原理  
 一个riot自定义标签在日常开发中从源码到呈现在页面上主要分为三步：编译（一般利用官方自带编译工具）、注册（riot.tag()）和加载（riot.mount()），如下图所示：  
-![](https://caelumtian.github.io/2017/09/21/riot-js-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%901/a.png)    
+<img src="https://caelumtian.github.io/2017/09/21/riot-js-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%901/a.png" alt="" width="387" height="365" />    
 ### 编译  
 编译阶段的主要工作就是将riot语法写的.tag文件转换为可执行的.js文件，这部分主要靠编译器来完成。例如：  
 
@@ -184,7 +184,7 @@ riot 组件状态分为以下几个部分：
 * unmount：标签实例被从页面上卸载后   
 
 
-![](https://caelumtian.github.io/images/b.png)    
+<img src="https://caelumtian.github.io/images/b.png" alt="" width="675" height="848" />    
 
 riot.js 采用事件驱动的方式来进行通讯，我们可以采用如下函数来监听上面的事件，例如处理 update 事件：  
 
@@ -386,7 +386,7 @@ var demo = new Vue({
 
 代码很简单，单击按钮，为列表添加一条新数据。在组件挂载完毕后，为第一个 li 的 property 上面添加了 extraType 属性。列表更新后，再去访问这个 li 的 extraType 属性。运行结果如下：    
 
-![](https://caelumtian.github.io/2017/10/18/riot-js%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%902/b.png)   
+<img src="https://caelumtian.github.io/2017/10/18/riot-js%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%902/b.png" alt="" width="142" height="69" />   
 
 不出意料，可以正常访问到 li 的type属性。这说明了，在更新过程中，第一个 li 节点仅仅是 textContent 发生了改变而不是重新创建的。这样的结果得益于 virtual dom 算法，保证更新最小变动。同样的我们用 riot 来重写上面的代码。    
 
@@ -423,7 +423,7 @@ var demo = new Vue({
 
 查看运行结果：  
 
-![](https://caelumtian.github.io/2017/10/18/riot-js%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%902/c.png) 
+<img src="https://caelumtian.github.io/2017/10/18/riot-js%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%902/c.png" alt="" width="165" height="66" /> 
 
 extraType 找不到了，所有的 li 节点都被重新构建了。这里面发生了什么，查看源码 /tag/each.js。渲染逻辑代码如下：  
 
@@ -507,7 +507,7 @@ export default function _each(dom, parent, expr) {
 
 
 
-![](https://caelumtian.github.io/2017/10/18/riot-js%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%902/d.gif)   
+<img src="https://caelumtian.github.io/2017/10/18/riot-js%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%902/d.gif" alt="" width="178" height="72" />   
 
 
 ### 优化更新  

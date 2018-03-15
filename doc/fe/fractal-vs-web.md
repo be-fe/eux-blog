@@ -60,14 +60,14 @@ resize: function (S) {
 分形地垫也可以叫多边形地垫，即不断的绘制多边形。下图是一个具有代表性的分形地垫——sierpinki地垫。  
 
 
-![](http://ww3.sinaimg.cn/large/699ef9c0jw1ey52auxjvuj20ag09a74b.jpg)
+<img src="http://ww3.sinaimg.cn/large/699ef9c0jw1ey52auxjvuj20ag09a74b.jpg" alt="" width="376" height="334" />
   
 
 
 第1层  
 
 
-![](http://ww2.sinaimg.cn/large/699ef9c0jw1ey529t7tllj20af09574s.jpg)
+<img src="http://ww2.sinaimg.cn/large/699ef9c0jw1ey529t7tllj20af09574s.jpg" alt="" width="375" height="329" />
   
 
 
@@ -100,14 +100,14 @@ SIERPINSKI(level)
 利用同样的方法我们还可以画出其它的分形地垫：  
 
 
-![](http://ww1.sinaimg.cn/large/699ef9c0jw1ey52fzt7q1j20a709yt8q.jpg)
+<img src="http://ww1.sinaimg.cn/large/699ef9c0jw1ey52fzt7q1j20a709yt8q.jpg" alt="" width="367" height="358" />
   
 
 
 分形台阶  
 
 
-![](http://ww2.sinaimg.cn/large/699ef9c0jw1ey52kssmsvj20cs0bjgmh.jpg)
+<img src="http://ww2.sinaimg.cn/large/699ef9c0jw1ey52kssmsvj20cs0bjgmh.jpg" alt="" width="460" height="415" />
   
 
 
@@ -126,14 +126,14 @@ SIERPINSKI(level)
    
 
 
-![](http://ww3.sinaimg.cn/large/699ef9c0jw1ey52mjctbzj209s05odfn.jpg)
+<img src="http://ww3.sinaimg.cn/large/699ef9c0jw1ey52mjctbzj209s05odfn.jpg" alt="" width="352" height="204" />
   
 
 
 第1层  
 
 
-![](http://ww2.sinaimg.cn/large/699ef9c0jw1ey52m0wiipj20a0044wef.jpg)
+<img src="http://ww2.sinaimg.cn/large/699ef9c0jw1ey52m0wiipj20a0044wef.jpg" alt="" width="360" height="148" />
   
 
 
@@ -166,14 +166,14 @@ KOCH(level)
 利用同样的方法可以画出其它一些分形曲线：  
 
 
-![](http://ww1.sinaimg.cn/large/699ef9c0jw1ey52o1ioauj20ce07kaat.jpg)
+<img src="http://ww1.sinaimg.cn/large/699ef9c0jw1ey52o1ioauj20ce07kaat.jpg" alt="" width="446" height="272" />
   
 
 
 C曲线  
 
 
-![](http://ww3.sinaimg.cn/large/699ef9c0jw1ey52og2wwbj20a8069q30.jpg)
+<img src="http://ww3.sinaimg.cn/large/699ef9c0jw1ey52og2wwbj20a8069q30.jpg" alt="" width="368" height="225" />
   
 
 
@@ -183,8 +183,8 @@ C曲线
 将凹凸分形作为多边形的边即可画出koch雪花及星形图案：  
 
 
-![](http://ww2.sinaimg.cn/large/699ef9c0jw1ey52ou64dhj206c057aa0.jpg)
- ![](http://ww1.sinaimg.cn/large/699ef9c0jw1ey52phwmroj209y096aal.jpg)
+<img src="http://ww2.sinaimg.cn/large/699ef9c0jw1ey52ou64dhj206c057aa0.jpg" alt="" width="228" height="187" />
+ <img src="http://ww1.sinaimg.cn/large/699ef9c0jw1ey52phwmroj209y096aal.jpg" alt="" width="358" height="330" />
   
 
 
@@ -194,21 +194,21 @@ C曲线
 分形植物是一类较复杂的分形几何图形，下图是几个简单的分形植物图形，完全利用上文介绍的方法生成。也可以通过L系统等符号递归方法生成更复杂的分形植物图形，这里不再详细介绍。  
 
 
-![](http://ww4.sinaimg.cn/large/699ef9c0jw1ey52rewovij209007kq37.jpg)
+<img src="http://ww4.sinaimg.cn/large/699ef9c0jw1ey52rewovij209007kq37.jpg" alt="" width="324" height="272" />
   
 
 
 **分形藤条**  
 
 
-![](http://ww1.sinaimg.cn/large/699ef9c0jw1ey52rmkj5jj207j074aab.jpg)
+<img src="http://ww1.sinaimg.cn/large/699ef9c0jw1ey52rmkj5jj207j074aab.jpg" alt="" width="271" height="256" />
   
 
 
 **分形灌木**  
 
 
-![](http://ww2.sinaimg.cn/large/699ef9c0jw1ey52rvix9wj209h083t93.jpg)
+<img src="http://ww2.sinaimg.cn/large/699ef9c0jw1ey52rvix9wj209h083t93.jpg" alt="" width="341" height="291" />
   
 
 
@@ -256,7 +256,7 @@ yn  =  b × xn-1 + d × yn-1 + f
 CSS和Canvas中的transform方法都是通过变换矩阵来实现图形变形的。下图是canvas的transform函数文档，可以看到变换矩阵中的每个字母都有其几何上的意义。  
 
 
-![](http://ww2.sinaimg.cn/large/699ef9c0jw1ey52svao9aj20ie0hctaw.jpg)
+<img src="http://ww2.sinaimg.cn/large/699ef9c0jw1ey52svao9aj20ie0hctaw.jpg" alt="" width="662" height="624" />
   
 
 
@@ -314,31 +314,31 @@ var timer = setInterval(function() {
 **从三角形地垫转换到分形藤条：**  
 
 
-![](http://ww1.sinaimg.cn/large/699ef9c0jw1ey52thbyxrj20d10bzmy1.jpg)
- ![](http://ww1.sinaimg.cn/large/699ef9c0jw1ey52tvjek7j20d80axaar.jpg)
- ![](http://ww2.sinaimg.cn/large/699ef9c0jw1ey52ubsbqhj20ct0bedgg.jpg)
- ![](http://ww4.sinaimg.cn/large/699ef9c0jw1ey52umqc6sj20dl0cxab7.jpg)
+<img src="http://ww1.sinaimg.cn/large/699ef9c0jw1ey52thbyxrj20d10bzmy1.jpg" alt="" width="469" height="431" />
+ <img src="http://ww1.sinaimg.cn/large/699ef9c0jw1ey52tvjek7j20d80axaar.jpg" alt="" width="476" height="393" />
+ <img src="http://ww2.sinaimg.cn/large/699ef9c0jw1ey52ubsbqhj20ct0bedgg.jpg" alt="" width="461" height="410" />
+ <img src="http://ww4.sinaimg.cn/large/699ef9c0jw1ey52umqc6sj20dl0cxab7.jpg" alt="" width="489" height="465" />
   
 
 
 **从koch曲线转换到分形灌木：**  
 
 
-![](http://ww3.sinaimg.cn/large/699ef9c0jw1ey52uw03jtj208709ojrc.jpg)
- ![](http://ww3.sinaimg.cn/large/699ef9c0jw1ey52v7v36aj206x0ac0sp.jpg)
- ![](http://ww3.sinaimg.cn/large/699ef9c0jw1ey52vj5uarj206q09jt8q.jpg)
- ![](http://ww2.sinaimg.cn/large/699ef9c0jw1ey52vyebxfj207o09nmxd.jpg)
- ![](http://ww4.sinaimg.cn/large/699ef9c0jw1ey52w72pbuj208g09pjs2.jpg)
+<img src="http://ww3.sinaimg.cn/large/699ef9c0jw1ey52uw03jtj208709ojrc.jpg" alt="" width="295" height="348" />
+ <img src="http://ww3.sinaimg.cn/large/699ef9c0jw1ey52v7v36aj206x0ac0sp.jpg" alt="" width="249" height="372" />
+ <img src="http://ww3.sinaimg.cn/large/699ef9c0jw1ey52vj5uarj206q09jt8q.jpg" alt="" width="242" height="343" />
+ <img src="http://ww2.sinaimg.cn/large/699ef9c0jw1ey52vyebxfj207o09nmxd.jpg" alt="" width="276" height="347" />
+ <img src="http://ww4.sinaimg.cn/large/699ef9c0jw1ey52w72pbuj208g09pjs2.jpg" alt="" width="304" height="349" />
   
 
 
 **从台阶地垫转换到分形树：**  
 
 
-![](http://ww4.sinaimg.cn/large/699ef9c0jw1ey52xcvpltj2080083dfr.jpg)
- ![](http://ww2.sinaimg.cn/large/699ef9c0jw1ey52xjzpp0j207w07tdfx.jpg)
- ![](http://ww3.sinaimg.cn/large/699ef9c0jw1ey52xsfij9j209908vaak.jpg)
- ![](http://ww4.sinaimg.cn/large/699ef9c0jw1ey52y0waxlj20dm0bfabt.jpg)
+<img src="http://ww4.sinaimg.cn/large/699ef9c0jw1ey52xcvpltj2080083dfr.jpg" alt="" width="288" height="291" />
+ <img src="http://ww2.sinaimg.cn/large/699ef9c0jw1ey52xjzpp0j207w07tdfx.jpg" alt="" width="284" height="281" />
+ <img src="http://ww3.sinaimg.cn/large/699ef9c0jw1ey52xsfij9j209908vaak.jpg" alt="" width="333" height="319" />
+ <img src="http://ww4.sinaimg.cn/large/699ef9c0jw1ey52y0waxlj20dm0bfabt.jpg" alt="" width="490" height="411" />
   
 
 
@@ -379,21 +379,21 @@ for (var i = 0; i < n; i++) {
 代码中使用了两个变换M1和M2，对应控制参数p1和1—p1。迭代时我们生成随机数r并根据r的大小来决定使用M1还是M2来生成新点。下图是M1和M2绘制出的图形，通过不同的随机参数控制，可以画出形状完全不同的图形。也可以通过不断改变参数大小生成分形动画。  
 
 
-![](http://ww2.sinaimg.cn/large/699ef9c0jw1ey52yeac7sj20ee0e7dhh.jpg)
+<img src="http://ww2.sinaimg.cn/large/699ef9c0jw1ey52yeac7sj20ee0e7dhh.jpg" alt="" width="518" height="511" />
   
 
 
 **P1=0.5**  
 
 
-![](http://ww1.sinaimg.cn/large/699ef9c0jw1ey52yt9iivj20e80ebwgq.jpg)
+<img src="http://ww1.sinaimg.cn/large/699ef9c0jw1ey52yt9iivj20e80ebwgq.jpg" alt="" width="512" height="515" />
   
 
 
 **p1=0.8**  
 
 
-![](http://ww1.sinaimg.cn/large/699ef9c0jw1ey52z237gcj20dz0dbq4j.jpg)
+<img src="http://ww1.sinaimg.cn/large/699ef9c0jw1ey52z237gcj20dz0dbq4j.jpg" alt="" width="503" height="479" />
   
 
 
@@ -403,7 +403,7 @@ for (var i = 0; i < n; i++) {
 著名的巴恩斯利蕨（Barnsley Fern）就是用分形网球算法画的，顺便一提，迭代函数系统方法就是巴恩斯利提出的。  
 
 
-![](http://ww3.sinaimg.cn/large/699ef9c0jw1ey52zr8u4xj20870crmxz.jpg)
+<img src="http://ww3.sinaimg.cn/large/699ef9c0jw1ey52zr8u4xj20870crmxz.jpg" alt="" width="295" height="459" />
   
 
 
@@ -413,14 +413,14 @@ for (var i = 0; i < n; i++) {
 关于变换矩阵还有一个重要的定理：任意三点确定一个变换。即如果确定一个初始三角形，并且确定经过变换后，三角形的三个点的最终位置，用这六个点就可以求出对应的变换矩阵。可以很直观的看到巴恩斯利蕨的生成由五个三角形决定。其中红色三角形表示初始三角形；紫色的小三角形决定了叶子的茎；而两个蓝色的三角形决定了左右两片子叶；绿色的三角形将茎和两片子叶往上复制，形成整片叶子。  
 
 
-![](http://ww3.sinaimg.cn/large/699ef9c0jw1ey530hc13ij20a107gq3r.jpg)
+<img src="http://ww3.sinaimg.cn/large/699ef9c0jw1ey530hc13ij20a107gq3r.jpg" alt="" width="361" height="268" />
   
 
 
 利用这种方法你可以画出任何想要的图形，只要通过获取点坐标确定变换矩阵以及对应的控制随机参数。  
 
 
-![](http://ww3.sinaimg.cn/large/699ef9c0jw1ey52zgql1ij20e50bc75y.jpg)
+<img src="http://ww3.sinaimg.cn/large/699ef9c0jw1ey52zgql1ij20e50bc75y.jpg" alt="" width="509" height="408" />
   
 
 
@@ -436,16 +436,16 @@ for (var i = 0; i < n; i++) {
 如果在网上搜索分形的话，会出现许多像下面这样的图形，它们跟我们之前看到的分形图形差别很大，更加复杂而具有随机性。  
 
 
-![](http://ww1.sinaimg.cn/large/699ef9c0jw1ey530uzw54j20ds0dtzmm.jpg)
-![](http://ww3.sinaimg.cn/large/699ef9c0jw1ey5315rgwqj20dw0duq4k.jpg)
+<img src="http://ww1.sinaimg.cn/large/699ef9c0jw1ey530uzw54j20ds0dtzmm.jpg" alt="" width="496" height="497" />
+<img src="http://ww3.sinaimg.cn/large/699ef9c0jw1ey5315rgwqj20dw0duq4k.jpg" alt="" width="500" height="498" />
   
 
 
 **Julia集**  
 
 
-![](http://ww2.sinaimg.cn/large/699ef9c0jw1ey531f9t3gj20dx0duwf1.jpg)
-![](http://ww3.sinaimg.cn/large/699ef9c0jw1ey531p53a0j20dv0dudgk.jpg)
+<img src="http://ww2.sinaimg.cn/large/699ef9c0jw1ey531f9t3gj20dx0duwf1.jpg" alt="" width="501" height="498" />
+<img src="http://ww3.sinaimg.cn/large/699ef9c0jw1ey531p53a0j20dv0dudgk.jpg" alt="" width="499" height="498" />
   
 
 

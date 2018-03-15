@@ -86,9 +86,9 @@ ES5中的正则是不支持Unicode Property的，而ES6可以支持，这样我�
 
 注：String.fromCodePoint和String.prototype.codePointAt属于新的API，所有ES6+中新的API，都需要使用babel-polyfill，可以在项目中引用babel-polyfill，或在编译器中配置babel-plugin-transform-runtime.
 
-<img src="http://text-learn.qiniudn.com/65395a8351886b09951f5f917f676f03.png" style="width: 400px">
+<img width="1096" height="746" src="http://text-learn.qiniudn.com/65395a8351886b09951f5f917f676f03.png" style="width: 400px">
 
-<img src="http://text-learn.qiniudn.com/f9dc4bf38b9c437f4e159b091789beb4.png" width="400px">
+<img src="http://text-learn.qiniudn.com/f9dc4bf38b9c437f4e159b091789beb4.png" width="1008" height="836">
 
 
 

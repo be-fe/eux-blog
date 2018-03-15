@@ -5,7 +5,7 @@ datetime: 2015-11-13 08:00:00
 cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 ---
 
-![](http://ww3.sinaimg.cn/large/56f7b09ejw1exz9do2ohyj20m80et461.jpg)
+<img src="http://ww3.sinaimg.cn/large/56f7b09ejw1exz9do2ohyj20m80et461.jpg" alt="" width="800" height="533" />
   
 
 
@@ -21,11 +21,11 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 <span class="s1">小伙伴们还没来，但是咱们勤劳勇敢的小同学们已经开始布置会场了</span>  
 
 
-![](http://ww1.sinaimg.cn/large/56f7b09ejw1exz9jyavmcj20m80c9n26.jpg)
+<img src="http://ww1.sinaimg.cn/large/56f7b09ejw1exz9jyavmcj20m80c9n26.jpg" alt="" width="800" height="441" />
   
 
 
-![](http://ww3.sinaimg.cn/large/56f7b09ejw1exz9j5o03xj20m80etn0f.jpg)
+<img src="http://ww3.sinaimg.cn/large/56f7b09ejw1exz9j5o03xj20m80etn0f.jpg" alt="" width="800" height="533" />
   
 
 
@@ -41,14 +41,14 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 <span class="s1">到了17:00，小伙伴们终于到了会场 </span>  
 
 
-![](http://ww1.sinaimg.cn/large/56f7b09ejw1exz9q01cpij20xc0m84bs.jpg)
+<img src="http://ww1.sinaimg.cn/large/56f7b09ejw1exz9q01cpij20xc0m84bs.jpg" alt="" width="1200" height="800" />
   
 
 
 <span class="s1">大家按分组纷纷入座</span>  
 
 
-![](http://ww1.sinaimg.cn/large/56f7b09ejw1exzb83f3g5j20xc0m817b.jpg)
+<img src="http://ww1.sinaimg.cn/large/56f7b09ejw1exzb83f3g5j20xc0m817b.jpg" alt="" width="1200" height="800" />
   
 
 
@@ -58,14 +58,14 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 <span class="s1">请收下我的膝盖！！！</span>  
 
 
-![](http://ww2.sinaimg.cn/large/56f7b09ejw1exzb9oyyb6j20xc0m8dtk.jpg)
+<img src="http://ww2.sinaimg.cn/large/56f7b09ejw1exzb9oyyb6j20xc0m8dtk.jpg" alt="" width="1200" height="800" />
   
 
 
 最帅一组～简直是颜值担当  
 
 
-![](http://ww4.sinaimg.cn/large/56f7b09ejw1exzbawl5xyj20xc0m8k1u.jpg)
+<img src="http://ww4.sinaimg.cn/large/56f7b09ejw1exzbawl5xyj20xc0m8k1u.jpg" alt="" width="1200" height="800" />
   
 
 
@@ -81,7 +81,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 <span class="s1">接下来由组织者润胸和金晶介绍了一下茶话会的流程和游戏规则</span>  
 
 
-![](http://ww3.sinaimg.cn/large/56f7b09ejw1exzbbuwx0cj20xc0lg7fs.jpg)
+<img src="http://ww3.sinaimg.cn/large/56f7b09ejw1exzbbuwx0cj20xc0lg7fs.jpg" alt="" width="1200" height="772" />
   
 
 
@@ -100,7 +100,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 <span class="s1">等待有缘的可爱小天使来帮自己完成愿望</span>  
 
 
-![](http://ww4.sinaimg.cn/large/56f7b09ejw1exzbd02jqkj20xc0m8tjt.jpg)
+<img src="http://ww4.sinaimg.cn/large/56f7b09ejw1exzbd02jqkj20xc0m8tjt.jpg" alt="" width="1200" height="800" />
   
 
 
@@ -125,10 +125,10 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 <span class="s1">我们来回顾感受一下当时的热闹现场</span>  
 
 
-![](http://ww3.sinaimg.cn/large/56f7b09ejw1exzbe3vjaqj20xc0m8drh.jpg)
+<img src="http://ww3.sinaimg.cn/large/56f7b09ejw1exzbe3vjaqj20xc0m8drh.jpg" alt="" width="1200" height="800" />
   
 
-![](http://ww2.sinaimg.cn/large/56f7b09ejw1exzbdnonx3j20xc0m8ai7.jpg)
+<img src="http://ww2.sinaimg.cn/large/56f7b09ejw1exzbdnonx3j20xc0m8ai7.jpg" alt="" width="1200" height="800" />
   
 
 
@@ -138,21 +138,21 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 <span class="s1">于是就有了这个场面</span>  
 
 
-![](http://ww2.sinaimg.cn/large/56f7b09ejw1exzbesbt2gj20xc0m847t.jpg)
+<img src="http://ww2.sinaimg.cn/large/56f7b09ejw1exzbesbt2gj20xc0m847t.jpg" alt="" width="1200" height="800" />
   
 
 
 <span class="s1">或者这个场面</span>  
 
 
-![](http://ww2.sinaimg.cn/large/56f7b09ejw1exzbfh4jroj20xc0m8tg3.jpg)
+<img src="http://ww2.sinaimg.cn/large/56f7b09ejw1exzbfh4jroj20xc0m8tg3.jpg" alt="" width="1200" height="800" />
   
 
 
 <span class="s1">蓝厚 呢，画海报的小伙伴们就开始啦</span>  
 
 
-![](http://ww3.sinaimg.cn/large/56f7b09ejw1exzbg3mg3zj20xc1gzqk6.jpg)
+<img src="http://ww3.sinaimg.cn/large/56f7b09ejw1exzbg3mg3zj20xc1gzqk6.jpg" alt="" width="1200" height="1907" />
   
 
 
@@ -162,7 +162,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 <span class="s1">蓝厚就是showtime！～哦耶</span>  
 
 
-![](http://ww2.sinaimg.cn/large/56f7b09ejw1exzbgyrkw5j20xc0m8wkd.jpg)
+<img src="http://ww2.sinaimg.cn/large/56f7b09ejw1exzbgyrkw5j20xc0m8wkd.jpg" alt="" width="1200" height="800" />
   
 
 
@@ -172,7 +172,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 <span class="s1">讲的是唐伯虎穿越到现代，误打误撞进了百度参加面试的故事～</span>  
 
 
-![](http://ww1.sinaimg.cn/large/56f7b09ejw1exzbh78vctj20xc0lswij.jpg)
+<img src="http://ww1.sinaimg.cn/large/56f7b09ejw1exzbh78vctj20xc0lswij.jpg" alt="" width="1200" height="784" />
   
 
 
@@ -185,7 +185,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 <span class="s1">据不愿透露姓名的胡小姐回忆，这是一个会让她鸡皮都会起来的爱情故事</span>  
 
 
-![](http://ww3.sinaimg.cn/large/56f7b09ejw1exzbhj76tij20xc0m8aec.jpg)
+<img src="http://ww3.sinaimg.cn/large/56f7b09ejw1exzbhj76tij20xc0m8aec.jpg" alt="" width="1200" height="800" />
   
 
 
@@ -195,7 +195,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 <span class="s1">一个国王 三哥个儿子每个人都有一面很不好，国王就安排他们穿越到有不同锻炼的星球，锻炼他们，然后各自蜕变成一个更好的人</span>  
 
 
-![](http://ww1.sinaimg.cn/large/56f7b09ejw1exzbhu40ttj20xc0m879i.jpg)
+<img src="http://ww1.sinaimg.cn/large/56f7b09ejw1exzbhu40ttj20xc0m879i.jpg" alt="" width="1200" height="800" />
   
 
 
@@ -205,7 +205,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 <span class="s1">讲的是两组演员拿错剧本，演串场子的年度爆笑喜剧</span>  
 
 
-![](http://ww4.sinaimg.cn/large/56f7b09ejw1exzbi5caygj20xc0m80xb.jpg)
+<img src="http://ww4.sinaimg.cn/large/56f7b09ejw1exzbi5caygj20xc0m80xb.jpg" alt="" width="1200" height="800" />
   
 
 
@@ -221,7 +221,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 <span class="s1">蟹蟹～</span>  
 
 
-![](http://ww4.sinaimg.cn/large/56f7b09ejw1exzbmtpg8aj20xc0m878l.jpg)
+<img src="http://ww4.sinaimg.cn/large/56f7b09ejw1exzbmtpg8aj20xc0m878l.jpg" alt="" width="1200" height="800" />
   
 
 
@@ -234,7 +234,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 <span class="s1">指导大家如何从一个不会拍照的蓝盆友  上升为一个受尊敬受爱戴居家旅游不可或缺的蓝盆友</span>  
 
 
-![](http://ww3.sinaimg.cn/large/56f7b09ejw1exzbqzjpvsj20xc0m8tcu.jpg)
+<img src="http://ww3.sinaimg.cn/large/56f7b09ejw1exzbqzjpvsj20xc0m8tcu.jpg" alt="" width="1200" height="800" />
   
 
 
@@ -253,7 +253,7 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 <span class="s1">＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝</span>  
 
 
-![](http://ww1.sinaimg.cn/large/56f7b09ejw1exzc58s8zej20xc0m8tem.jpg)
+<img src="http://ww1.sinaimg.cn/large/56f7b09ejw1exzc58s8zej20xc0m8tem.jpg" alt="" width="1200" height="800" />
   
 
 

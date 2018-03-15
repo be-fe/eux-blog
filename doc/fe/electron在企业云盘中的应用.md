@@ -14,7 +14,7 @@ datetime: 2017-06-06 12:00:00
 - atom基于electron开发，以前叫atom-shell
 
 
-[![](http://ww1.sinaimg.cn/large/bdab2ccely1fjjannpuzoj216s0gg780.jpg)
+[<img src="http://ww1.sinaimg.cn/large/bdab2ccely1fjjannpuzoj216s0gg780.jpg" alt="" width="1540" height="592" />
 ](http://ww1.sinaimg.cn/large/bdab2ccely1fjjannpuzoj216s0gg780.jpg)  
 
 
@@ -127,7 +127,7 @@ renderProcess中的请求通过ipc通信方式使用nodejs的request模块来进
 
 4.打包过程中也需要配置下，否则mac中不生效  
 
-[![](http://ww1.sinaimg.cn/large/bdab2ccely1fjjapd8obnj20l406ead5.jpg)
+[<img src="http://ww1.sinaimg.cn/large/bdab2ccely1fjjapd8obnj20l406ead5.jpg" alt="" width="760" height="230" />
 ](http://ww1.sinaimg.cn/large/bdab2ccely1fjjapd8obnj20l406ead5.jpg)  
 
 
@@ -173,7 +173,7 @@ const contextMenu = Menu.buildFromTemplate([
 ])
 ```
 
-[![](http://ww1.sinaimg.cn/large/bdab2ccely1fjjapsyh6dj20c2072jt3.jpg)
+[<img src="http://ww1.sinaimg.cn/large/bdab2ccely1fjjapsyh6dj20c2072jt3.jpg" alt="" width="434" height="254" />
 ](http://ww1.sinaimg.cn/large/bdab2ccely1fjjapsyh6dj20c2072jt3.jpg)  
 
 
@@ -286,7 +286,7 @@ window采用nodejs的node-notifier模块
 
    - mac通过开发者账号生成,公司苹果开发者团队，可以通过权限申请加入，地址：[http://appdev.baidu.com/](http://appdev.baidu.com/)  
 
-[![](http://ww1.sinaimg.cn/large/bdab2ccely1fjjaqgp9f1j20do0amdit.jpg)
+[<img src="http://ww1.sinaimg.cn/large/bdab2ccely1fjjaqgp9f1j20do0amdit.jpg" alt="" width="492" height="382" />
 ](http://ww1.sinaimg.cn/large/bdab2ccely1fjjaqgp9f1j20do0amdit.jpg)
    - window证书  
 
@@ -297,10 +297,10 @@ ecloud.pfx,带秘钥的证书，具体可以参考 [如何生成pfx的证书](ht
 - 具体方案可以参考 [Auto-updating apps for Windows and OSX using Electron: The complete guide](https://medium.com/@svilen/auto-updating-apps-for-windows-and-osx-using-electron-the-complete-guide-4aa7a50b904c)
 - 自动更新提示如下  
 
-[![](http://ww1.sinaimg.cn/large/bdab2ccely1fjjaqw909ij21a20i0wkm.jpg)
+[<img src="http://ww1.sinaimg.cn/large/bdab2ccely1fjjaqw909ij21a20i0wkm.jpg" alt="" width="1658" height="648" />
 ](http://ww1.sinaimg.cn/large/bdab2ccely1fjjaqw909ij21a20i0wkm.jpg)  
 
-[![](http://ww1.sinaimg.cn/large/bdab2ccely1fjjar8dcv5j20k009c77w.jpg)
+[<img src="http://ww1.sinaimg.cn/large/bdab2ccely1fjjar8dcv5j20k009c77w.jpg" alt="" width="720" height="336" />
 ](http://ww1.sinaimg.cn/large/bdab2ccely1fjjar8dcv5j20k009c77w.jpg)
 - 遇到坑  
 
@@ -428,11 +428,11 @@ app.commandLine.appendSwitch('ppapi-flash-path', path.join(__dirname+'/plugins/'
 - 可以看到官方网站提供了mainProcess和renderProcess区分了接口，但是这两个api并不是完全独立的，renderProces提供的remote模块可以获取到mainProcess到所有的api，详细见接口 [接口文档](https://electron.atom.io/docs/api/remote/)
 - 企业云盘在mainProcess里面定义了整个app通用的全局变量：  
 
-[![](http://ww1.sinaimg.cn/large/bdab2ccely1fjjarqtk6ej20fe0ac0x4.jpg)
+[<img src="http://ww1.sinaimg.cn/large/bdab2ccely1fjjarqtk6ej20fe0ac0x4.jpg" alt="" width="554" height="372" />
 ](http://ww1.sinaimg.cn/large/bdab2ccely1fjjarqtk6ej20fe0ac0x4.jpg)
 - 虽然renderProcess中可以访问到mainProcess里面的全局变量，但是renderProcess里面修改并不会影响到mainPorcess里面的变量  
 
-[![](http://ww1.sinaimg.cn/large/bdab2ccely1fjjas3p2gkj2192076dm5.jpg)
+[<img src="http://ww1.sinaimg.cn/large/bdab2ccely1fjjas3p2gkj2192076dm5.jpg" alt="" width="1622" height="258" />
 ](http://ww1.sinaimg.cn/large/bdab2ccely1fjjas3p2gkj2192076dm5.jpg)
 
 
@@ -497,7 +497,7 @@ electron-builder 支持非常强大的配置，可以参考 [官网](https://git
     },
 ```
 
-[![](http://ww1.sinaimg.cn/large/bdab2ccely1fjjasih7h5j20k9049q51.jpg)
+[<img src="http://ww1.sinaimg.cn/large/bdab2ccely1fjjasih7h5j20k9049q51.jpg" alt="" width="729" height="153" />
 ](http://ww1.sinaimg.cn/large/bdab2ccely1fjjasih7h5j20k9049q51.jpg)  
 
 

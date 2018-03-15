@@ -13,7 +13,7 @@ cover: "http://ww1.sinaimg.cn/large/825c1e3bly1fiutxm1vybj20nj0dwgoy.jpg"
 <span class="md-line md-end-block"><span class=""><strong>&#x00A;</strong></span>是字符实体编号（16进制），可以用于处理XML中文本的换行。</span>  
 
 
-<span class="md-line md-end-block"><span class="md-image md-img-loaded" contenteditable="false" data-src="http://osclv9bvp.bkt.clouddn.com/F29839EEF975E532AE3DBA612349A7FC.png"><img src="http://osclv9bvp.bkt.clouddn.com/F29839EEF975E532AE3DBA612349A7FC.png" alt=""></span></span>  
+<span class="md-line md-end-block"><span class="md-image md-img-loaded" contenteditable="false" data-src="http://osclv9bvp.bkt.clouddn.com/F29839EEF975E532AE3DBA612349A7FC.png"><img width="639" height="1136" src="http://osclv9bvp.bkt.clouddn.com/F29839EEF975E532AE3DBA612349A7FC.png" alt=""></span></span>  
 
 
 <span class="md-line md-end-block">对应的正确代码在第9行（部分文字有修改）：</span>  

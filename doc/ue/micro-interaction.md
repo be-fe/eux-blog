@@ -19,7 +19,7 @@ cover: "http://ww2.sinaimg.cn/large/699ef9c0jw1ey6hhahy2sj20rs0gignf.jpg"
 **例1：私家车**  
 
 
-![](http://ww4.sinaimg.cn/large/699ef9c0jw1evxkvui62dj20o10d6my3.jpg)
+<img src="http://ww4.sinaimg.cn/large/699ef9c0jw1evxkvui62dj20o10d6my3.jpg" alt="" width="865" height="474" />
   
 
 
@@ -38,7 +38,7 @@ cover: "http://ww2.sinaimg.cn/large/699ef9c0jw1ey6hhahy2sj20rs0gignf.jpg"
 **例2：冰箱**  
 
 
-![](http://ww1.sinaimg.cn/large/699ef9c0gw1evxl3shhbhj20kn08kac2.jpg)
+<img src="http://ww1.sinaimg.cn/large/699ef9c0gw1evxl3shhbhj20kn08kac2.jpg" alt="" width="743" height="308" />
   
 
 
@@ -51,7 +51,7 @@ cover: "http://ww2.sinaimg.cn/large/699ef9c0jw1ey6hhahy2sj20rs0gignf.jpg"
 **例3：牙膏**  
 
 
-![](http://ww4.sinaimg.cn/large/699ef9c0gw1evxl61cegsj20jz0900tu.jpg)
+<img src="http://ww4.sinaimg.cn/large/699ef9c0gw1evxl61cegsj20jz0900tu.jpg" alt="" width="719" height="324" />
   
 
 
@@ -61,7 +61,7 @@ cover: "http://ww2.sinaimg.cn/large/699ef9c0jw1ey6hhahy2sj20rs0gignf.jpg"
 这两个牙膏是我们平时经常使用的两款牙膏，大家觉得这两款牙膏哪个更方便快捷好用？大家可能会选中右边这个。之前也看过一个研究，左面旋钮式拧开瓶盖时间大概是3s，右面按扣式的1s。尤其再早晨这样宝贵的时间，拧开拧上6s钟时间，没准我们就可以赶上地铁了，是吧？当然早晨刷牙的时候可能还睡眼悻悻，可能我们不能很准确的找到按扣式的开口方向，那我们怎么解决呢？  
 
 
-![](http://ww1.sinaimg.cn/large/699ef9c0gw1evxl7pr900j20m20dh0tx.jpg)
+<img src="http://ww1.sinaimg.cn/large/699ef9c0gw1evxl7pr900j20m20dh0tx.jpg" alt="" width="794" height="485" />
   
 
 
@@ -80,7 +80,7 @@ cover: "http://ww2.sinaimg.cn/large/699ef9c0jw1ey6hhahy2sj20rs0gignf.jpg"
 **例1：煮蛋器**  
 
 
-![](http://ww2.sinaimg.cn/large/699ef9c0gw1evxlcel6s6j20dq0dumyf.jpg)
+<img src="http://ww2.sinaimg.cn/large/699ef9c0gw1evxlcel6s6j20dq0dumyf.jpg" alt="" width="494" height="498" />
   
 
 
@@ -93,7 +93,7 @@ cover: "http://ww2.sinaimg.cn/large/699ef9c0jw1ey6hhahy2sj20rs0gignf.jpg"
 **例2：计算器**  
 
 
-![](http://ww2.sinaimg.cn/large/699ef9c0gw1evxlcsam46j20iy0dmt96.jpg)
+<img src="http://ww2.sinaimg.cn/large/699ef9c0gw1evxlcsam46j20iy0dmt96.jpg" alt="" width="682" height="490" />
   
 
 
@@ -112,7 +112,7 @@ cover: "http://ww2.sinaimg.cn/large/699ef9c0jw1ey6hhahy2sj20rs0gignf.jpg"
 手机关机的时候，闹钟是否要按时响？飞行模式的时候呢？手机静音的时候？  
 
 
-![](http://ww2.sinaimg.cn/large/699ef9c0gw1evxldava5vj20lj0dujru.jpg)
+<img src="http://ww2.sinaimg.cn/large/699ef9c0gw1evxldava5vj20lj0dujru.jpg" alt="" width="775" height="498" />
   
 
 
@@ -128,11 +128,11 @@ cover: "http://ww2.sinaimg.cn/large/699ef9c0jw1ey6hhahy2sj20rs0gignf.jpg"
 电脑静音的情况下，我在设置中点击试听，是应该播放声音还是不播放声音？  
 
 
-![](http://ww3.sinaimg.cn/large/699ef9c0gw1evxldqm4k2j20dq06i0tx.jpg)
+<img src="http://ww3.sinaimg.cn/large/699ef9c0gw1evxldqm4k2j20dq06i0tx.jpg" alt="" width="494" height="234" />
   
 
 
-![](http://ww1.sinaimg.cn/large/699ef9c0gw1evxleh8rg6j20gu05cglu.jpg)
+<img src="http://ww1.sinaimg.cn/large/699ef9c0gw1evxleh8rg6j20gu05cglu.jpg" alt="" width="606" height="192" />
   
 
 
@@ -148,7 +148,7 @@ cover: "http://ww2.sinaimg.cn/large/699ef9c0jw1ey6hhahy2sj20rs0gignf.jpg"
 
 ## 微交互设计构成
 
-![](http://ww4.sinaimg.cn/large/699ef9c0gw1evxlevfk12j20o003sdg7.jpg)
+<img src="http://ww4.sinaimg.cn/large/699ef9c0gw1evxlevfk12j20o003sdg7.jpg" alt="" width="864" height="136" />
   
 
 
@@ -182,22 +182,22 @@ cover: "http://ww2.sinaimg.cn/large/699ef9c0jw1ey6hhahy2sj20rs0gignf.jpg"
 不可见触发器——手势、头像、指纹识别等（移动设备上）；命令键或移动到屏幕一角。  
 
 
-![](http://ww4.sinaimg.cn/large/699ef9c0gw1evxlfcjz8vj207i03h3yb.jpg)
+<img src="http://ww4.sinaimg.cn/large/699ef9c0gw1evxlfcjz8vj207i03h3yb.jpg" alt="" width="270" height="125" />
   
 
 
-![](http://ww4.sinaimg.cn/large/699ef9c0gw1evxlfpqzogj209606wwen.jpg)
+<img src="http://ww4.sinaimg.cn/large/699ef9c0gw1evxlfpqzogj209606wwen.jpg" alt="" width="330" height="248" />
   
 
 
 **图10**  
 
 
-![](http://ww4.sinaimg.cn/large/699ef9c0gw1evxlgijd7cj20a3024dfs.jpg)
+<img src="http://ww4.sinaimg.cn/large/699ef9c0gw1evxlgijd7cj20a3024dfs.jpg" alt="" width="363" height="76" />
   
 
 
-![](http://ww2.sinaimg.cn/large/699ef9c0gw1evxlgtky29j20a30230sv.jpg)
+<img src="http://ww2.sinaimg.cn/large/699ef9c0gw1evxlgtky29j20a30230sv.jpg" alt="" width="363" height="75" />
   
 
 
@@ -219,7 +219,7 @@ cover: "http://ww2.sinaimg.cn/large/699ef9c0jw1ey6hhahy2sj20rs0gignf.jpg"
 即：动机+操作+目的  
 
 
-![](http://ww4.sinaimg.cn/large/699ef9c0gw1evxlhadtanj20900axmxc.jpg)
+<img src="http://ww4.sinaimg.cn/large/699ef9c0gw1evxlhadtanj20900axmxc.jpg" alt="" width="324" height="393" />
   
 
 
@@ -241,7 +241,7 @@ cover: "http://ww2.sinaimg.cn/large/699ef9c0jw1ey6hhahy2sj20rs0gignf.jpg"
 1.如何判断？——怎么用最少的反馈传达同样的信息？  
 
 
-![](http://ww4.sinaimg.cn/large/699ef9c0gw1evxlhnsyicj20fa0350ta.jpg)
+<img src="http://ww4.sinaimg.cn/large/699ef9c0gw1evxlhnsyicj20fa0350ta.jpg" alt="" width="550" height="113" />
   
 
 
@@ -279,7 +279,7 @@ cover: "http://ww2.sinaimg.cn/large/699ef9c0jw1ey6hhahy2sj20rs0gignf.jpg"
 - C强烈程度
 
 
-![](http://ww1.sinaimg.cn/large/699ef9c0gw1evxlkq7hjij20jz0jltar.jpg)
+<img src="http://ww1.sinaimg.cn/large/699ef9c0gw1evxlkq7hjij20jz0jltar.jpg" alt="" width="719" height="705" />
   
 
 
@@ -310,7 +310,7 @@ A.如果用户需要在不同模式之间切换，那就最好可以切换不同
 B.设置模式本身目的就是执行一种不常用的交互，可能会妨碍达到主要的目的。  
 
 
-![](http://ww2.sinaimg.cn/large/699ef9c0gw1evxma6oxdnj20hq057dgb.jpg)
+<img src="http://ww2.sinaimg.cn/large/699ef9c0gw1evxma6oxdnj20hq057dgb.jpg" alt="" width="638" height="187" />
   
 
 
@@ -320,7 +320,7 @@ B.设置模式本身目的就是执行一种不常用的交互，可能会妨碍
 **循环：确定微交互的速度和持续时间**  
 
 
-![](http://ww3.sinaimg.cn/large/699ef9c0gw1evxmanql7aj20e0071aan.jpg)
+<img src="http://ww3.sinaimg.cn/large/699ef9c0gw1evxmanql7aj20e0071aan.jpg" alt="" width="504" height="253" />
   
 
 

@@ -22,7 +22,7 @@ cover: "http://ww1.sinaimg.cn/large/633b942ejw1eyc2zav7jxj20rs0gigo2.jpg"
 },
 ```
 
-![](http://ww2.sinaimg.cn/large/43b712ebjw1ey33ussdiwj205g02aaa3.jpg)
+<img src="http://ww2.sinaimg.cn/large/43b712ebjw1ey33ussdiwj205g02aaa3.jpg" alt="" width="196" height="82" />
   
 
 
@@ -35,7 +35,7 @@ cover: "http://ww1.sinaimg.cn/large/633b942ejw1eyc2zav7jxj20rs0gigo2.jpg"
 <span class="s1"><b>2）地址栏中，如下图：（注意默认为隐藏，必须通过js调出）</b></span>  
 
 
-![](http://ww4.sinaimg.cn/large/43b712ebjw1ey33yrfudej2038010743.jpg)
+<img src="http://ww4.sinaimg.cn/large/43b712ebjw1ey33yrfudej2038010743.jpg" alt="" width="116" height="36" />
   
 
 
@@ -87,7 +87,7 @@ chrome.tabs.onUpdated.addListener(checkForValidUrl);
 <span class="s1"><b>2.桌面提醒，如下图：（注意是电脑桌面，而不是chrome中）</b></span>  
 
 
-![](http://ww1.sinaimg.cn/large/43b712ebjw1ey343se926j208r02b3yi.jpg)
+<img src="http://ww1.sinaimg.cn/large/43b712ebjw1ey343se926j208r02b3yi.jpg" alt="" width="315" height="83" />
   
 
 
@@ -126,7 +126,7 @@ var views = chrome.extension.getViews({type:"notification"});
 <span class="s1"><b>3.omnibox，可以基于地址栏扩展，如下图</b></span>  
 
 
-![](http://ww4.sinaimg.cn/large/43b712ebjw1ey347jb0twj20cb046gm6.jpg)
+<img src="http://ww4.sinaimg.cn/large/43b712ebjw1ey347jb0twj20cb046gm6.jpg" alt="" width="443" height="150" />
   
 
 
@@ -187,7 +187,7 @@ chrome.omnibox.onInputEntered.addListener(
 <span class="s1"><b>4.经常看到很多chrome插件都有可配置项，例如refer_control怎么做到的呢？效果如下图：</b></span>  
 
 
-![](http://ww4.sinaimg.cn/large/43b712ebjw1ey34cvmsajj20ad04gmxu.jpg)
+<img src="http://ww4.sinaimg.cn/large/43b712ebjw1ey34cvmsajj20ad04gmxu.jpg" alt="" width="373" height="160" />
   
 
 
@@ -212,7 +212,7 @@ chrome.omnibox.onInputEntered.addListener(
 <span class="s1"><b>5.覆盖已有的页面,效果如下图</b></span>  
 
 
-![](http://ww2.sinaimg.cn/large/43b712ebjw1ey34ehj0ouj20ca064gmd.jpg)
+<img src="http://ww2.sinaimg.cn/large/43b712ebjw1ey34ehj0ouj20ca064gmd.jpg" alt="" width="442" height="220" />
   
 
 
