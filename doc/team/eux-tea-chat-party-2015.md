@@ -8,7 +8,6 @@ cover: "http://ww4.sinaimg.cn/large/56f7b09ejw1exzcbe26exj20c306fq51.jpg"
 
 
 <img width="800" height="533" src="http://ww3.sinaimg.cn/large/56f7b09ejw1exz9do2ohyj20m80et461.jpg"/>
-  
 
 
 <span class="s1">10月29日，在这个普通又不普通的日子，咱们小伙伴欢聚一堂，热热闹闹的举办了一场别开生面的EUX茶话会</span>  
