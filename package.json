@@ -9,7 +9,7 @@
     "build": "picidae build -f --source-map",
     "getlinks": "./pre-treat/getBlogLinks.js > ./pre-treat/links.json && cp ./pre-treat/links.json ./templates/assets",
     "getmds": "npm run getlinks && ./pre-treat/getMdFromLink.js",
-    "precommit": "node -e \"console.log('正在为你计算markdown文本中的图片大小')\" && lint-staged"
+    "precommit": "node -e \"console.log('正在为你计算markdown文本中的图片大小')\" && lint-staged --debug"
   },
   "lint-staged": {
     "doc/**/*.md": [
