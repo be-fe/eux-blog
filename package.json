@@ -36,7 +36,7 @@
     "nodejieba": "^2.2.5",
     "picidae-tool-auto-keyword": "0.0.0",
     "picidae-tools": "^0.0.3",
-    "picidae-transformer-medium-image": "^1.0.3",
+    "picidae-transformer-medium-image": "^1.0.4",
     "react-document-title": "^2.0.3",
     "react-favicon": "0.0.13"
   }

@@ -34,11 +34,12 @@ module.exports = {
   //     gift
   //   })
   // }
+  port: 10000,
 
   transformers: [
     'picidae-transformer-medium-image?' + JSON.stringify({
       progressive: {
-        sizeOptions: { debug: true }
+        sizeOptions: { debug: true, devEnable: false }
       }
     })
   ]
