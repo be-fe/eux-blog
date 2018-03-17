@@ -13,7 +13,7 @@
   },
   "lint-staged": {
     "doc/**/*.md": [
-      "mimgs -o --",
+      "mimgs -o -l --",
       "git add"
     ]
   },
