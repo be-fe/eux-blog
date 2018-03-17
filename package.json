@@ -8,7 +8,14 @@
     "start": "picidae start",
     "build": "picidae build -f --source-map",
     "getlinks": "./pre-treat/getBlogLinks.js > ./pre-treat/links.json && cp ./pre-treat/links.json ./templates/assets",
-    "getmds": "npm run getlinks && ./pre-treat/getMdFromLink.js"
+    "getmds": "npm run getlinks && ./pre-treat/getMdFromLink.js",
+    "precommit": "node -e \"console.log('正在为你计算markdown文本中的图片大小')\" && lint-staged"
+  },
+  "lint-staged": {
+    "doc/**/*.md": [
+      "mimgs -q -s doc",
+      "git add"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -18,6 +25,9 @@
     "concat-stream": "^1.6.0",
     "del": "^3.0.0",
     "html-markdown": "^1.0.17",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "markdown-image-size": "^1.2.2",
     "mkdirp": "^0.5.1",
     "picidae": "^2.2.9"
   },
