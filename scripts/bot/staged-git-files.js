@@ -12,7 +12,7 @@ var sgf = function(filter, head, callback) {
   }
 
   function coreRun(head) {
-    var command = "git diff-index --name-status";
+    var command = "git diff --name-status";
 
     if (filter.indexOf('R') !== -1) {
       command += " -M";

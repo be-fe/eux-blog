@@ -5,10 +5,18 @@
  * @description 
  */
 
-module.exports = function formatMessage({ author, title, url }) {
-  return [
-    '【EUX Blog 提醒】',
-    `${author} 发布了文章《${title}》`,
-    `大家快来围观吧😀 >>> ${encodeURI(url)}`
-  ].join('\n')
+module.exports = {
+  TITLE: '【EUX Blog 提醒】',
+  detail({ author, title, url }) {
+    return [
+      `${author} 发布了文章《${title}》`,
+      `大家快来围观吧😀 >>> ${encodeURI(url)}`
+    ].join('\n')
+  },
+  simple({ author, title, url }) {
+    return [
+      `${author} 发布了文章《${title}》，围观地址：`,
+      `${encodeURI(url)}`
+    ].join('\n')
+  }
 }

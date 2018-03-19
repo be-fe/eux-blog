@@ -17,7 +17,7 @@ const {
 } = require('../../picidae.config')
 
 const getStagedFiles = require('./staged-git-files')
-const formatMessage = require('./formatMessage')
+const { detail, simple, TITLE } = require('./formatMessage')
 
 getStagedFiles.includeContent = true
 getStagedFiles.cwd = join(__dirname, '../..')
@@ -77,18 +77,28 @@ async function sendMessage(message) {
   process.env.CI && console.log(mdStatusList)
 
   const messageList = []
+  const format = function (change) {
+    if (mdStatusList.length > 1) {
+      return simple(change)
+    }
+    return detail(change)
+  }
   mdStatusList
-    .forEach(change => {
+    .some(change => {
+      if (messageList.length === 5) {
+        messageList.push('...')
+        return true
+      }
       switch (change.status) {
         case 'Added':
-          messageList.push(formatMessage(
+          messageList.push(detail(
             adaptorToMessage(change)
           ))
           break
         // case 'Copied':
         // case 'Deleted':
         case 'Modified':
-          messageList.push(formatMessage(
+          messageList.push(detail(
             adaptorToMessage(change)
           ))
           break
@@ -101,7 +111,5 @@ async function sendMessage(message) {
       }
     })
 
-  messageList.forEach(async message => {
-    await sendMessage(message)
-  })
+  await sendMessage([TITLE].concat(messageList).join('\n'))
 })()
