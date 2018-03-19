@@ -11,6 +11,7 @@ install:
 
 jobs:
   include:
+
     - stage: Github Pages
 #      allow_failure: true
       script: npm run build
