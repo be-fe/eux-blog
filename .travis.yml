@@ -14,10 +14,6 @@ install:
 
 jobs:
   include:
-    - stage: Robot
-      allow_failure: true
-      script: curl 'http://qy.im.baidu.com/msgt/api/sendMsgToGroup?access_token=de00428530d2ec16534c83f9818787f3' -d '{"to":1605096,"access_token":"de00428530d2ec16534c83f9818787f3","msg_type":"text","content":"啦啦啦"}'
-
 
     - stage: Github Pages
 #      allow_failure: true
@@ -32,3 +28,7 @@ jobs:
         target-branch: master
         repo: $GH_REF
       env: GH_REF=be-fe/be-fe.github.io
+
+    - stage: Robot
+      allow_failure: true
+      script: sh scripts/bot.sh
