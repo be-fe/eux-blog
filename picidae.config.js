@@ -39,7 +39,17 @@ module.exports = {
   transformers: [
     'picidae-transformer-medium-image?' + JSON.stringify({
       progressive: {
-        sizeOptions: { debug: true, devEnable: false }
+        sizeOptions: { debug: true, devEnable: false },
+        progressImageUrlGetter: function(url) {
+          var obj = require('url').parse(url)
+          if (obj.hostname === 'eux-blog-static.bj.bcebos.com') {
+            obj.pathname = obj.pathname += '@s_0,h_30,l_1,f_jpg,q_50'
+            var newUrl = require('url').format(obj)
+            return newUrl
+          }
+          var q = String.fromCharCode(63)
+          return 'http://23.106.151.229:8000/resize/' + encodeURIComponent(url) + q + 's=0.1'
+        }.toString()
       }
     })
   ]
