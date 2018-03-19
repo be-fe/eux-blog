@@ -11,7 +11,7 @@ module.exports = {
   theme: './theme',
   // publicPath: '/eux-blog/',
   // @todo
-  // host: 'http://eux.baidu.com/',
+  host: 'http://eux.baidu.com/',
   verbose: true,
   webpackConfigUpdater: function (config) {
     // config.module.loaders[2].include = [/\/node_modules\/picidae\//, nps.join(__dirname, '..')]
