@@ -91,23 +91,18 @@ async function sendMessage(message) {
       }
       switch (change.status) {
         case 'Added':
+        // case 'Modified':
           messageList.push(detail(
             adaptorToMessage(change)
           ))
           break
         // case 'Copied':
         // case 'Deleted':
-        case 'Modified':
-          messageList.push(detail(
-            adaptorToMessage(change)
-          ))
-          break
         // case 'Renamed':
         // case 'Type-Change':
         // // Type-Change (T) [i.e. regular file, symlink, submodule, etc.]
         // case 'Unmerged':
         // case 'Unknown':
-        //   break
       }
     })
 
