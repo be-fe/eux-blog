@@ -7,6 +7,9 @@ cache:
     - public
 
 install:
+  - echo $TRAVIS_COMMIT_RANGE
+  - echo $TRAVIS_COMMIT
+  - echo $TRAVIS_COMMIT_MESSAGE
   - npm install
 
 jobs:
