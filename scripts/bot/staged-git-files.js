@@ -23,22 +23,22 @@ var sgf = function(filter, head, callback) {
         callback(err || new Error(stderr));
       } else {
         old = stdout.trim()
-        try {
-          sgf.debug && console.log(
-            execSync('git config --local --unset-all core.quotepath')
-          )
-        } catch (ex) {
-          callback(ex)
-        }
-        run('git config --local --add core.quotepath false', function (err, stdout, stderr) {
+
+        run('git config --local --unset-all core.quotepath', function (err, stdout, stderr) {
           if (err || stderr) {
             callback(err || new Error(stderr));
           } else {
-            core(function () {
-              if (old) {
-                run('git config --local --replace-all core.quotepath ' + old, function (err, stdout, stderr) {
-                  if (err || stderr) {
-                    callback(err || new Error(stderr));
+            run('git config --local --add core.quotepath false', function (err, stdout, stderr) {
+              if (err || stderr) {
+                callback(err || new Error(stderr));
+              } else {
+                core(function () {
+                  if (old) {
+                    run('git config --local --replace-all core.quotepath ' + old, function (err, stdout, stderr) {
+                      if (err || stderr) {
+                        callback(err || new Error(stderr));
+                      }
+                    })
                   }
                 })
               }
