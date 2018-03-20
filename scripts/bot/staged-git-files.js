@@ -1,7 +1,11 @@
 // From https://github.com/mcwhittemore/staged-git-files/blob/master/index.js
 
 var spawn = require("child_process").spawn;
+var execSync = require("child_process").execSync;
 var fs = require("fs");
+
+// git config --local --get core.quotepath
+// git config --local --set core.quotepath false
 
 var sgf = function(filter, head, callback) {
 
@@ -10,23 +14,56 @@ var sgf = function(filter, head, callback) {
     head = null;
     filter = "ACDMRTUXB";
   }
+  var command = ''
 
   function coreRun(head) {
-    var command = "git diff --name-status";
-
-    if (filter.indexOf('R') !== -1) {
-      command += " -M";
-    }
-
-    command += " --diff-filter=" + filter + " " + head;
-
-    run(command, function(err, stdout, stderr) {
+    var old
+    run('git config --local --get core.quotepath', function (err, stdout, stderr) {
       if (err || stderr) {
         callback(err || new Error(stderr));
       } else {
-        callback(null, stdoutToResultsObject(stdout));
+        old = stdout.trim()
+        try {
+          execSync('git config --local --unset-all core.quotepath')
+        } catch (ex) {
+          callback(ex)
+        }
+        run('git config --local --add core.quotepath false', function (err, stdout, stderr) {
+          if (err || stderr) {
+            callback(err || new Error(stderr));
+          } else {
+            core(function () {
+              if (old) {
+                run('git config --local --replace-all core.quotepath ' + old, function (err, stdout, stderr) {
+                  if (err || stderr) {
+                    callback(err || new Error(stderr));
+                  }
+                })
+              }
+            })
+          }
+        })
       }
-    });
+    })
+
+    function core(after) {
+      command = "git diff --name-status";
+
+      if (filter.indexOf('R') !== -1) {
+        command += " -M";
+      }
+
+      command += " --diff-filter=" + filter + " " + head;
+
+      run(command, function(err, stdout, stderr) {
+        if (err || stderr) {
+          callback(err || new Error(stderr));
+        } else {
+          callback(null, stdoutToResultsObject(stdout));
+        }
+        after && after()
+      });
+    }
   }
 
   if (!head) {
@@ -97,7 +134,7 @@ var run = function(command, callback) {
   cmd.on("close", function(code){
     var err = null;
 
-    if(code!==0){
+    if(stderr && code!==0){
       err = new Error(stderr);
     }
 
@@ -148,7 +185,7 @@ var stdoutToResultsObject = function(stdout) {
     if (line != "") {
       var parts = line.split("\t");
       var result = {
-        filename: (parts[2] || parts[1]).replace(/^\"(.+)\"$/, '$1'),
+        filename: (parts[2] || parts[1])/*.replace(/^\"(.+)\"$/, '$1')*/,
         status: codeToStatus(parts[0])
       }
 

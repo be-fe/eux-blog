@@ -108,5 +108,7 @@ async function sendMessage(message) {
       }
     })
 
-  await sendMessage([TITLE].concat(messageList).join('\n'))
+  if (messageList.length) {
+    await sendMessage([TITLE].concat(messageList).join('\n'))
+  }
 })()
