@@ -44,7 +44,7 @@ export default class extends React.PureComponent {
       var self = this;
 
       var script_2 = document.createElement('script')
-      script_2.src = '//unpkg.com/valine/dist/Valine.min.js'
+      script_2.src = '//unpkg.com/valine@1.1.8-rc3/dist/Valine.min.js'
       script_2.async = true;
       (document.head || document.body).appendChild(script_2);
 
