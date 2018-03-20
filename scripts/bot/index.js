@@ -21,6 +21,7 @@ const { detail, simple, TITLE } = require('./formatMessage')
 
 getStagedFiles.includeContent = true
 getStagedFiles.cwd = join(__dirname, '../..')
+getStagedFiles.debug = true
 
 
 function adaptorToMessage({ content, filename }) {

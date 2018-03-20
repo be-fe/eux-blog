@@ -11,7 +11,6 @@ datetime: 2017-08-21 12:00:00
 - Make site better
 
 
-
 #### Chrome 内置抓包工具
 
 在浏览器地址栏输入**chrome://net-internals/#events**，即可打开自带的抓包工具。工具处于live状态，其他tab 页有请求刷新，列表会随之刷新请求的快照，点击快照可查看详细的请求信息，配合 network面板能看到一个完整的请求。  

@@ -24,7 +24,9 @@ var sgf = function(filter, head, callback) {
       } else {
         old = stdout.trim()
         try {
-          execSync('git config --local --unset-all core.quotepath')
+          sgf.debug && console.log(
+            execSync('git config --local --unset-all core.quotepath')
+          )
         } catch (ex) {
           callback(ex)
         }
