@@ -67,14 +67,16 @@ async function sendMessage(message) {
     // commit_a...commit_b
     process.env.TRAVIS_COMMIT_RANGE || 'HEAD'
   )
+  console.log(statusList.map(state => ({ filename: state.filename, status: state.status })))
   const mdStatusList = statusList
-    .filter(status => minimatch(status.filename, 'doc/**/*.{md,MD,markdown}', { matchBase: true }))
+    .filter(status => {
+      return minimatch(status.filename, 'doc/**/*.{md,MD,markdown}', { matchBase: true })
+    })
 
   if (!mdStatusList.length) {
     console.log('未发现改动的markdown文件')
     return
   }
-  process.env.CI && console.log(mdStatusList)
 
   const messageList = []
   const format = function (change) {

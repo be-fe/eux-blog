@@ -148,7 +148,7 @@ var stdoutToResultsObject = function(stdout) {
     if (line != "") {
       var parts = line.split("\t");
       var result = {
-        filename: parts[2] || parts[1],
+        filename: (parts[2] || parts[1]).replace(/^\"(.+)\"$/, '$1'),
         status: codeToStatus(parts[0])
       }
 
