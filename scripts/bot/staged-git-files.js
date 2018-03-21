@@ -3,6 +3,7 @@
 var spawn = require("child_process").spawn;
 var execSync = require("child_process").execSync;
 var fs = require("fs");
+var gitQuotePathDecode = require("./gitQuotePathDecode")
 
 // git config --local --get core.quotepath
 // git config --local --set core.quotepath false
@@ -17,55 +18,21 @@ var sgf = function(filter, head, callback) {
   var command = ''
 
   function coreRun(head) {
-    var old
-    run('git config --local --get core.quotepath', function (err, stdout, stderr) {
+    command = "git diff --name-status";
+
+    if (filter.indexOf('R') !== -1) {
+      command += " -M";
+    }
+
+    command += " --diff-filter=" + filter + " " + head;
+
+    run(command, function(err, stdout, stderr) {
       if (err || stderr) {
         callback(err || new Error(stderr));
       } else {
-        old = stdout.trim()
-
-        run('git config --local --unset-all core.quotepath', function (err, stdout, stderr) {
-          if (err || stderr) {
-            callback(err || new Error(stderr));
-          } else {
-            run('git config --local --add core.quotepath false', function (err, stdout, stderr) {
-              if (err || stderr) {
-                callback(err || new Error(stderr));
-              } else {
-                core(function () {
-                  if (old) {
-                    run('git config --local --replace-all core.quotepath ' + old, function (err, stdout, stderr) {
-                      if (err || stderr) {
-                        callback(err || new Error(stderr));
-                      }
-                    })
-                  }
-                })
-              }
-            })
-          }
-        })
+        callback(null, stdoutToResultsObject(stdout));
       }
-    })
-
-    function core(after) {
-      command = "git diff --name-status";
-
-      if (filter.indexOf('R') !== -1) {
-        command += " -M";
-      }
-
-      command += " --diff-filter=" + filter + " " + head;
-
-      run(command, function(err, stdout, stderr) {
-        if (err || stderr) {
-          callback(err || new Error(stderr));
-        } else {
-          callback(null, stdoutToResultsObject(stdout));
-        }
-        after && after()
-      });
-    }
+    });
   }
 
   if (!head) {
@@ -187,7 +154,7 @@ var stdoutToResultsObject = function(stdout) {
     if (line != "") {
       var parts = line.split("\t");
       var result = {
-        filename: (parts[2] || parts[1])/*.replace(/^\"(.+)\"$/, '$1')*/,
+        filename: gitQuotePathDecode(parts[2] || parts[1]),
         status: codeToStatus(parts[0])
       }
 
