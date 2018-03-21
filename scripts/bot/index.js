@@ -44,10 +44,10 @@ function adaptorToMessage({ content, filename }) {
 async function sendMessage(message) {
   try {
     const data = await promisify(cp.exec)(
-      'curl -s "http://qy.im.baidu.com/msgt/api/sendMsgToGroup?access_token=$ROBOT_TOKEN"' +
+      'curl -s "$ROBOT_REQUEST"' +
       ` -d ${JSON.stringify(
           JSON.stringify({
-            'to': 1605096,
+            'to': 1604670,
             'access_token': process.env.ROBOT_TOKEN,
             'msg_type': 'text',
             'content': message
@@ -93,8 +93,8 @@ async function sendMessage(message) {
         return true
       }
       switch (change.status) {
-        case 'Added':
-        // case 'Modified':
+        // case 'Added':
+        case 'Modified':
           messageList.push(detail(
             adaptorToMessage(change)
           ))
