@@ -8,37 +8,37 @@
 1. 浏览器输入url，浏览器发送请求到服务器，服务器将请求的HTML返回给浏览器。
 2. 浏览器下载完成HTML(Finish Loading HTML)之后，便开始从上到下解析。
 3. 解析的过程中碰到css和js外链（其实HTML的下载也是这个流程）都会执行以下过程：
-  1. **Send Request:表示给这个外链对应的服务器发送请求**
-  2. **Receive Response: 表示接收响应，这里是表示告诉浏览器可以开始从网络接收数据了**
-  3. **Receive Data:表示开始接收数据**
-  4. **Finish Loading: 表示已经完成下载数据。**
-  5. **Parse Stylesheet/Evaluate（默认情况下js下载完成之后执行Evaluate，css下载完成后会进行Parse Stylesheet）**
-4. 所有的css下载完成后Parse Stylesheet然后开始构建CSSOM
-5. DOM（文档对象模型）和 CSSOM（CSS对象模型）会合并生成一个渲染树(Render Tree)
-6. 根据渲染树的内容计算处各个节点在网页中的大小和位置（Layout，可以理解为“刻章”）
-7. 根据Layout绘制内容在浏览器上（Paint，可以理解为“盖章”）。
+    1. **`Send Request`:表示给这个外链对应的服务器发送请求**
+    2. **`Receive Response`: 表示接收响应，这里是表示告诉浏览器可以开始从网络接收数据了**
+    3. **`Receive Data`:表示开始接收数据**
+    4. **`Finish Loading`: 表示已经完成下载数据。**
+    5. **`Parse Stylesheet/Evaluate`（默认情况下js下载完成之后执行`Evaluate`，css下载完成后会进行`Parse Stylesheet`）**
+4. 所有的css下载完成后`Parse Stylesheet`然后开始构建CSSOM
+5. DOM（文档对象模型）和 CSSOM（CSS对象模型）会合并生成一个渲染树(`Render Tree`)
+6. 根据渲染树的内容计算处各个节点在网页中的大小和位置（`Layout`，可以理解为“刻章”）
+7. 根据Layout绘制内容在浏览器上（`Paint`，可以理解为“盖章”）。
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-1.jpg)
 
 ## 正题开始
-在最新版的Chrome的perfomance中是能直接看到First Paint这个时间点的，为了方便大家测试，我就直接拿谷歌这个示例页面来做演示: 
+在最新版的Chrome的`perfomance`中是能直接看到First Paint这个时间点的，为了方便大家测试，我就直接拿谷歌这个示例页面来做演示: 
 
 [测试页面](https://googlesamples.github.io/web-fundamentals/fundamentals/performance/critical-rendering-path/measure_crp_timing.html)
 
-用chrome打开上面链接，最好是隐身模式，防止插件乱入影响判断，按F12或者右键检查元素打开控制台先切换到Network选项,勾选禁用缓存(缓存也会影响到判断)：
+用chrome打开上面链接，最好是隐身模式，防止插件乱入影响判断，按F12或者右键检查元素打开控制台先切换到`Network`选项,勾选禁用缓存(缓存也会影响到判断)：
 ![1](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F1.png)
-切换到Perfomance，勾选Screenshots并点击红框进行页面分析（会自动停止的，不用点stop）：
+切换到`Perfomance`，勾选`Screenshots`并点击红框进行页面分析（会自动停止的，不用点stop）：
 ![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-2.jpg)
 分析完后可以看到如下结果：
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2.png)
-上图中的绿色的线就是当前页面第一次出现内容的时间点，可以将鼠标放到Main上面的Network中绿色的线附近可以看到在他之前页面空白，在他之后就有内容。
+上图中的绿色的线就是当前页面第一次出现内容的时间点，可以将鼠标放到`Main`上面的`Network`中绿色的线附近可以看到在他之前页面空白，在他之后就有内容。
 除了绿色的线还有蓝色以及红色的线，这里也解释一下：
 ![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-4.jpg)
 
-简单讲一下DOMContentLoaded、load的区别：
-1. DOMContentLoaded是HTML文档（包括CSS、JS）被加载以及解析完成之后触发（即 HTML-\>DOM的过程完成 ）
-2. load则是在页面的其他资源如图片、字体、音频、视频加载完成之后触发
-3. load事件一般在DOMContentLoaded之后才触发（也有可能在它之前哦）
+简单讲一下`DOMContentLoaded`、`load`的区别：
+1. `DOMContentLoaded`是HTML文档（包括CSS、JS）被加载以及解析完成之后触发（即 `HTML-\>DOM`的过程完成 ）
+2. `load`则是在页面的其他资源如图片、字体、音频、视频加载完成之后触发
+3. `load`事件一般在`DOMContentLoaded`之后才触发（也有可能在它之前哦）
 这个时候发现绿色虚线之前有一个浅绿色方块，相应的解释如下：
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-5.jpg)
@@ -47,11 +47,11 @@
 
 由图可以得出“浅绿色”代表的是**根据CSSOM计算样式并进行布局绘制**的过程，这段时间内浏览器做了一下事情：
 
-1. Recalculate Style:重新计算样式，确定DOM元素的样式规则（定规则）
-2. Layout:根据计算结果进行布局，确定元素的大小和位置（刻章）
-3. Update Layer Tree: 更新渲染层树
-4. Paint: 绘制，根据前面的Layer Tree绘制页面（位置、大小、颜色、边框、阴影等）（盖章）
-5. Composite Layers： 形成层，浏览器按照合理的顺序合并成一个图层然后输出到屏幕（给别人看）
+1. `Recalculate Style`:重新计算样式，确定DOM元素的样式规则（定规则）
+2. `Layout`:根据计算结果进行布局，确定元素的大小和位置（刻章）
+3. `Update Layer Tree`: 更新渲染层树
+4. `Paint`: 绘制，根据前面的Layer Tree绘制页面（位置、大小、颜色、边框、阴影等）（盖章）
+5. `Composite Layers`： 形成层，浏览器按照合理的顺序合并成一个图层然后输出到屏幕（给别人看）
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-8.jpg)
 
@@ -68,6 +68,7 @@
 5. **Update Layer Tree：更新渲染层树**
 6. **Paint:：绘制，根据前面的Layer Tree绘制页面（位置、大小、颜色、边框、阴影等）（盖章）**
 7. **Composite Layers：形成层，浏览器按照合理的顺序合并成一个图层然后输出到屏幕（给别人看）**
+
 但是现在还只是确定了First Paint的加载流程，也确定了他是在所有CSS执行完Parse Stylesheet之后才会触发，但是这还是不够准确啊，所以我找了一些CSS和JS的外链来测试，模板如下：
 ```html
 <!DOCTYPE html>
@@ -102,86 +103,88 @@
 ### 第一种情况：
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-41-44.jpg)
-
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-36-54.jpg)
 
 发现FP发生在最后（实心的蓝色线是按shift出来的，不是DOMContentLoaded）,现在还发现不了什么。
 ### 第二种情况：
 调换head中CSS和JS外链位置
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-43-44.jpg)
 
+![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-43-44.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-44-01.jpg)
+
 仍然发现不了什么
 ### 第三种情况
-把CSS放head，JS放</body>前
+把CSS放head，JS放`</body>`前
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-45-16.jpg)
-
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-45-26.jpg)
+
 发现FP竟然在蓝色和红色虚线前面出现，通过这点可以确定，FP还跟JS外链的位置有关，继续:
 ### 第四种情况：
-JS外链放head，CSS放</body>前
+JS外链放head，CSS放`</body>`前
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-48-00.jpg)
-
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-48-04.jpg)
+
 发现又跟第一二种情况一样了，所以这种用法是不可取的。
 ### 第五种情况：
-CSS和JS都放</body>前，且CSS紧贴在div后面，JS在CSS后面：
+CSS和JS都放`</body>`前，且CSS紧贴在div后面，JS在CSS后面：
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-52-52.jpg)
-
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-52-57.jpg)
+
 可以发现FP居然更快触发，但是我鼠标hover到绿色虚线后，仍然是白屏，只有等到CSS加载完成执行Parse Stylesheet之后才显示出内容（说明这种用法也不可取），难道body中的CSS也会影响？
 ### 第六种情况：
 掉换一下上面CSS和JS的位置：
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-55-50.jpg)
-
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-55-55.jpg)
+
 发现这次FP触发而且立马有内容，而等到CSS加载完成之后还会再重新渲染一次，嗯，看来body中的第一个JS脚本有猫腻，接下来的情况对他特殊照顾。
 ### 第七种情况：
 CSS放head中，JS放在div节点中间：
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-00-49.jpg)
-
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-00-55.jpg)
+
 哈哈，居然只渲染了12俩字，说明浏览器会渲染body中脚本之前的内容，那会是哪个脚本之前的内容呢？
 ### 第八种情况：
 在div之间都插入脚本
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-07-03.jpg)
 
+![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-07-03.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-06-52.jpg)
-看来浏览器会提前渲染body中第一个脚本前的内容，并且**第一脚本**（就这么叫他吧，O(∩_∩)O~~）还会在FP之后才执行。所以结合之前得出的结论，在CSSOM准备就绪之后，浏览器会提前渲染第一脚本前的内容，我们可以用第九种情况来验证，
+
+看来浏览器会提前渲染body中第一个脚本前的内容，并且**第一脚本**（就这么叫他吧，O(∩_∩)O~~）还会在FP之后才执行。所以结合之前得出的结论，在CSSOM准备就绪之后，浏览器会提前渲染第一脚本前的内容，我们可以用第九种情况来验证：
 ### 第九种情况：
 这种情况和上种没什么区别，只是增加了一个CSS，这个CSS中还会发出一个请求去加载其他CSS（通过@import url()的方式），所以CSS的加载时间很长。
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-19-44.jpg)
 
+![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-19-44.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-19-35.jpg)
+
 通过结果可以看出，123在CSS下载完成之后才渲染，而不是单独渲染一个1，所以FP必须得等到CSSOM准备就绪之后才会触发，否则即使有第一脚本在也没用。
 所以到这里，我们总算可以下结论了：
 **
 FP发生在body中第一个script脚本之前的CSS解析和JS执行完成之后。
 换句话说就是第一脚本之前的DOM和CSSOM准备就绪之后，便会着手渲染第一脚本前的内容。
 **
-但是...你以为到这里就结束了？其实不然：
+但是...你以为到这里就结束了？其实没有。
 ### 第十种情况：
 head中既有JS也有CSS，body中也有第一脚本存在：
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-34-55.jpg)
-
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-35-11.jpg)
+
 注意上图中的vue.js是在head中的，而后面的JS文件都在body中，而且，vue.js加载完成之后，body中的JS还没下载完成，这个时候我们调换一下vue.js和angular2.js的位置：
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-37-53.jpg)
-
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-37-46.jpg)
+
 看，这个时候又没有提前渲染了，123等到所有JS文件都执行完之后才渲染，这种情况除了验证了第九点的结论，还能补充我们的结论：
 **
 如果第一脚本前的JS和CSS加载完了，body中的脚本还未下载完成，那么浏览器就会利用构建好的局部CSSOM和DOM提前渲染第一脚本前的内容（触发FP）；
 如果第一脚本前的JS和CSS都还没下载完成，body中的脚本就已经下载完了，那么浏览器就会在所有JS脚本都执行完之后才触发FP。
 **
 ## 建议：
-* CSS放在head中，JS放在</body>前（如果在head必须放JS，也尽量减少他的大小，把大JS文件放</body>前）。
+* CSS放在head中，JS放在`</body>`前（如果在head必须放JS，也尽量减少他的大小，把大JS文件放`</body>`前）。
 * 减小head中CSS和JS大小（gzip)，
 * 优化head中的JS和CSS外链的网络情况，减少Stalled、TTFP和content download的时间。
 * 在第一脚本前使用骨架图，可以减少用户的白屏感知时间（对于使用JS插入模板来渲染的框架，建议将骨架图的路由生成逻辑单独提出来）
@@ -194,12 +197,13 @@ head中既有JS也有CSS，body中也有第一脚本存在：
 * 如果script之后紧跟几个link且script比这几个link的下载时间都长，那script执行完成之后link是按顺序执行。
 * RRDL：
     * R：send **R**equest，发送资源请求
-    *  R：receive **R**esponse，接收到服务端响应
+    * R：receive **R**esponse，接收到服务端响应
     * D：receive **D**ata，开始接受服务端数据(一个资源可能执行多次)
     * L：finish **L**oading，完成资源下载
 * 浏览器在RRDL的时候，在D（Receive data）这个步骤可能执行多次。
 * 浏览器会给HTML中的资源文件进行等级分类（Hightest/High/Meduim/Low/Lowest）,一般HTML文档自身、head中的CSS都是Hightest，head中JS一般是High，而图片一般是Low，而设置了async/defer的脚本一般是Low，gif图片一般是Lowest。
 * 下图中的资源文件浅色和深色第二个图画红框的位置是对应的
+
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-16-04-40.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-16-05-44.jpg)
 
