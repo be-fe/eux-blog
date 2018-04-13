@@ -55,21 +55,21 @@
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-8.jpg)
 
-那什么时候开始first paint呢?在浅绿色方块最前面的虚线往前看，发现在灰色虚线之前都会有一个步骤：就是**Parse Stylesheet**（调研了很多页面都是如此）
+那什么时候开始`First paint`呢?在浅绿色方块最前面的虚线往前看，发现在灰色虚线之前都会有一个步骤：就是**`Parse Stylesheet`**（调研了很多页面都是如此）
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-9.jpg)
 
 所以，First Paint的加载流程应该是这样：
 
 1. **所有的CSS（不包括JS动态插入的link）加载完成**
-2. **Parse Stylesheet：构建出CSSOM**
-3. **Recalculate Style：重新计算样式，确定DOM元素的样式规则（定规则）**
-4. **Layout：根据计算结果进行布局，确定元素的大小和位置（刻章）**
-5. **Update Layer Tree：更新渲染层树**
-6. **Paint:：绘制，根据前面的Layer Tree绘制页面（位置、大小、颜色、边框、阴影等）（盖章）**
-7. **Composite Layers：形成层，浏览器按照合理的顺序合并成一个图层然后输出到屏幕（给别人看）**
+2. **`Parse Stylesheet`：构建出CSSOM**
+3. **`Recalculate Style`：重新计算样式，确定DOM元素的样式规则（定规则）**
+4. **`Layout`：根据计算结果进行布局，确定元素的大小和位置（刻章）**
+5. **`Update Layer Tree`：更新渲染层树**
+6. **`Paint`：绘制，根据前面的Layer Tree绘制页面（位置、大小、颜色、边框、阴影等）（盖章）**
+7. **`Composite Layers`：形成层，浏览器按照合理的顺序合并成一个图层然后输出到屏幕（给别人看）**
 
-但是现在还只是确定了First Paint的加载流程，也确定了他是在所有CSS执行完Parse Stylesheet之后才会触发，但是这还是不够准确啊，所以我找了一些CSS和JS的外链来测试，模板如下：
+但是现在还只是确定了`First Paint`的加载流程，也确定了他是在所有CSS执行完`Parse Stylesheet`之后才会触发，但是这还是不够准确啊，所以我找了一些CSS和JS的外链来测试，模板如下：
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -81,8 +81,8 @@
     <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/vue/2.5.13/vue.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
     <script src="https://cdn.bootcss.com/react/16.4.0-alpha.0911da3/cjs/react.development.js"></script>
-    <script src="https://cdn.bootcss.com/vue/2.5.13/vue.js"></script>
     <script src="https://cdn.bootcss.com/angular.js/2.0.0-beta.17/angular2.js"></script>
 </head>
 <body>
@@ -105,43 +105,44 @@
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-41-44.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-36-54.jpg)
 
-发现FP发生在最后（实心的蓝色线是按shift出来的，不是DOMContentLoaded）,现在还发现不了什么。
+发现FP发生在最后（实心的蓝色线是按`shift`出来的，不是`DOMContentLoaded`）,现在还发现不了什么。
 ### 第二种情况：
-调换head中CSS和JS外链位置
+调换`head`中CSS和JS外链位置
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-43-44.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-44-01.jpg)
 
 仍然发现不了什么
 ### 第三种情况
-把CSS放head，JS放`</body>`前
+把CSS放`head`，JS放`</body>`前
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-45-16.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-45-26.jpg)
 
-发现FP竟然在蓝色和红色虚线前面出现，通过这点可以确定，FP还跟JS外链的位置有关，继续:
+发现`FP`竟然在蓝色和红色虚线前面出现，通过这点可以确定，`FP`还跟JS外链的位置有关，继续:
 ### 第四种情况：
-JS外链放head，CSS放`</body>`前
+JS外链放`head`，CSS放`</body>`前
+
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-48-00.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-48-04.jpg)
 
 发现又跟第一二种情况一样了，所以这种用法是不可取的。
 ### 第五种情况：
-CSS和JS都放`</body>`前，且CSS紧贴在div后面，JS在CSS后面：
+CSS和JS都放`</body>`前，且CSS紧贴在`div`后面，JS在CSS后面：
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-52-52.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-52-57.jpg)
 
-可以发现FP居然更快触发，但是我鼠标hover到绿色虚线后，仍然是白屏，只有等到CSS加载完成执行Parse Stylesheet之后才显示出内容（说明这种用法也不可取），难道body中的CSS也会影响？
+可以发现`FP`居然更快触发，但是我鼠标hover到绿色虚线后，仍然是白屏，只有等到CSS加载完成执行`Parse Stylesheet`之后才显示出内容（说明这种用法也不可取），难道body中的CSS也会影响？
 ### 第六种情况：
 掉换一下上面CSS和JS的位置：
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-55-50.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-55-55.jpg)
 
-发现这次FP触发而且立马有内容，而等到CSS加载完成之后还会再重新渲染一次，嗯，看来body中的第一个JS脚本有猫腻，接下来的情况对他特殊照顾。
+发现这次`FP`触发而且立马有内容，而等到CSS加载完成之后还会再重新渲染一次，嗯，看来body中的第一个JS脚本有猫腻，接下来的情况对他特殊照顾。
 ### 第七种情况：
-CSS放head中，JS放在div节点中间：
+CSS放`head`中，JS放在`div`节点中间：
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-00-49.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-00-55.jpg)
@@ -153,9 +154,9 @@ CSS放head中，JS放在div节点中间：
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-07-03.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-06-52.jpg)
 
-看来浏览器会提前渲染body中第一个脚本前的内容，并且**第一脚本**（就这么叫他吧，O(∩_∩)O~~）还会在FP之后才执行。所以结合之前得出的结论，在CSSOM准备就绪之后，浏览器会提前渲染第一脚本前的内容，我们可以用第九种情况来验证：
+看来浏览器会提前渲染`body`中第一个脚本前的内容，并且**第一脚本**（就这么叫他吧，O(∩_∩)O~~）还会在FP之后才执行。所以结合之前得出的结论，在CSSOM准备就绪之后，浏览器会提前渲染第一脚本前的内容，我们可以用第九种情况来验证：
 ### 第九种情况：
-这种情况和上种没什么区别，只是增加了一个CSS，这个CSS中还会发出一个请求去加载其他CSS（通过@import url()的方式），所以CSS的加载时间很长。
+这种情况和上种没什么区别，只是增加了一个CSS，这个CSS中还会发出一个请求去加载其他CSS（通过`@import url()`的方式），所以CSS的加载时间很长。
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-19-44.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-19-35.jpg)
@@ -164,44 +165,45 @@ CSS放head中，JS放在div节点中间：
 所以到这里，我们总算可以下结论了：
 
 **FP发生在body中第一个script脚本之前的CSS解析和JS执行完成之后。
-换句话说就是第一脚本之前的DOM和CSSOM准备就绪之后，便会着手渲染第一脚本前的内容。**
+换句话说就是第一脚本之前的`DOM`和`CSSOM`准备就绪之后，便会着手渲染第一脚本前的内容。**
 
 但是...你以为到这里就结束了？其实没有。
 ### 第十种情况：
-head中既有JS也有CSS，body中也有第一脚本存在：
+这种情况中，`head`中既有JS也有CSS，`body`中也有第一脚本存在：
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-34-55.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-35-11.jpg)
 
-注意上图中的vue.js是在head中的，而后面的JS文件都在body中，而且，vue.js加载完成之后，body中的JS还没下载完成，这个时候我们调换一下vue.js和angular2.js的位置：
+注意上图中的`vue.js`是在`head`中的，而后面的JS文件都在`body`中，而且，`vue.js`加载完成之后，`body`中的JS还没下载完成，这个时候我们调换一下`vue.js`和`angular2.js`的位置：
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-37-53.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-37-46.jpg)
 
 看，这个时候又没有提前渲染了，123等到所有JS文件都执行完之后才渲染，这种情况除了验证了第九点的结论，还能补充我们的结论：
 
-**如果第一脚本前的JS和CSS加载完了，body中的脚本还未下载完成，那么浏览器就会利用构建好的局部CSSOM和DOM提前渲染第一脚本前的内容（触发FP）；
-如果第一脚本前的JS和CSS都还没下载完成，body中的脚本就已经下载完了，那么浏览器就会在所有JS脚本都执行完之后才触发FP。**
+**如果第一脚本前的JS和CSS加载完了，`body`中的脚本还未下载完成，那么浏览器就会利用构建好的局部`CSSOM`和`DOM`提前渲染第一脚本前的内容（触发`FP`）；
+如果第一脚本前的JS和CSS都还没下载完成，`body`中的脚本就已经下载完了，那么浏览器就会在所有JS脚本都执行完之后才触发FP。**
 
 ## 建议：
 * CSS放在head中，JS放在`</body>`前（如果在head必须放JS，也尽量减少他的大小，把大JS文件放`</body>`前）。
-* 减小head中CSS和JS大小（gzip)，
-* 优化head中的JS和CSS外链的网络情况，减少Stalled、TTFP和content download的时间。
+* 减小head中CSS和JS大小（`gzip`[了解一下？](https://segmentfault.com/a/1190000012800222))，
+* 优化head中的JS和CSS外链的网络情况，减少`Stalled`、`TTFB`和`Content Download`的时间。
 * 在第一脚本前使用骨架图，可以减少用户的白屏感知时间（对于使用JS插入模板来渲染的框架，建议将骨架图的路由生成逻辑单独提出来）
 ## 科普一下
 
-* 浏览器会渲染局部CSSOM和DOM
-* 第一脚本前的CSS如果还会去加载字体文件，那么及时CSSOM和DOM构建完成触发FP，页面内容也会是空白，只有等到字体文件下载完成才会出现内容（这也是我们在打开一个加载了谷歌字体的网站会白屏很长时间的原因）。
-* 默认情况下，css是谁先加载完成谁先解析，但是JS即使先加载完成，也得按顺序执行。
-* link后面紧跟script，须先等link parse完成之后，script才会执行，即使script先下载完成。script后面紧跟link，也是一样，会等script执行完之后，link才会parse。
-* 如果script之后紧跟几个link且script比这几个link的下载时间都长，那script执行完成之后link是按顺序执行。
-* RRDL：
+* 浏览器会渲染局部`CSSOM`和`DOM`
+* 第一脚本前的CSS如果还会去加载字体文件，那么即使`CSSOM`和`DOM`构建完成触发`FP`，页面内容也会是空白，只有等到字体文件下载完成才会出现内容（这也是我们在打开一个加载了谷歌字体的网站会白屏很长时间的原因）。
+* 默认情况下，`css`是谁先加载完成谁先解析，但是`JS`即使先加载完成，也得按顺序执行。
+* `link`后面紧跟`script`，须先等`link parse`完成之后，`script`才会执行，即使`script`先下载完成。`script`后面紧跟`link`，也是一样，会等`script`执行完之后，`link`才会`parse`。
+* 如果`script`之后紧跟几个`link`且`script`比这几个`link`的下载时间都长，那`script`执行完成之后`link`是按顺序执行。
+* `RRDL`：
     * R：send **R**equest，发送资源请求
     * R：receive **R**esponse，接收到服务端响应
     * D：receive **D**ata，开始接受服务端数据(一个资源可能执行多次)
     * L：finish **L**oading，完成资源下载
-* 浏览器在RRDL的时候，在D（Receive data）这个步骤可能执行多次。
-* 浏览器会给HTML中的资源文件进行等级分类（Hightest/High/Meduim/Low/Lowest）,一般HTML文档自身、head中的CSS都是Hightest，head中JS一般是High，而图片一般是Low，而设置了async/defer的脚本一般是Low，gif图片一般是Lowest。
+* 浏览器在`RRDL`的时候，在`D（Receive data）`这个步骤可能执行多次。
+* `TTFB`:`Time To First Byte`，第一个字节返回的时间，这个是对应`send Request`到`receive Response`这段时间。
+* 浏览器会给HTML中的资源文件进行等级分类（`Hightest/High/Meduim/Low/Lowest`）,一般`HTML`文档自身、`head`中的CSS都是`Hightest`，`head`中JS一般是`High`，而图片一般是`Low`，而设置了`async/defer`的脚本一般是`Low`，`gif`图片一般是`Lowest`。
 * 下图中的资源文件浅色和深色第二个图画红框的位置是对应的
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-16-04-40.jpg)
