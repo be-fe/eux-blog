@@ -36,7 +36,7 @@
 ![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-4.jpg)
 
 简单讲一下`DOMContentLoaded`、`load`的区别：
-1. `DOMContentLoaded`是HTML文档（包括CSS、JS）被加载以及解析完成之后触发（即 `HTML-\>DOM`的过程完成 ）
+1. `DOMContentLoaded`是HTML文档（包括CSS、JS）被加载以及解析完成之后触发（即 `HTML->DOM`的过程完成 ）
 2. `load`则是在页面的其他资源如图片、字体、音频、视频加载完成之后触发
 3. `load`事件一般在`DOMContentLoaded`之后才触发（也有可能在它之前哦）
 这个时候发现绿色虚线之前有一个浅绿色方块，相应的解释如下：
