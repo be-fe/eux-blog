@@ -55,7 +55,7 @@
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-8.jpg)
 
-那什么时候开始`First paint`呢?在浅绿色方块最前面的虚线往前看，发现在灰色虚线之前都会有一个步骤：就是**`Parse Stylesheet`**（调研了很多页面都是如此）
+那什么时候开始`First paint`呢?在浅绿色方块最前面的虚线往前看，发现在灰色虚线之前都会有一个步骤：就是`Parse Stylesheet`（调研了很多页面都是如此）
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-9.jpg)
 
@@ -161,7 +161,7 @@ CSS放`head`中，JS放在`div`节点中间：
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-19-44.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-19-35.jpg)
 
-通过结果可以看出，123在CSS下载完成之后才渲染，而不是单独渲染一个1，所以FP必须得等到CSSOM准备就绪之后才会触发，否则即使有第一脚本在也没用。
+通过结果可以看出，123在CSS下载完成之后才渲染，而不是单独渲染一个1，所以`FP`必须得等到`CSSOM`准备就绪之后才会触发，否则即使有第一脚本在也没用。
 所以到这里，我们总算可以下结论了：
 
 **FP发生在body中第一个script脚本之前的CSS解析和JS执行完成之后。
@@ -204,7 +204,7 @@ CSS放`head`中，JS放在`div`节点中间：
 * 浏览器在`RRDL`的时候，在`D（Receive data）`这个步骤可能执行多次。
 * `TTFB`:`Time To First Byte`，第一个字节返回的时间，这个是对应`send Request`到`receive Response`这段时间。
 * 浏览器会给HTML中的资源文件进行等级分类（`Hightest/High/Meduim/Low/Lowest`）,一般`HTML`文档自身、`head`中的CSS都是`Hightest`，`head`中JS一般是`High`，而图片一般是`Low`，而设置了`async/defer`的脚本一般是`Low`，`gif`图片一般是`Lowest`。
-* 下图中的资源文件浅色和深色第二个图画红框的位置是对应的
+* 下图中的资源文件浅色和深色和第二个图画红框的位置是对应的
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-16-04-40.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-16-05-44.jpg)
