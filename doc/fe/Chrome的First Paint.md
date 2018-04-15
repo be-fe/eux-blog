@@ -212,5 +212,3 @@ CSS放`head`中，JS放在`div`节点中间：
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-16-04-40.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-16-05-44.jpg)
-
-
