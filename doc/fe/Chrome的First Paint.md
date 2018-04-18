@@ -29,8 +29,7 @@ cover: ""
 ## 正题开始
 在最新版的Chrome的`perfomance`中是能直接看到First Paint这个时间点的，为了方便大家测试，我就直接拿谷歌这个示例页面来做演示: 
 
-[测试页面]
-(https://googlesamples.github.io/web-fundamentals/fundamentals/performance/critical-rendering-path/measure_crp_timing.html)
+[测试页面](https://googlesamples.github.io/web-fundamentals/fundamentals/performance/critical-rendering-path/measure_crp_timing.html)
 
 用chrome打开上面链接，最好是隐身模式，防止插件乱入影响判断，按F12或者右键检查元素打开控制台先切换到`Network`选项,勾选禁用缓存(缓存也会影响到判断)：
 
@@ -57,7 +56,7 @@ cover: ""
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-5.jpg)
 
-![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-6.jpg)![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-7.jpg)
+![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-6.jpg)
 
 由图可以得出“浅绿色”代表的是**根据CSSOM计算样式并进行布局绘制**的过程，这段时间内浏览器做了一下事情：
 
