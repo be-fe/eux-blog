@@ -1,3 +1,9 @@
+---
+title: "Chrome的First Paint"
+author: "洪闰辉"
+datetime: "2018-4-15"
+cover: ""
+---
 ## 前言
 
 > First paint 直译过来的意思就是浏览器第一次渲染(paint)，在First paint之前是白屏，在这个时间点之后用户就能看到（部分）页面内容。
@@ -23,16 +29,24 @@
 ## 正题开始
 在最新版的Chrome的`perfomance`中是能直接看到First Paint这个时间点的，为了方便大家测试，我就直接拿谷歌这个示例页面来做演示: 
 
-[测试页面](https://googlesamples.github.io/web-fundamentals/fundamentals/performance/critical-rendering-path/measure_crp_timing.html)
+[测试页面]
+(https://googlesamples.github.io/web-fundamentals/fundamentals/performance/critical-rendering-path/measure_crp_timing.html)
 
 用chrome打开上面链接，最好是隐身模式，防止插件乱入影响判断，按F12或者右键检查元素打开控制台先切换到`Network`选项,勾选禁用缓存(缓存也会影响到判断)：
+
 ![1](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F1.png)
+
 切换到`Perfomance`，勾选`Screenshots`并点击红框进行页面分析（会自动停止的，不用点stop）：
+
 ![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-2.jpg)
+
 分析完后可以看到如下结果：
+
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2.png)
+
 上图中的绿色的线就是当前页面第一次出现内容的时间点，可以将鼠标放到`Main`上面的`Network`中绿色的线附近可以看到在他之前页面空白，在他之后就有内容。
 除了绿色的线还有蓝色以及红色的线，这里也解释一下：
+
 ![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-4.jpg)
 
 简单讲一下`DOMContentLoaded`、`load`的区别：
@@ -61,7 +75,7 @@
 
 所以，First Paint的加载流程应该是这样：
 
-1. **所有的CSS（不包括JS动态插入的link）加载完成**
+1. **所有的CSS加载完成**
 2. **`Parse Stylesheet`：构建出CSSOM**
 3. **`Recalculate Style`：重新计算样式，确定DOM元素的样式规则（定规则）**
 4. **`Layout`：根据计算结果进行布局，确定元素的大小和位置（刻章）**
@@ -70,6 +84,7 @@
 7. **`Composite Layers`：形成层，浏览器按照合理的顺序合并成一个图层然后输出到屏幕（给别人看）**
 
 但是现在还只是确定了`First Paint`的加载流程，也确定了他是在所有CSS执行完`Parse Stylesheet`之后才会触发，但是这还是不够准确啊，所以我找了一些CSS和JS的外链来测试，模板如下：
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -99,6 +114,7 @@
 </html>
 
 ```
+
 我们通过改变上面模板里的外链顺序来探究：
 ### 第一种情况：
 
@@ -133,7 +149,7 @@ CSS和JS都放`</body>`前，且CSS紧贴在`div`后面，JS在CSS后面：
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-52-52.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-52-57.jpg)
 
-可以发现`FP`居然更快触发，但是我鼠标hover到绿色虚线后，仍然是白屏，只有等到CSS加载完成执行`Parse Stylesheet`之后才显示出内容（说明这种用法也不可取），难道body中的CSS也会影响？
+可以发现`FP`居然更快触发，**但是我鼠标hover到绿色虚线后，仍然是白屏，只有等到CSS加载完成执行`Parse Stylesheet`之后才显示出内容**（说明这种用法也不可取），难道body中的CSS也会影响？
 ### 第六种情况：
 掉换一下上面CSS和JS的位置：
 
@@ -154,7 +170,7 @@ CSS放`head`中，JS放在`div`节点中间：
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-07-03.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-06-52.jpg)
 
-看来浏览器会提前渲染`body`中第一个脚本前的内容，并且**第一脚本**（就这么叫他吧，O(∩_∩)O~~）还会在FP之后才执行。所以结合之前得出的结论，在CSSOM准备就绪之后，浏览器会提前渲染第一脚本前的内容，我们可以用第九种情况来验证：
+看来浏览器会提前渲染`body`中第一个脚本前的内容（`我们就把body中的第一个外链脚本叫做【第一脚本】吧`），并且**第一脚本**还会在FP之后才执行。所以结合之前得出的结论，在CSSOM准备就绪之后，浏览器会提前渲染第一脚本前的内容，我们可以用第九种情况来验证：
 ### 第九种情况：
 这种情况和上种没什么区别，只是增加了一个CSS，这个CSS中还会发出一个请求去加载其他CSS（通过`@import url()`的方式），所以CSS的加载时间很长。
 
@@ -197,8 +213,8 @@ CSS放`head`中，JS放在`div`节点中间：
 * `First Paint`和`DOMContentLoaded`、`load`事件的触发没有绝对的关系，`FP`可能在他们之前，也可能在他们之后，这取决于影响他们触发的因素的各自时间（`FP`：`第一脚本`前`CSSOM`和`DOM`的构建速度；`DOMContentLoaded`：`HTML`文档自身以及`HTML`文档中所有`JS`、`CSS`的加载速度；`load`：图片、音频、视频、字体的加载速度）。
 * `DOMContentLoaded`和`load`事件也没有强制的先后顺序，`DOMContentLoaded`一般在`load`事件之前触发，但也可能在`load`事件之后触发。
 * `第一脚本`前的CSS如果还会去加载字体文件，那么即使`CSSOM`和`DOM`构建完成触发`FP`，页面内容也会是空白，只有等到字体文件下载完成才会出现内容（这也是我们在打开一个加载了谷歌字体的网站会白屏很长时间的原因）。
-* 默认情况下，`css`是谁先加载完成谁先解析，但是`JS`即使先加载完成，也得按顺序执行。
-* `link`后面紧跟`script`，须先等`link parse`完成之后，`script`才会执行，即使`script`先下载完成。`script`后面紧跟`link`，也是一样，会等`script`执行完之后，`link`才会`parse`。
+* 默认情况下，`CSS`外链之间是谁先加载完成谁先解析，但是`JS`外链之间即使先加载完成，也得按顺序执行。
+* `link`外链后面紧跟`script`外链，须先等`link parse`完成之后，`script`才会执行，即使`script`先下载完成。`script`后面紧跟`link`，也是一样，会等`script`执行完之后，`link`才会`parse`。
 * 如果`script`之后紧跟几个`link`且`script`比这几个`link`的下载时间都长，那`script`执行完成之后`link`是按顺序执行。
 * `RRDL`：
     * R：send **R**equest，发送资源请求
@@ -208,7 +224,14 @@ CSS放`head`中，JS放在`div`节点中间：
 * 浏览器在`RRDL`的时候，在`D（Receive data）`这个步骤可能执行多次。
 * `TTFB`:`Time To First Byte`，第一个字节返回的时间，这个是对应`send Request`到`receive Response`这段时间。
 * 浏览器会给HTML中的资源文件进行等级分类（`Hightest/High/Meduim/Low/Lowest`）,一般`HTML`文档自身、`head`中的CSS都是`Hightest`，`head`中JS一般是`High`，而图片一般是`Low`，而设置了`async/defer`的脚本一般是`Low`，`gif`图片一般是`Lowest`。
-* 下图中的资源文件浅色和深色和第二个图画红框的位置是对应的
+* 下图中的资源文件浅色和深色和第二个图画红框的位置是对应的（不信自己计算一下对应的时间）
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-16-04-40.jpg)
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-16-05-44.jpg)
+
+参考链接：
+
+1. [分析关键渲染路径性能](https://developers.google.cn/web/fundamentals/performance/critical-rendering-path/analyzing-crp?hl=zh-cn)
+2. [CSS/JS对DOM渲染的影响](http://harttle.land/2016/11/26/static-dom-render-blocking.html)
+3. [CSS Animation性能优化](https://github.com/amfe/article/issues/47)
+
