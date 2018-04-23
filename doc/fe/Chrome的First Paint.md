@@ -121,56 +121,56 @@ cover: ""
 
 ### 第一种情况：
 
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-41-44.jpg)
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-36-54.jpg)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F1%2FSnipaste_2018-04-23_19-29-12.png)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F1%2FSnipaste_2018-04-23_19-31-12.png)
 
 发现FP发生在最后（实心的蓝色线是按`shift`出来的，不是`DOMContentLoaded`）,现在还发现不了什么。
 
 ### 第二种情况：
 调换`head`中CSS和JS外链位置
 
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-43-44.jpg)
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-44-01.jpg)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F2%2FSnipaste_2018-04-23_19-31-59.png)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F2%2FSnipaste_2018-04-23_19-33-03.png)
 
 仍然发现不了什么
 
 ### 第三种情况
 把CSS放`head`，JS放`</body>`前
 
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-45-16.jpg)
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-45-26.jpg)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F3%2FSnipaste_2018-04-23_19-31-59.png)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F3%2FSnipaste_2018-04-23_19-38-26.png)
 
 发现`FP`竟然在蓝色和红色虚线前面出现，通过这点可以确定，`FP`还跟JS外链的位置有关，继续:
 
 ### 第四种情况：
 JS外链放`head`，CSS放`</body>`前
 
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-48-00.jpg)
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-48-04.jpg)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F4%2FSnipaste_2018-04-23_19-39-23.png)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F4%2FSnipaste_2018-04-23_19-39-52.png)
 
 发现又跟第一二种情况一样了，所以这种用法是不可取的。
 
 ### 第五种情况：
 CSS和JS都放`</body>`前，且CSS紧贴在`div`后面，JS在CSS后面：
 
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-52-52.jpg)
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-52-57.jpg)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F5%2FSnipaste_2018-04-23_19-40-18.png)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F5%2FSnipaste_2018-04-23_19-41-21.png)
 
 可以发现`FP`居然更快触发，**但是我鼠标hover到绿色虚线后，仍然是白屏，只有等到CSS加载完成执行`Parse Stylesheet`之后才显示出内容**（说明这种用法也不可取），难道body中的CSS也会影响？
 
 ### 第六种情况：
 掉换一下上面CSS和JS的位置：
 
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-55-50.jpg)
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-55-55.jpg)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F6%2FSnipaste_2018-04-23_19-41-55.png)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F6%2FSnipaste_2018-04-23_19-42-29.png)
 
 发现这次`FP`触发而且立马有内容，而等到CSS加载完成之后还会再重新渲染一次，嗯，看来body中的第一个JS脚本有猫腻，接下来的情况对他特殊照顾。
 
 ### 第七种情况：
 CSS放`head`中，JS放在`div`节点中间：
 
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-00-49.jpg)
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-00-55.jpg)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F7%2FSnipaste_2018-04-23_19-43-08.png)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F7%2FSnipaste_2018-04-23_19-43-49.png)
 
 哈哈，居然只渲染了12俩字，说明浏览器会渲染body中脚本之前的内容，那会是哪个脚本之前的内容呢？
 
@@ -191,8 +191,7 @@ CSS放`head`中，JS放在`div`节点中间：
 通过结果可以看出，123在CSS下载完成之后才渲染，而不是单独渲染一个1，所以`FP`必须得等到`CSSOM`准备就绪之后才会触发，否则即使有第一脚本在也没用。
 所以到这里，我们总算可以下结论了：
 
-**FP发生在body中第一个script脚本之前的CSS解析和JS执行完成之后。
-换句话说就是第一脚本之前的`DOM`和`CSSOM`准备就绪之后，便会着手渲染第一脚本前的内容。**
+> **FP发生在body中第一个script脚本之前的CSS解析和JS执行完成之后。换句话说就是第一脚本之前的`DOM`和`CSSOM`准备就绪之后，便会着手渲染第一脚本前的内容。**
 
 但是...你以为到这里就结束了？其实没有。
 
@@ -209,8 +208,7 @@ CSS放`head`中，JS放在`div`节点中间：
 
 看，这个时候又没有提前渲染了，123等到所有JS文件都执行完之后才渲染，这种情况除了验证了第九点的结论，还能补充我们的结论：
 
-**如果第一脚本前的JS和CSS加载完了，`body`中的脚本还未下载完成，那么浏览器就会利用构建好的局部`CSSOM`和`DOM`提前渲染第一脚本前的内容（触发`FP`）；
-如果第一脚本前的JS和CSS都还没下载完成，`body`中的脚本就已经下载完了，那么浏览器就会在所有JS脚本都执行完之后才触发FP。**
+> **如果第一脚本前的JS和CSS加载完了，`body`中的脚本还未下载完成，那么浏览器就会利用构建好的局部`CSSOM`和`DOM`提前渲染第一脚本前的内容（触发`FP`）；如果第一脚本前的JS和CSS都还没下载完成，`body`中的脚本就已经下载完了，那么浏览器就会在所有JS脚本都执行完之后才触发FP。**
 
 到这里本次探究就结束了，其实还有很多种情况，感兴趣的可以自己去试试。
 
