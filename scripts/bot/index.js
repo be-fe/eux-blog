@@ -43,11 +43,13 @@ function adaptorToMessage({ content, filename }) {
 
 async function sendMessage(message) {
   try {
+    // console.log('process.env.ROBOT_REQUEST', process.env.ROBOT_REQUEST)
+    // console.log('process.env.ROBOT_TOKEN', process.env.ROBOT_TOKEN)
     const data = await promisify(cp.exec)(
-      'curl -s "$ROBOT_REQUEST"' +
+      `curl -s ${JSON.stringify(process.env.ROBOT_REQUEST)}` +
       ` -d ${JSON.stringify(
           JSON.stringify({
-            'to': 1604670,
+            'to': 1608284,
             'access_token': process.env.ROBOT_TOKEN,
             'msg_type': 'text',
             'content': message
@@ -93,8 +95,8 @@ async function sendMessage(message) {
         return true
       }
       switch (change.status) {
-        // case 'Added':
-        case 'Modified':
+        case 'Added':
+        // case 'Modified':
           messageList.push(detail(
             adaptorToMessage(change)
           ))
@@ -109,6 +111,7 @@ async function sendMessage(message) {
       }
     })
 
+  console.log('messageList', messageList)
   if (messageList.length) {
     await sendMessage([TITLE].concat(messageList).join('\n'))
   }
