@@ -11,6 +11,7 @@ cover: ""
 所以研究这个First Paint的触发时机对于优化浏览器页面的首屏渲染时间有很重要的作用。
 
 在正题开始之前，先说下浏览器的页面的加载流程（大体过程是这样，并不精确，只是为了帮助理解后面内容）：
+
 1. 浏览器输入url，浏览器发送请求到服务器，服务器将请求的HTML返回给浏览器。
 2. 浏览器下载完成HTML(Finish Loading HTML)之后，便开始从上到下解析。
 3. 解析的过程中碰到css和js外链（其实HTML的下载也是这个流程）都会执行以下过程：
@@ -49,9 +50,11 @@ cover: ""
 ![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-4.jpg)
 
 简单讲一下`DOMContentLoaded`、`load`的区别：
+
 1. `DOMContentLoaded`是HTML文档（包括CSS、JS）被加载以及解析完成之后触发（即 `HTML->DOM`的过程完成 ）
 2. `load`则是在页面的其他资源如图片、字体、音频、视频加载完成之后触发
 3. `load`事件一般在`DOMContentLoaded`之后才触发（也有可能在它之前哦）
+
 这个时候发现绿色虚线之前有一个浅绿色方块，相应的解释如下：
 
 ![](http://eux-blog-static.bj.bcebos.com/fp%2FfirstPaint-5.jpg)
@@ -115,54 +118,62 @@ cover: ""
 ```
 
 我们通过改变上面模板里的外链顺序来探究：
+
 ### 第一种情况：
 
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-41-44.jpg)
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-36-54.jpg)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F1%2FSnipaste_2018-04-23_19-29-12.png)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F1%2FSnipaste_2018-04-23_19-31-12.png)
 
 发现FP发生在最后（实心的蓝色线是按`shift`出来的，不是`DOMContentLoaded`）,现在还发现不了什么。
+
 ### 第二种情况：
 调换`head`中CSS和JS外链位置
 
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-43-44.jpg)
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-44-01.jpg)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F2%2FSnipaste_2018-04-23_19-31-59.png)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F2%2FSnipaste_2018-04-23_19-33-03.png)
 
 仍然发现不了什么
+
 ### 第三种情况
 把CSS放`head`，JS放`</body>`前
 
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-45-16.jpg)
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-45-26.jpg)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F3%2FSnipaste_2018-04-23_19-31-59.png)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F3%2FSnipaste_2018-04-23_19-38-26.png)
 
 发现`FP`竟然在蓝色和红色虚线前面出现，通过这点可以确定，`FP`还跟JS外链的位置有关，继续:
+
 ### 第四种情况：
 JS外链放`head`，CSS放`</body>`前
 
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-48-00.jpg)
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-48-04.jpg)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F4%2FSnipaste_2018-04-23_19-39-23.png)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F4%2FSnipaste_2018-04-23_19-39-52.png)
 
 发现又跟第一二种情况一样了，所以这种用法是不可取的。
+
 ### 第五种情况：
 CSS和JS都放`</body>`前，且CSS紧贴在`div`后面，JS在CSS后面：
 
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-52-52.jpg)
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-52-57.jpg)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F5%2FSnipaste_2018-04-23_19-40-18.png)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F5%2FSnipaste_2018-04-23_19-41-21.png)
 
 可以发现`FP`居然更快触发，**但是我鼠标hover到绿色虚线后，仍然是白屏，只有等到CSS加载完成执行`Parse Stylesheet`之后才显示出内容**（说明这种用法也不可取），难道body中的CSS也会影响？
+
 ### 第六种情况：
 掉换一下上面CSS和JS的位置：
 
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-55-50.jpg)
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-14-55-55.jpg)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F6%2FSnipaste_2018-04-23_19-41-55.png)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F6%2FSnipaste_2018-04-23_19-42-29.png)
 
 发现这次`FP`触发而且立马有内容，而等到CSS加载完成之后还会再重新渲染一次，嗯，看来body中的第一个JS脚本有猫腻，接下来的情况对他特殊照顾。
+
 ### 第七种情况：
 CSS放`head`中，JS放在`div`节点中间：
 
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-00-49.jpg)
-![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-00-55.jpg)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F7%2FSnipaste_2018-04-23_19-43-08.png)
+![](http://eux-blog-static.bj.bcebos.com/fp%2F7%2FSnipaste_2018-04-23_19-43-49.png)
 
 哈哈，居然只渲染了12俩字，说明浏览器会渲染body中脚本之前的内容，那会是哪个脚本之前的内容呢？
+
 ### 第八种情况：
 在div之间都插入脚本
 
@@ -170,6 +181,7 @@ CSS放`head`中，JS放在`div`节点中间：
 ![](http://eux-blog-static.bj.bcebos.com/fp%2Fnew%2F2018-04-13-15-06-52.jpg)
 
 看来浏览器会提前渲染`body`中第一个脚本前的内容（`我们就把body中的第一个外链脚本叫做【第一脚本】吧`），并且**第一脚本**还会在FP之后才执行。所以结合之前得出的结论，在CSSOM准备就绪之后，浏览器会提前渲染第一脚本前的内容，我们可以用第九种情况来验证：
+
 ### 第九种情况：
 这种情况和上种没什么区别，只是增加了一个CSS，这个CSS中还会发出一个请求去加载其他CSS（通过`@import url()`的方式），所以CSS的加载时间很长。
 
@@ -179,10 +191,10 @@ CSS放`head`中，JS放在`div`节点中间：
 通过结果可以看出，123在CSS下载完成之后才渲染，而不是单独渲染一个1，所以`FP`必须得等到`CSSOM`准备就绪之后才会触发，否则即使有第一脚本在也没用。
 所以到这里，我们总算可以下结论了：
 
-**FP发生在body中第一个script脚本之前的CSS解析和JS执行完成之后。
-换句话说就是第一脚本之前的`DOM`和`CSSOM`准备就绪之后，便会着手渲染第一脚本前的内容。**
+> **FP发生在body中第一个script脚本之前的CSS解析和JS执行完成之后。换句话说就是第一脚本之前的`DOM`和`CSSOM`准备就绪之后，便会着手渲染第一脚本前的内容。**
 
 但是...你以为到这里就结束了？其实没有。
+
 ### 第十种情况：
 这种情况中，`head`中既有JS也有CSS，`body`中也有第一脚本存在：
 
@@ -196,16 +208,17 @@ CSS放`head`中，JS放在`div`节点中间：
 
 看，这个时候又没有提前渲染了，123等到所有JS文件都执行完之后才渲染，这种情况除了验证了第九点的结论，还能补充我们的结论：
 
-**如果第一脚本前的JS和CSS加载完了，`body`中的脚本还未下载完成，那么浏览器就会利用构建好的局部`CSSOM`和`DOM`提前渲染第一脚本前的内容（触发`FP`）；
-如果第一脚本前的JS和CSS都还没下载完成，`body`中的脚本就已经下载完了，那么浏览器就会在所有JS脚本都执行完之后才触发FP。**
+> **如果第一脚本前的JS和CSS加载完了，`body`中的脚本还未下载完成，那么浏览器就会利用构建好的局部`CSSOM`和`DOM`提前渲染第一脚本前的内容（触发`FP`）；如果第一脚本前的JS和CSS都还没下载完成，`body`中的脚本就已经下载完了，那么浏览器就会在所有JS脚本都执行完之后才触发FP。**
 
 到这里本次探究就结束了，其实还有很多种情况，感兴趣的可以自己去试试。
 
 ## 建议：
+
 * CSS放在head中，JS放在`</body>`前（如果在head必须放JS，也尽量减少他的大小，把大JS文件放`</body>`前）。
 * 减小head中CSS和JS大小（`gzip`[了解一下？](https://segmentfault.com/a/1190000012800222))，
 * 优化head中的JS和CSS外链的网络情况，减少`Stalled`、`TTFB`和`Content Download`的时间。
 * 在第一脚本前使用骨架图，可以减少用户的白屏感知时间（对于使用JS插入模板来渲染的框架，建议将骨架图的路由生成逻辑单独提出来）
+
 ## 科普一下
 
 * `Chrome`会渲染局部`CSSOM`和`DOM`
