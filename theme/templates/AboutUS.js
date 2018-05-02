@@ -32,26 +32,27 @@ const About = ({ themeConfig }) => {
   }
 
   const ramdomColors = ['#afc8ba', '#E3B587', '#b0a085', '#e2bd3b', '#519670', '#caddd5', '#a2b2a9', '#4f5355', '#93a2a9', '#f5cebe', '#8c90b9', '#f5c19b'];
+
   const lists = ours.map((item, index) => {
-    if (Object.prototype.toString.call(item) === '[object Array]') { // 联动的
+    if (Object.prototype.toString.call(item) === '[object Array]') { // 联动的 占位 1行2列
       const multipleItem = item.map((key, idx) => {
         const itemKey = index + '-' + idx;
         return getSingleItem(key, itemKey, 'multiple')
       })
       return <div className="multiple-items">{multipleItem}</div>;
     } else {
-      if (item.name === 'logo') { // logo
+      if (item.name === 'logo') { // logo 占位 2行4列
         return (
           <li key={index} className="big-logo"/>
         )
-      } else if (item.name === 'empty-item') { // 空的填充
+      } else if (item.name === 'empty-item') { // empty-item 占位 1行一列
         const style = {
           backgroundColor: ramdomColors[Math.floor(Math.random() * ramdomColors.length)]
         };
         return (
           <li key={index} className='empty-item' style={style}/>
         )
-      } else {
+      } else { // 普通 item 1行一列
         return getSingleItem(item, index, 'single');
       }
     }
