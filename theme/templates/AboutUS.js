@@ -31,7 +31,7 @@ const About = ({ themeConfig }) => {
     )
   }
 
-  const ramdomColors = ['#E3B587', '#b0a085', '#e2bd3b', '#519670', '#caddd5'];
+  const ramdomColors = ['#afc8ba', '#E3B587', '#b0a085', '#e2bd3b', '#519670', '#caddd5', '#a2b2a9', '#4f5355', '#93a2a9', '#f5cebe', '#8c90b9', '#f5c19b'];
   const lists = ours.map((item, index) => {
     if (Object.prototype.toString.call(item) === '[object Array]') { // 联动的
       const multipleItem = item.map((key, idx) => {
