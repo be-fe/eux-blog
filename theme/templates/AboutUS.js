@@ -1,7 +1,7 @@
 /**
  * @file: About us
  * @author: 陈蔓青
- * @date: 2017/11/26
+ * @date: 2018/5/2
  * @description: 关于我们
  */
 
@@ -39,12 +39,12 @@ const About = ({ themeConfig }) => {
         return getSingleItem(key, itemKey, 'multiple')
       })
       return <div className="multiple-items">{multipleItem}</div>;
-    } else { // 一个人
-      if (item.name === 'logo') {
+    } else {
+      if (item.name === 'logo') { // logo
         return (
           <li key={index} className="big-logo"/>
         )
-      } else if (item.name === 'empty-item') {
+      } else if (item.name === 'empty-item') { // 空的填充
         const style = {
           backgroundColor: ramdomColors[Math.floor(Math.random() * ramdomColors.length)]
         };
