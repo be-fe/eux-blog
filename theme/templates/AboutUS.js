@@ -16,7 +16,7 @@ const baseExt = '@h_160,w_160';
 const About = ({ themeConfig }) => {
   const ours = themeConfig.ours.slice()
   // 插入 logo 图
-  ours.splice(28, 0, {name:'logo' , url: `aboutus-baidu.png`, hoverUrl: ''},)
+  ours.splice(26, 0, {name:'logo' , url: `aboutus-baidu.png`, hoverUrl: ''},)
 
   const getSingleItem = function(item, index, className) {
     let hoverUrl = '';
