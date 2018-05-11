@@ -95,7 +95,7 @@ module.exports = {
       {name:'吴俊' , url: `%E5%90%B4%E4%BF%8A.jpg`, hoverUrl: ''},
       {name:'赵蕊' , url: `%E8%B5%B5%E8%95%8A1.jpg`, hoverUrl: `%E8%B5%B5%E8%95%8A2.jpg`},
       {name:'唐婉琪' , url: `%E5%94%90%E5%A9%89%E9%AA%901.jpg`, hoverUrl: `%E5%94%90%E5%A9%89%E9%AA%902.jpg`},
-      {name:'国悦婷' , url: `%E5%9B%BD%E6%82%A6%E5%A9%B7.jpeg`, hoverUrl: ``},
+      {name:'国悦婷' , url: `%E5%9B%BD%E6%82%A6%E5%A9%B7.jpg`, hoverUrl: ``},
       {name:'empty-item' , url: '', hoverUrl: ''},
       {name:'孙甜甜' , url: `%E5%AD%99%E7%94%9C%E7%94%9C1.jpg`, hoverUrl: `%E5%AD%99%E7%94%9C%E7%94%9C2.jpg`},
       {name:'尤足强' , url: `%E5%B0%A4%E8%B6%B3%E5%BC%BA1.jpg`, hoverUrl: `%E5%B0%A4%E8%B6%B3%E5%BC%BA2.jpg`},
@@ -139,7 +139,7 @@ module.exports = {
       ],
       {name:'郑亮亮' , url: `%E9%83%91%E4%BA%AE%E4%BA%AE1.jpg`, hoverUrl: `%E9%83%91%E4%BA%AE%E4%BA%AE2.jpg`},
       
-      {name:'林枫' , url: `%E6%9E%97%E6%9E%AB.jpeg`, hoverUrl: ``},
+      {name:'林枫' , url: `%E6%9E%97%E6%9E%AB.jpg`, hoverUrl: ``},
       {name:'张宇良' , url: `%E5%BC%A0%E5%AE%87%E8%89%AF1.jpg`, hoverUrl: `%E5%BC%A0%E5%AE%87%E8%89%AF2.jpg`},
       [
         {name:'车生然' , url: `%E8%BD%A6%E7%94%9F%E7%84%B61.jpg`, hoverUrl: `%E8%BD%A6%E7%94%9F%E7%84%B62.jpg`},
@@ -153,7 +153,7 @@ module.exports = {
       {name:'闫龙' , url: `%E9%97%AB%E9%BE%991.jpg`, hoverUrl: `%E9%97%AB%E9%BE%992.jpg`},
       {name:'陈建伟' , url: `%E9%99%88%E5%BB%BA%E4%BC%9F1.jpg`, hoverUrl: `%E9%99%88%E5%BB%BA%E4%BC%9F2.jpg`},
       {name:'龙江锦' , url: `%E9%BE%99%E6%B1%9F%E9%94%A61.jpg`, hoverUrl: `%E9%BE%99%E6%B1%9F%E9%94%A62.jpg`},
-      {name:'陈承星' , url: `%E9%99%88%E6%89%BF%E6%98%9F.jpg`, hoverUrl: ``},
+      {name:'陈承星' , url: `%E9%99%88%E6%89%BF%E6%98%9F.jpeg`, hoverUrl: ``},
       {name:'张大珍' , url: `%E5%BC%A0%E5%A4%A7%E7%8F%8D1.jpg`, hoverUrl: `%E5%BC%A0%E5%A4%A7%E7%8F%8D2.jpg`},
       {name:'洪润辉' , url: `%E6%B4%AA%E6%B6%A6%E8%BE%891.jpg`, hoverUrl: `%E6%B4%AA%E6%B6%A6%E8%BE%892.jpg`},
       {name:'' , url: `IMG_3192.jpg`, hoverUrl: `IMG_3194.jpg`},
