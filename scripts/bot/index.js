@@ -46,7 +46,7 @@ async function sendMessage(message) {
     // console.log('process.env.ROBOT_REQUEST', process.env.ROBOT_REQUEST)
     // console.log('process.env.ROBOT_TOKEN', process.env.ROBOT_TOKEN)
     const data = await promisify(cp.exec)(
-      `curl -s ${JSON.stringify(process.env.ROBOT_REQUEST)}` +
+      `curl -s http://qy.im.baidu.com/msgt/api/sendMsgToGroup?access_token=${process.env.ROBOT_TOKEN}` +
       ` -d ${JSON.stringify(
           JSON.stringify({
             'to': 1608284,
