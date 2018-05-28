@@ -46,10 +46,10 @@ async function sendMessage(message) {
     // console.log('process.env.ROBOT_REQUEST', process.env.ROBOT_REQUEST)
     // console.log('process.env.ROBOT_TOKEN', process.env.ROBOT_TOKEN)
     const data = await promisify(cp.exec)(
-      `curl -s ${JSON.stringify(process.env.ROBOT_REQUEST)}` +
+      `curl -s http://qy.im.baidu.com/msgt/api/sendMsgToGroup?access_token=${process.env.ROBOT_TOKEN}` +
       ` -d ${JSON.stringify(
           JSON.stringify({
-            'to': 1608284,
+            'to': 1450907, // 群号，EUX:1450907  个人:1608284
             'access_token': process.env.ROBOT_TOKEN,
             'msg_type': 'text',
             'content': message
@@ -96,7 +96,7 @@ async function sendMessage(message) {
       }
       switch (change.status) {
         case 'Added':
-        // case 'Modified':
+        case 'Modified':
           messageList.push(detail(
             adaptorToMessage(change)
           ))
