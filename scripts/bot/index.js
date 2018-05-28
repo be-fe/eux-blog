@@ -49,7 +49,7 @@ async function sendMessage(message) {
       `curl -s http://qy.im.baidu.com/msgt/api/sendMsgToGroup?access_token=${process.env.ROBOT_TOKEN}` +
       ` -d ${JSON.stringify(
           JSON.stringify({
-            'to': 1608284,
+            'to': 1450907, // 群号，EUX:1450907  个人:1608284
             'access_token': process.env.ROBOT_TOKEN,
             'msg_type': 'text',
             'content': message
@@ -96,7 +96,7 @@ async function sendMessage(message) {
       }
       switch (change.status) {
         case 'Added':
-        // case 'Modified':
+        case 'Modified':
           messageList.push(detail(
             adaptorToMessage(change)
           ))
