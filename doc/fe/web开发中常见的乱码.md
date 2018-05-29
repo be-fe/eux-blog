@@ -1,13 +1,13 @@
 ---
 title: "Web开发中常见的“乱码”"
-author: "郑, 佳润"
+author: "郑佳润"
 datetime: 2017-07-06 12:00:00
 cover: "http://ww1.sinaimg.cn/large/825c1e3bly1fiutxm1vybj20nj0dwgoy.jpg"
 ---
 
 ### 问题来源：
 
-<span class="md-line md-end-block">在微信公众号开发指定回复消息为文本格式的时候，尝试了几种换行方式都不行，最终了解即XML的换行应使用：<span class=""><strong>&#x00A;</strong></span></span>  
+<span class="md-line md-end-block">在微信公众号开发指定回复消息为文本格式的时候，尝试了几种换行方式都不行，最终了解即 XML 的换行应使用：<span class=""><strong>&#x00A;</strong></span></span>  
 
 
 <span class="md-line md-end-block"><span class=""><strong>&#x00A;</strong></span>是字符实体编号（16进制），可以用于处理XML中文本的换行。</span>  
@@ -29,9 +29,9 @@ cover: "http://ww1.sinaimg.cn/large/825c1e3bly1fiutxm1vybj20nj0dwgoy.jpg"
     <% if (msgType === 'text') { if(content!=="zs") { %>
       <Content><![CDATA[<%= content %>]]></Content>
       <% } else { %>
-      <Content>欢迎来到报名图书馆暑假工！&#x00A;&#x00A;&#x00A;报名步骤：&#x00A;&#x00A;①将招聘推文转发至朋友圈或者40人以上的群，让更多同学了解本招聘。为招聘方宣传以找到更多优质学生员工。&#x00A;&#x00A;→&lt;a href=&quot;http://a.xiumi.us/board/v5/29Ndm/47380885&quot;&gt;点此进入招聘推文&lt;/a&gt;&#x00A;&#x00A;②回复你的资料：报名+姓名+电话号码+深圳哪个区+可上班时间&#x00A;&#x00A;&#x00A;</Content>
+      <Content>欢迎来到报名图书馆暑假工！&#x00A;&#x00A;&#x00A;报名步骤：&#x00A;&#x00A;①将招聘推文转发至朋友圈或者40人以上的群，让更多同学了解本招聘。为招聘方宣传以找到更多优质学生员工。&#x00A;&#x00A;→<a href="http://a.xiumi.us/board/v5/29Ndm/47380885">点此进入招聘推文</a>&#x00A;&#x00A;②回复你的资料：报名+姓名+电话号码+深圳哪个区+可上班时间&#x00A;&#x00A;&#x00A;</Content>
       <% }} else if (msgType === 'zs') { %>
-      <Content>&lt;a href=&quot;http://www.baidu.com/?k381740148&quot;&gt;ddwadwada&lt;/a&gt;</Content>
+      <Content><a href="http://www.baidu.com/?k381740148">ddwadwada</a></Content>
       <% } else if (msgType === 'image') { %>
         <Image>
           <MediaId><![CDATA[<%= content.mediaId %>]]></MediaId>
@@ -66,7 +66,7 @@ cover: "http://ww1.sinaimg.cn/large/825c1e3bly1fiutxm1vybj20nj0dwgoy.jpg"
 比如我们要展示`<p>情深深雨蒙蒙</p>` 以下两种表示是等效的
 ​
 <pre>
-  &lt;p&gt;情深深雨蒙蒙&lt;&#47;p&gt;
+  <p>情深深雨蒙蒙</p>
   &#60;p&#62;情深深雨蒙蒙&#60;&#47;p&#62;
 </pre>
 ```

@@ -240,7 +240,7 @@ function insertLink(url, title) {
 function setHeading(heading) {
     let formatTag = heading,
         formatBlock = document.queryCommandValue("formatBlock");
-    if (formatBlock.length &gt; 0 &amp;&amp; formatBlock.toLowerCase() === formatTag) {
+    if (formatBlock.length > 0  & & formatBlock.toLowerCase() === formatTag) {
         document.execCommand('formatBlock', false, ``);
     } else {
         document.execCommand('formatBlock', false, ``);
