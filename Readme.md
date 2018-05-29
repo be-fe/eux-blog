@@ -9,7 +9,7 @@
 npm install picidae -g
 
 npm run start
-# open http://localhost:8989
+# open http://localhost:10000/
 
 # build the site for deploy
 npm run build
