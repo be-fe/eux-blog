@@ -10,6 +10,8 @@ cover: "https://bj.bcebos.com/v1/eux-blog-static/windowonload.jpg"
 #### 先放结论
 
 **onload的触发时机：** JS 加载并执行完毕且页面中所有外链资源加载完成之后大约 3 - 4ms（这个值跟机型和浏览器有关）
+**最佳实践：** JS代码的执行要放到onload里。如果是服务端渲染带图片的列表，图片最好由JS异步加载，避免阻塞onload。
+
 
 #### 1、onload不是立即触发的
 
@@ -38,7 +40,8 @@ for (var i = 0; i < 100000000; i++) {
 }
 ```
 
-你会发现 `onload` 会等很久才触发。
+你会发现 onload 会等很久才触发，因此JS的执行最好放在onload之后。
+
 
 #### 3、动态加载的资源可能对onload产生影响
 
@@ -93,6 +96,8 @@ iOS 中判断 webview 加载完成的 **webViewDidFinishLoad** 方法，Android 
 
 也就是说 **对 onload 有影响的因素也同样会影响这些 Native 方法**。而在 Hybrid 开发中，一些 Native 和 Web 之间的交互和调用往往要在`webViewDidFinishLoad / onPageFinished` 之后。因此如果 `onload` 的触发被推迟了，那么这些 `Native` 相关的调用也都会被推迟。
 
+**因此如果是Hybrid应用，尤其要注意让onload尽快触发。**
+
 
 
 #### 5、百度统计对onload的影响
@@ -109,4 +114,13 @@ var _hmt = _hmt || [];
 
 上面是百度统计的代码，我们可以看到它动态加载了一个 `script`，而这个 `script` 会马上以一个小 gif 的形式发送一个上报请求，经过测试，如果页面上没有其它元素，这个 **小 gif 加载完成后才会触发 onload**，那么总加载时间就是 script 加载时间 + gif 加载时间。
 
-因此应该尽量把百度统计代码提前，避免百度统计拖慢 onload 时间。百度统计官方也是 **建议将统计代码放在 head 中**。
+因此应该尽量把百度统计代码提前，避免百度统计拖慢 onload 时间。百度统计官方也是**建议将统计代码放在 head 中**。
+
+
+#### 现实示例：
+我们把网速调整到slow 3G模拟弱网环境，测试一个线上的带图片列表的项目：
+下面是把JS代码放在onload里执行的效果，7秒左右onload触发。
+![](http://text-learn.qiniudn.com/assets/58f000c8ad5fc1447e00c25b3f5b18c1.png)
+
+下面是把JS代码放在onload外，直接顺序执行的效果，因为要等待所有图片加载完成，等了44秒左右onload才触发。
+![](http://text-learn.qiniudn.com/assets/90267ba6fc4f77e9dcdb53f1efa9ccdf.jpg)
