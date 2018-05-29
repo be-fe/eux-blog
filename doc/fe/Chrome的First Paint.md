@@ -2,7 +2,7 @@
 title: "Chrome的First Paint"
 author: "洪闰辉"
 datetime: "2018-4-15"
-cover: ""
+cover: "https://bj.bcebos.com/v1/eux-blog-static/Chrome的First Paint.jpg"
 ---
 ## 前言
 

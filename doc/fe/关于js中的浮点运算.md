@@ -2,6 +2,7 @@
 title: "关于 js 中的浮点计算"
 author: "陈蔓青"
 datetime: 2018-03-21 10:00:00
+cover: "https://bj.bcebos.com/v1/eux-blog-static/关于JS中的浮点计算.jpg"
 ---
 
 > 😄 阅读本文需要的：

@@ -2,7 +2,7 @@
 title: "深入理解 window.onload"
 author: "谢 郁"
 datetime: 2018-05-25 12:00:00
-cover: ""
+cover: "https://bj.bcebos.com/v1/eux-blog-static/windowonload.jpg"
 ---
 
 **现象：**在一个 Hybrid 应用中，用户反馈弱网条件下页面的进度条总是不消失，最后发现是页面接口先于其他资源返回，而接口中包含大量图片导致了 `onload` 会推迟，从而客户端控制的进度条不会消失，页面调用客户端的方法不会执行。

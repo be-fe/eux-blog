@@ -2,7 +2,7 @@
 title: "ES6+ 开发环境搭建要点"
 author: "谢郁"
 datetime: "2018-5-04"
-cover: ""
+cover: "https://bj.bcebos.com/v1/eux-blog-static/ES6开发环境.jpg"
 ---
 
 ## ES6+ 开发环境搭建要点

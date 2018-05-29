@@ -96,7 +96,7 @@ async function sendMessage(message) {
       }
       switch (change.status) {
         case 'Added':
-        case 'Modified':
+        // case 'Modified':
           messageList.push(detail(
             adaptorToMessage(change)
           ))

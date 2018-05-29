@@ -2,7 +2,7 @@
 title: "ES6 对unicode的支持"
 author: "谢郁"
 datetime: 2017-12-6 12:00:00
-
+cover: "https://bj.bcebos.com/v1/eux-blog-static/ES6对unicode的支持.png"
 ---
 
 - Chrome 内置抓包工具

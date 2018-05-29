@@ -2,7 +2,7 @@
 title: "如何进行EDM邮件制作"
 author: "谢 郁"
 datetime: 2017-12-13 12:00:00
-
+cover: "https://bj.bcebos.com/v1/eux-blog-static/如何进行EDM邮件制作.jpg"
 ---
 
 首先，制作EDM邮件的一个准则就是使用table布局和inline style，因为很多样式和标签邮件客户端是不识别的，再一个外部资源引入的CSS/JS和写在&lt;style&gt;标签里的CSS很多时候都会被邮件客户端干掉。这两点是我们开篇的基础知识。

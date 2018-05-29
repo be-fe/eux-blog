@@ -2,6 +2,7 @@
 title: "在浏览器环境下使用Protocol Buffers协议"
 author: "苏 伟荣"
 datetime: 2018-04-24 12:00:00
+cover: "https://bj.bcebos.com/v1/eux-blog-static/在浏览器环境下使用Protocol Buffers协议.jpg"
 ---
 
 ###  在浏览器环境下使用Protocol Buffers协议
