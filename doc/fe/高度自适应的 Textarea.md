@@ -2,7 +2,7 @@
 title: 实现高度内容自适应的 textarea
 author: 张庭岑
 datetime: 2018-6-7 09:14:00
-cover: http://upload-images.jianshu.io/upload_images/4217515-6fd8b07173997039.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+cover: https://eux-public.bj.bcebos.com/2018/06/11/banner-%E9%AB%98%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94.png
 ---
 
 ## 背景介绍
@@ -48,7 +48,7 @@ resize 方法处理流程：
 满分3分, 三种方案通过优化, 在用户体验和兼容性上都能达到满分. 因此差别仅仅在于这几个方案的实现难度. (仅仅是基于 react 组件的实现复杂度).
 方案对比：
 
-![](https://eux-public.bj.bcebos.com/2018/06/07/34596181d6d29cff57903f61b.png)
+<img src="https://eux-public.bj.bcebos.com/2018/06/07/34596181d6d29cff57903f61b.png" alt="" width="656" height="173" />
 
 毫无疑问方案一是最优选择, 多加1分以示奖励;
 
