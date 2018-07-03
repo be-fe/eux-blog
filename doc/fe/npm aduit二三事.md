@@ -5,11 +5,9 @@ datetime: 2017-07-02 23:09:00
 cover: ""
 ---
 
-# npm aduit 二三事
-#note/blog
-
 ## 前言：从一个 bug 说起
-最近碰到一个问题，使用一个框架的时候使用公司内部的镜像装怎么都跑不起来, 然而只要改成官方的镜像就没问题，于是去对比了下 package.lock 文件，如图：
+
+最近碰到一个问题，使用一个框架的时候使用公司内部的镜像装怎么都跑不起来, 然而只要改成官方的镜像就没问题，于是去对比了下 `package.lock` 文件，如图：
 
 ![](https://eux-public.bj.bcebos.com/2018/07/02/df233513dd3e36bafdd4a15a69415bdc.jpg)
 
@@ -36,7 +34,7 @@ found 5 vulnerabilities (2 low, 1 moderate, 1 high, 1 critical)
 
 再执行下 `npm aduit` 查看详情，列表很清晰。
 
-![](https://eux-public.bj.bcebos.com/2018/07/02/df233513dd3e36bafdd4a15a69415bdc.jpg)
+![](https://eux-public.bj.bcebos.com/2018/07/03/9D8FAEFD-85A5-45C2-8DCF-7B312AB9204D.png)
 
 执行 `npm audit fix`，发现并没有能自动的帮我 fix 掉这些错误。
 
@@ -87,23 +85,34 @@ npm audit --json
 
 通过查看文档和源码发现，`npm aduit` 主要动作就是在 `npm install` 完成之后把需要检查的包的信息发送给一个官方接口, 再根据返回信息生成一个包含包名称、漏洞严重性、简介, 路径等的报告。处理格式化什么的主要在于 [npm-audit-report](https://www.npmjs.com/package/npm-audit-report) 模块，有兴趣的也可以研究下。
 
-那么报告是根据什么生成的呢，根据 aduit 的提示信息我们能发现一个 [node 安全平台](https://nodesecurity.io/)，进去首页就看到一句类似『好消息，2018 年 4 月 10 号，npm 正式入驻我们平台』的通知。所以看来 aduit 的数据来源也找到了。
+那么报告是根据什么生成的呢，根据 aduit 的提示信息我们能发现一个 [node 安全平台](https://nodesecurity.io/)，进去首页就看到一句类似『好消息，2018 年 4 月 10 号，npm 正式入驻我们平台』的通知。看来 aduit 的数据来源也大概知道了。
 
-然后我们再仔细研究下.......
+该平台的公布一个漏洞的步骤跟大多安全平台类似：
+
+1. 漏洞被披露 or 反馈到此安全平台。
+2. 通知维护者相关信息（如果不是维护者自己汇报的）。
+3. 通知使用该依赖的用户，给给予推荐性的解决方案。
+4. 修复完成之后发布公开补丁，并申请 [CVE](http://cve.mitre.org/) 。
+5. 如果 45 天之后还没有修复，则通知超时并公开漏洞。
 
 ## 总结
-总的来说，安全问题是不容忽视。以目前状况是大家拿到项目之后直接 `npm install`，只要项目能成功运行基本没有人会去关注装了什么。一大堆错综复杂的相互关联的依赖包，就算开发者有安全意识，也缺乏解决安全漏洞的手段。所以这次 npm 官方的做法还是很值得称赞的。
+
+总的来说，安全的问题不容忽视。
+很多时候，大家拿到项目之后直接 `npm install`，只要项目能成功运行基本没有人会去关注装了什么。一大堆错综复杂的相互关联的依赖包，就算开发者有安全意识，也缺乏解决安全漏洞的手段。
+此时有个官方平台来帮忙管理收集反馈给出报告给出建议等，是意见很值得称赞的事。
 
 ## 最后的最后
+
 想到目前已经有很大一部分同学转移去了 `yarn` 阵营，甚至有一些并不知道为什么就转过去了只是当时很多人推荐使用它。其实主要是在 npm v4 时期安裝超慢，才会让 yarn 崛起，在 v5 的时候其实改善不少了，v6 应该是再次强调想夺回这么一部分用户 😐？有兴趣的可以再自行研究下 yarn 和 npm 的对比， 这里有一个 [npm5.7.1 vs yarn1.5.1 数据上的比较以及比较方法](https//github.com/appleboy/npm-vs-yarn)。
 
 再有其实 npm 现在也有很多功能似乎用的人不是很多，篇幅有限简单提几个自认为还不错的。
-1.  `npx` 
-2. 更改npm 安装包的目录`npm config set prefix <new_path>`（在没有 sudo 权限的场景很有用）
-3. 在开发 npm 模块的时候使用 `npm link` 等…
+1.  `npx` 执行依赖包里的二进制文件。自动查找当前依赖包中的可执行文件，如果找不到，就会去 PATH 里找。如果依然找不到，就会帮你安装
+2. 更改 npm 安装包的目录`npm config set prefix <new_path>`（在没有 sudo 权限的场景很有用）
+3. 在开发 npm 模块的时候使用 `npm link`
+4. ...
 
 至于前面说的问题解决方案，咨询了官方同学以及翻了下 nanomatch 的 [issue](https://github.com/micromatch/nanomatch/issues/15)，发现是包的问题。再者就是内部镜像没有及时同步，果然当晚回到家之后再看了一眼一切又恢复正常，就当一个学习知识的经历。
 
 ## 参考资料
 - https://docs.npmjs.com/cli/audit
-- https://docs.npmjs.com/getting-started/running-a-security-audit
+- [【科普】不了解CVE 就不能算是安全圈的人 来看看官方权威解答]https://zhuanlan.zhihu.com/p/27891196
