@@ -114,5 +114,5 @@ npm audit --json
 至于前面说的问题解决方案，咨询了官方同学以及翻了下 nanomatch 的 [issue](https://github.com/micromatch/nanomatch/issues/15)，发现是包的问题。再者就是内部镜像没有及时同步，果然当晚回到家之后再看了一眼一切又恢复正常，就当一个学习知识的经历。
 
 ## 参考资料
-- https://docs.npmjs.com/cli/audit
-- [【科普】不了解CVE 就不能算是安全圈的人 来看看官方权威解答]https://zhuanlan.zhihu.com/p/27891196
+- [npm audit 文档](https://docs.npmjs.com/cli/audit)
+- [【科普】不了解CVE 就不能算是安全圈的人 来看看官方权威解答](https://zhuanlan.zhihu.com/p/27891196)
