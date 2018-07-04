@@ -2,7 +2,7 @@
 title: "npm aduit 二三事"
 author: "陈蔓青"
 datetime: 2017-07-02 23:09:00
-cover: ""
+cover: "https://eux-public.bj.bcebos.com/2018/07/04/npm%20aduit_1.jpg"
 ---
 
 ## 前言：从一个 bug 说起
