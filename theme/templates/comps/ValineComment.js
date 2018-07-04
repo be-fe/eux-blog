@@ -22,8 +22,8 @@ export default class extends React.PureComponent {
       }
       new Valine({
         ...props,
-        el: this.refs.comment,
-        av: window.AV,
+        el: '.valine-comment-container',
+        // av: window.AV,
         path: window.location.pathname,
         // notify: false,
         // verify: false,
@@ -44,7 +44,8 @@ export default class extends React.PureComponent {
       var self = this;
 
       var script_2 = document.createElement('script')
-      script_2.src = '//unpkg.com/valine@1.1.8-rc3/dist/Valine.min.js'
+      // script_2.src = '//unpkg.com/valine'
+      script_2.src = '//unpkg.com/valine'
       script_2.async = true;
       (document.head || document.body).appendChild(script_2);
 

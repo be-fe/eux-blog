@@ -43,9 +43,9 @@ const Article = ({location, render, params, pageData, themeConfig, pluginData: {
                 && <DisqusComment url={'http://' + join(usedComment.host, location.pathname)} {...usedComment} />
               }
               {
-                use === 'valine'
-                && usedComment
-                && <ValineComment path={'http://' + join(usedComment.host || '', location.pathname)} {...usedComment} />
+                // use === 'valine'
+                // && usedComment
+                // && <ValineComment path={'http://' + join(usedComment.host || '', location.pathname)} {...usedComment} />
               }
             </div>
             <nav className="single-bar clearfix">
