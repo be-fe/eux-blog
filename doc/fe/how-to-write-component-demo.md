@@ -92,7 +92,7 @@ const rawReq = require.context('!raw-loader!dulife-ui', true, /\/demo\/.+?\.js$/
 ```
 
 最终效果如下：
-<img src="https://i.loli.net/2018/06/30/5b3741de4ed1e.png" alt="" width="1614" height="950" />
+<img src="https://eux-public.bj.bcebos.com/2018/07/09/5b3741de4ed1e.png" alt="" width="1614" height="950" />
 
 
 ## 结尾
