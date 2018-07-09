@@ -2,7 +2,7 @@
 title: 书写组件 DEMO 的一些方案
 datetime: 2018-06-30 15:55:46
 author: 余聪
-cover: "https://eux-public.bj.bcebos.com/2018/07/04/%E4%B9%A6%E5%86%99%E7%BB%84%E4%BB%B6%20DEMO%20%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%B9%E6%A1%88-0.jpg"
+cover: "https://eux-public.bj.bcebos.com/2018/07/09/f6a74b42eb3a3f94eb5f33649.jpg"
 ---
 
 目前前端开发都推崇一致组件化的开发思想，即看到业务页面之后，先不着急写页面；而是先观察，把一些具有共性的UI控件包装成组件（如 React/Vue/Web Component）。这样做的好处不言而喻，提供组件复用率，团队开发效率提升明显。
