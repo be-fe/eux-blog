@@ -1,5 +1,5 @@
 ---
-title: "npm aduit 二三事"
+title: "npm audit 二三事"
 author: "陈蔓青"
 datetime: 2017-07-02 23:09:00
 cover: "https://eux-public.bj.bcebos.com/2018/07/04/npm%20aduit_1.jpg"
@@ -32,7 +32,7 @@ found 5 vulnerabilities (2 low, 1 moderate, 1 high, 1 critical)
   run `npm audit fix` to fix them, or `npm audit` for details
 ```
 
-再执行下 `npm aduit` 查看详情，列表很清晰。
+再执行下 `npm audit` 查看详情，列表很清晰。
 
 ![](https://eux-public.bj.bcebos.com/2018/07/03/9D8FAEFD-85A5-45C2-8DCF-7B312AB9204D.png)
 
@@ -81,11 +81,11 @@ npm audit --json
 	- 运行 `npm set audit false`
 	- 手动将 `~/.npmrc` 配置文件中的 `audit` 修改为 `false`
 
-## aduit 报告
+## audit 报告
 
-通过查看文档和源码发现，`npm aduit` 主要动作就是在 `npm install` 完成之后把需要检查的包的信息发送给一个官方接口, 再根据返回信息生成一个包含包名称、漏洞严重性、简介, 路径等的报告。处理格式化什么的主要在于 [npm-audit-report](https://www.npmjs.com/package/npm-audit-report) 模块，有兴趣的也可以研究下。
+通过查看文档和源码发现，`npm audit` 主要动作就是在 `npm install` 完成之后把需要检查的包的信息发送给一个官方接口, 再根据返回信息生成一个包含包名称、漏洞严重性、简介, 路径等的报告。处理格式化什么的主要在于 [npm-audit-report](https://www.npmjs.com/package/npm-audit-report) 模块，有兴趣的也可以研究下。
 
-那么报告是根据什么生成的呢，根据 aduit 的提示信息我们能发现一个 [node 安全平台](https://nodesecurity.io/)，进去首页就看到一句类似『好消息，2018 年 4 月 10 号，npm 正式入驻我们平台』的通知。看来 aduit 的数据来源也大概知道了。
+那么报告是根据什么生成的呢，根据 audit 的提示信息我们能发现一个 [node 安全平台](https://nodesecurity.io/)，进去首页就看到一句类似『好消息，2018 年 4 月 10 号，npm 正式入驻我们平台』的通知。看来 audit 的数据来源也大概知道了。
 
 该平台的公布一个漏洞的步骤跟大多安全平台类似：
 
