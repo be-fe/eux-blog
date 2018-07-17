@@ -39,6 +39,7 @@
     "picidae-tools": "^0.0.3",
     "picidae-transformer-medium-image": "^1.0.4",
     "react-document-title": "^2.0.3",
-    "react-favicon": "0.0.13"
+    "react-favicon": "0.0.13",
+    "url-join": "^4.0.0"
   }
 }

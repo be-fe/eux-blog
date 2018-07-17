@@ -2,11 +2,12 @@
  * @file index
  * @author Cuttle Cong
  * @date 2018/3/19
- * @description 
+ * @description
  */
 const minimatch = require('minimatch')
 const { promisify } = require('util')
 const { join } = require('path')
+const uJoin = require('url-join')
 const { resolve } = require('url')
 const { loadFront } = require('picidae/lib/lib/utils/loadFront')
 const cp = require('child_process')
@@ -23,15 +24,13 @@ getStagedFiles.includeContent = true
 getStagedFiles.cwd = join(__dirname, '../..')
 getStagedFiles.debug = true
 
-
 function adaptorToMessage({ content, filename }) {
   const { __content, ...meta } = loadFront(content)
 
-  const url = resolve(host,
-    resolve(
-      publicPath,
-      filename.replace(/^doc(?=\/)/, 'blog').replace(/\.(md|markdown)/i, '')
-    )
+  const url = uJoin(
+    host,
+    publicPath,
+    filename.replace(/^doc(?=\/)/, 'blog').replace(/\.(md|markdown)/i, '')
   )
   // doc/fe/name -> blog/fe/name
   return {
@@ -70,11 +69,17 @@ async function sendMessage(message) {
     // commit_a...commit_b
     process.env.TRAVIS_COMMIT_RANGE || 'HEAD'
   )
-  console.log(statusList.map(state => ({ filename: state.filename, status: state.status })))
-  const mdStatusList = statusList
-    .filter(status => {
-      return minimatch(status.filename, 'doc/**/*.{md,MD,markdown}', { matchBase: true })
+  console.log(
+    statusList.map(state => ({
+      filename: state.filename,
+      status: state.status
+    }))
+  )
+  const mdStatusList = statusList.filter(status => {
+    return minimatch(status.filename, 'doc/**/*.{md,MD,markdown}', {
+      matchBase: true
     })
+  })
 
   if (!mdStatusList.length) {
     console.log('未发现改动的markdown文件')
@@ -82,34 +87,31 @@ async function sendMessage(message) {
   }
 
   const messageList = []
-  const format = function (change) {
+  const format = function(change) {
     if (mdStatusList.length > 1) {
       return simple(change)
     }
     return detail(change)
   }
-  mdStatusList
-    .some(change => {
-      if (messageList.length === 5) {
-        messageList.push('...')
-        return true
-      }
-      switch (change.status) {
-        case 'Added':
+  mdStatusList.some(change => {
+    if (messageList.length === 5) {
+      messageList.push('...')
+      return true
+    }
+    switch (change.status) {
+      case 'Added':
         // case 'Modified':
-          messageList.push(detail(
-            adaptorToMessage(change)
-          ))
-          break
-        // case 'Copied':
-        // case 'Deleted':
-        // case 'Renamed':
-        // case 'Type-Change':
-        // // Type-Change (T) [i.e. regular file, symlink, submodule, etc.]
-        // case 'Unmerged':
-        // case 'Unknown':
-      }
-    })
+        messageList.push(detail(adaptorToMessage(change)))
+        break
+      // case 'Copied':
+      // case 'Deleted':
+      // case 'Renamed':
+      // case 'Type-Change':
+      // // Type-Change (T) [i.e. regular file, symlink, submodule, etc.]
+      // case 'Unmerged':
+      // case 'Unknown':
+    }
+  })
 
   console.log('messageList', messageList)
   if (messageList.length) {
