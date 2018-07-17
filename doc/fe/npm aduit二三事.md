@@ -1,7 +1,7 @@
 ---
 title: "npm audit 二三事"
 author: "陈蔓青"
-datetime: 2017-07-02 23:09:00
+datetime: 2018-07-02 23:09:00
 cover: "https://eux-public.bj.bcebos.com/2018/07/04/npm%20aduit_1.jpg"
 ---
 
@@ -9,7 +9,7 @@ cover: "https://eux-public.bj.bcebos.com/2018/07/04/npm%20aduit_1.jpg"
 
 最近碰到一个问题，使用一个框架的时候使用公司内部的镜像装怎么都跑不起来, 然而只要改成官方的镜像就没问题，于是去对比了下 `package.lock` 文件，如图：
 
-![](https://eux-public.bj.bcebos.com/2018/07/02/df233513dd3e36bafdd4a15a69415bdc.jpg)
+<img src="https://eux-public.bj.bcebos.com/2018/07/02/df233513dd3e36bafdd4a15a69415bdc.jpg" alt="" width="1202" height="761" />
 
 很明显可以看出用我厂的镜像装出来的 `nanomatch` 是 `1.2.11` 的版本，而官方装的 `1.2.9`，心里一愣我去还能超前，老早听说 `npm@6` 的一主要特征是安全机制，脑洞了一下难道官方 `npm` 源能判断是不是有问题的包还能自动回滚到稳定版本？
 
@@ -34,7 +34,7 @@ found 5 vulnerabilities (2 low, 1 moderate, 1 high, 1 critical)
 
 再执行下 `npm audit` 查看详情，列表很清晰。
 
-![](https://eux-public.bj.bcebos.com/2018/07/03/9D8FAEFD-85A5-45C2-8DCF-7B312AB9204D.png)
+<img src="https://eux-public.bj.bcebos.com/2018/07/03/9D8FAEFD-85A5-45C2-8DCF-7B312AB9204D.png" alt="" width="1232" height="944" />
 
 执行 `npm audit fix`，发现并没有能自动的帮我 fix 掉这些错误。
 
