@@ -121,7 +121,7 @@ var _hmt = _hmt || [];
 #### 现实示例：
 我们把网速调整到slow 3G模拟弱网环境，测试一个线上的带图片列表的项目：
 下面是把JS代码放在onload里执行的效果，**7秒** 左右onload触发。
-![](http://text-learn.qiniudn.com/assets/58f000c8ad5fc1447e00c25b3f5b18c1.png)
+![](http://qiniu.fe-learn.com/assets/58f000c8ad5fc1447e00c25b3f5b18c1.png)
 
 下面是把JS代码放在onload外，直接顺序执行的效果，因为要等待所有图片加载完成，等了 **44秒** 左右onload才触发。
-![](http://text-learn.qiniudn.com/assets/90267ba6fc4f77e9dcdb53f1efa9ccdf.jpg)
+![](http://qiniu.fe-learn.com/assets/90267ba6fc4f77e9dcdb53f1efa9ccdf.jpg)

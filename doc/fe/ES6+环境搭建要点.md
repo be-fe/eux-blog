@@ -13,7 +13,7 @@ cover: "https://bj.bcebos.com/v1/eux-blog-static/ES6开发环境.jpg"
 
 Babel可以帮我们将大部分的ES6+ 的语法转为ES5，但是需要注意的是，Babel只能转换语法，不能转换API，哪些属于语法，哪些属于API呢？可以认为声明、流程控制、循环、作用域这些相关的都属于语法，而新的数据类型，以及新的对象方法、类方法都属于API。下面这个表大家可以在Babel官网上看到，列出了Babel所能转换的语法。
 
-<img src="http://text-learn.qiniudn.com/assets/babel.png" width="600">
+<img src="http://qiniu.fe-learn.com/assets/babel.png" width="600">
 
 我们可以直接使用babel的命令行工具，也可以在webpack， gulp等环境下使用相关的babel插件来进行转换。
 
@@ -23,7 +23,7 @@ Babel可以帮我们将大部分的ES6+ 的语法转为ES5，但是需要注意�
 
 前面我们讲到了，Babel只能转语法，而不能转换API，如果我们想使用ES6+的API，例如`Array.from(arguments)`就需要使用 Babel-Polyfill，一个类似于ES5-shim的东西。以下是 Babel-Polyfill 可以兼容的API
 
-<img src="http://text-learn.qiniudn.com/assets/babel-polyfill.png" width="600">
+<img src="http://qiniu.fe-learn.com/assets/babel-polyfill.png" width="600">
 
 最简单的用法当然是在页面中直接引入
 
